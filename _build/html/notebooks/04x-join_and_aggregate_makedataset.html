@@ -1,0 +1,1809 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innovating Journalism &#8212; Data Journalism</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Journalism</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Data Journalism
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-accessing_data.html">
+   Accessing Data
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/04x-join_and_aggregate_makedataset.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/04x-join_and_aggregate_makedataset.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/04x-join_and_aggregate_makedataset.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-python-exercise-joining-and-merging">
+   Practical Python exercise Joining and Merging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-how-did-we-prepare-the-dataset">
+   EXTRA: How did we prepare the dataset?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#population-data">
+     Population data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#economic-data">
+     Economic data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing-the-data">
+   Preprocessing the data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Population data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Economic data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="innovating-journalism">
+<h1>Innovating Journalism<a class="headerlink" href="#innovating-journalism" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="practical-python-exercise-joining-and-merging">
+<h2>Practical Python exercise Joining and Merging<a class="headerlink" href="#practical-python-exercise-joining-and-merging" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="extra-how-did-we-prepare-the-dataset">
+<h2>EXTRA: How did we prepare the dataset?<a class="headerlink" href="#extra-how-did-we-prepare-the-dataset" title="Permalink to this headline">¶</a></h2>
+<p><em>Damian Trilling and Penny Sheets</em></p>
+<p>This notebook outlines the retrieval and preprocessing steps we did to construct the files for our examples.
+Thus, this notebook contains the steps</p>
+<ul class="simple">
+<li><p>(1) Retrieval</p></li>
+<li><p>(2) Preprocessing,</p></li>
+</ul>
+<p>while the other notebook contains the steps</p>
+<ul class="simple">
+<li><p>(3) Enrichment</p></li>
+<li><p>(4) Analysis</p></li>
+</ul>
+<div class="section" id="population-data">
+<h3>Population data<a class="headerlink" href="#population-data" title="Permalink to this headline">¶</a></h3>
+<p>Go to
+<a class="reference external" href="https://opendata.cbs.nl/statline/portal.html?_la=en&amp;_catalog=CBS&amp;tableId=37259eng&amp;_theme=1066">https://opendata.cbs.nl/statline/portal.html?_la=en&amp;_catalog=CBS&amp;tableId=37259eng&amp;_theme=1066</a></p>
+<p>Select the following options:</p>
+<ul class="simple">
+<li><p>Topics: Net migration <em>and</em> live born children (2/25)</p></li>
+<li><p>Sex: only total (1/3)</p></li>
+<li><p>Regions: all provinces (12/1225)</p></li>
+</ul>
+<p>This should give you 1392 rows and result in the file</p>
+<p><code class="docutils literal notranslate"><span class="pre">37259eng_UntypedDataSet_20112018_132903.csv</span></code></p>
+<p>Also download the metadata for later reference.</p>
+</div>
+<div class="section" id="economic-data">
+<h3>Economic data<a class="headerlink" href="#economic-data" title="Permalink to this headline">¶</a></h3>
+<p>Go to
+<a class="reference external" href="https://opendata.cbs.nl/statline/portal.html?_la=en&amp;_catalog=CBS&amp;tableId=82800ENG&amp;_theme=1064">https://opendata.cbs.nl/statline/portal.html?_la=en&amp;_catalog=CBS&amp;tableId=82800ENG&amp;_theme=1064</a></p>
+<p>Select the following options:</p>
+<ul class="simple">
+<li><p>Topics: GDP (volume change) (1/2)</p></li>
+<li><p>Economic sectors: A-U all economic activities (1/15)</p></li>
+<li><p>Regions: all provinces (12/77)</p></li>
+</ul>
+<p>This should give you 264 rows and result in the file</p>
+<p><code class="docutils literal notranslate"><span class="pre">82800ENG_UntypedDataSet_20112018_133529.csv</span></code></p>
+<p>Also download the metadata for later reference.</p>
+</div>
+</div>
+<div class="section" id="preprocessing-the-data">
+<h2>Preprocessing the data<a class="headerlink" href="#preprocessing-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Population data<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;37259eng_UntypedDataSet_20112018_132903.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Sex</th>
+      <th>Regions</th>
+      <th>Periods</th>
+      <th>LiveBornChildren_2</th>
+      <th>NetMigrationExcludingAdministrative_19</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>290</td>
+      <td>T001038</td>
+      <td>PV20</td>
+      <td>1960JJ00</td>
+      <td>8868.0</td>
+      <td>-1748.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>291</td>
+      <td>T001038</td>
+      <td>PV20</td>
+      <td>1961JJ00</td>
+      <td>9062.0</td>
+      <td>-1087.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>292</td>
+      <td>T001038</td>
+      <td>PV20</td>
+      <td>1962JJ00</td>
+      <td>9165.0</td>
+      <td>-623.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>293</td>
+      <td>T001038</td>
+      <td>PV20</td>
+      <td>1963JJ00</td>
+      <td>9518.0</td>
+      <td>547.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>294</td>
+      <td>T001038</td>
+      <td>PV20</td>
+      <td>1964JJ00</td>
+      <td>9671.0</td>
+      <td>305.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We first remove all columns that are not necessary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T001038    696
+Name: Sex, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span><span class="s1">&#39;ID&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Regions</th>
+      <th>Periods</th>
+      <th>LiveBornChildren_2</th>
+      <th>NetMigrationExcludingAdministrative_19</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PV20</td>
+      <td>1960JJ00</td>
+      <td>8868.0</td>
+      <td>-1748.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>PV20</td>
+      <td>1961JJ00</td>
+      <td>9062.0</td>
+      <td>-1087.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PV20</td>
+      <td>1962JJ00</td>
+      <td>9165.0</td>
+      <td>-623.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PV20</td>
+      <td>1963JJ00</td>
+      <td>9518.0</td>
+      <td>547.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PV20</td>
+      <td>1964JJ00</td>
+      <td>9671.0</td>
+      <td>305.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>PV20</td>
+      <td>1965JJ00</td>
+      <td>9632.0</td>
+      <td>-148.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>PV20</td>
+      <td>1966JJ00</td>
+      <td>9558.0</td>
+      <td>667.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>PV20</td>
+      <td>1967JJ00</td>
+      <td>9707.0</td>
+      <td>-1617.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>PV20</td>
+      <td>1968JJ00</td>
+      <td>9366.0</td>
+      <td>-2358.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>PV20</td>
+      <td>1969JJ00</td>
+      <td>10088.0</td>
+      <td>-1952.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>PV20</td>
+      <td>1970JJ00</td>
+      <td>9774.0</td>
+      <td>196.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>PV20</td>
+      <td>1971JJ00</td>
+      <td>9219.0</td>
+      <td>-203.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>PV20</td>
+      <td>1972JJ00</td>
+      <td>8895.0</td>
+      <td>-190.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>PV20</td>
+      <td>1973JJ00</td>
+      <td>7776.0</td>
+      <td>-660.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>PV20</td>
+      <td>1974JJ00</td>
+      <td>7341.0</td>
+      <td>925.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>PV20</td>
+      <td>1975JJ00</td>
+      <td>6952.0</td>
+      <td>1750.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PV20</td>
+      <td>1976JJ00</td>
+      <td>6862.0</td>
+      <td>2387.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PV20</td>
+      <td>1977JJ00</td>
+      <td>6624.0</td>
+      <td>1781.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>PV20</td>
+      <td>1978JJ00</td>
+      <td>6716.0</td>
+      <td>1949.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>PV20</td>
+      <td>1979JJ00</td>
+      <td>6644.0</td>
+      <td>823.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>PV20</td>
+      <td>1980JJ00</td>
+      <td>6898.0</td>
+      <td>1345.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>PV20</td>
+      <td>1981JJ00</td>
+      <td>6730.0</td>
+      <td>569.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>PV20</td>
+      <td>1982JJ00</td>
+      <td>6648.0</td>
+      <td>102.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>PV20</td>
+      <td>1983JJ00</td>
+      <td>6449.0</td>
+      <td>-612.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>PV20</td>
+      <td>1984JJ00</td>
+      <td>6366.0</td>
+      <td>-1625.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>PV20</td>
+      <td>1985JJ00</td>
+      <td>6537.0</td>
+      <td>-2135.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>PV20</td>
+      <td>1986JJ00</td>
+      <td>6551.0</td>
+      <td>-2756.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>PV20</td>
+      <td>1987JJ00</td>
+      <td>6515.0</td>
+      <td>-2720.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>PV20</td>
+      <td>1988JJ00</td>
+      <td>6298.0</td>
+      <td>-2679.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>PV20</td>
+      <td>1989JJ00</td>
+      <td>6284.0</td>
+      <td>-2204.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>666</th>
+      <td>PV31</td>
+      <td>1988JJ00</td>
+      <td>12979.0</td>
+      <td>505.0</td>
+    </tr>
+    <tr>
+      <th>667</th>
+      <td>PV31</td>
+      <td>1989JJ00</td>
+      <td>12875.0</td>
+      <td>1027.0</td>
+    </tr>
+    <tr>
+      <th>668</th>
+      <td>PV31</td>
+      <td>1990JJ00</td>
+      <td>13690.0</td>
+      <td>1906.0</td>
+    </tr>
+    <tr>
+      <th>669</th>
+      <td>PV31</td>
+      <td>1991JJ00</td>
+      <td>13479.0</td>
+      <td>2191.0</td>
+    </tr>
+    <tr>
+      <th>670</th>
+      <td>PV31</td>
+      <td>1992JJ00</td>
+      <td>13029.0</td>
+      <td>1434.0</td>
+    </tr>
+    <tr>
+      <th>671</th>
+      <td>PV31</td>
+      <td>1993JJ00</td>
+      <td>12899.0</td>
+      <td>2810.0</td>
+    </tr>
+    <tr>
+      <th>672</th>
+      <td>PV31</td>
+      <td>1994JJ00</td>
+      <td>12700.0</td>
+      <td>1919.0</td>
+    </tr>
+    <tr>
+      <th>673</th>
+      <td>PV31</td>
+      <td>1995JJ00</td>
+      <td>12474.0</td>
+      <td>2086.0</td>
+    </tr>
+    <tr>
+      <th>674</th>
+      <td>PV31</td>
+      <td>1996JJ00</td>
+      <td>12100.0</td>
+      <td>1476.0</td>
+    </tr>
+    <tr>
+      <th>675</th>
+      <td>PV31</td>
+      <td>1997JJ00</td>
+      <td>11984.0</td>
+      <td>982.0</td>
+    </tr>
+    <tr>
+      <th>676</th>
+      <td>PV31</td>
+      <td>1998JJ00</td>
+      <td>12445.0</td>
+      <td>411.0</td>
+    </tr>
+    <tr>
+      <th>677</th>
+      <td>PV31</td>
+      <td>1999JJ00</td>
+      <td>12213.0</td>
+      <td>1584.0</td>
+    </tr>
+    <tr>
+      <th>678</th>
+      <td>PV31</td>
+      <td>2000JJ00</td>
+      <td>12235.0</td>
+      <td>615.0</td>
+    </tr>
+    <tr>
+      <th>679</th>
+      <td>PV31</td>
+      <td>2001JJ00</td>
+      <td>11884.0</td>
+      <td>642.0</td>
+    </tr>
+    <tr>
+      <th>680</th>
+      <td>PV31</td>
+      <td>2002JJ00</td>
+      <td>11484.0</td>
+      <td>-311.0</td>
+    </tr>
+    <tr>
+      <th>681</th>
+      <td>PV31</td>
+      <td>2003JJ00</td>
+      <td>11190.0</td>
+      <td>-1579.0</td>
+    </tr>
+    <tr>
+      <th>682</th>
+      <td>PV31</td>
+      <td>2004JJ00</td>
+      <td>10753.0</td>
+      <td>-1338.0</td>
+    </tr>
+    <tr>
+      <th>683</th>
+      <td>PV31</td>
+      <td>2005JJ00</td>
+      <td>10051.0</td>
+      <td>-2831.0</td>
+    </tr>
+    <tr>
+      <th>684</th>
+      <td>PV31</td>
+      <td>2006JJ00</td>
+      <td>9857.0</td>
+      <td>-2389.0</td>
+    </tr>
+    <tr>
+      <th>685</th>
+      <td>PV31</td>
+      <td>2007JJ00</td>
+      <td>9458.0</td>
+      <td>-2099.0</td>
+    </tr>
+    <tr>
+      <th>686</th>
+      <td>PV31</td>
+      <td>2008JJ00</td>
+      <td>9401.0</td>
+      <td>986.0</td>
+    </tr>
+    <tr>
+      <th>687</th>
+      <td>PV31</td>
+      <td>2009JJ00</td>
+      <td>9741.0</td>
+      <td>1264.0</td>
+    </tr>
+    <tr>
+      <th>688</th>
+      <td>PV31</td>
+      <td>2010JJ00</td>
+      <td>9620.0</td>
+      <td>2288.0</td>
+    </tr>
+    <tr>
+      <th>689</th>
+      <td>PV31</td>
+      <td>2011JJ00</td>
+      <td>9288.0</td>
+      <td>2666.0</td>
+    </tr>
+    <tr>
+      <th>690</th>
+      <td>PV31</td>
+      <td>2012JJ00</td>
+      <td>9109.0</td>
+      <td>1900.0</td>
+    </tr>
+    <tr>
+      <th>691</th>
+      <td>PV31</td>
+      <td>2013JJ00</td>
+      <td>9011.0</td>
+      <td>1255.0</td>
+    </tr>
+    <tr>
+      <th>692</th>
+      <td>PV31</td>
+      <td>2014JJ00</td>
+      <td>8841.0</td>
+      <td>1176.0</td>
+    </tr>
+    <tr>
+      <th>693</th>
+      <td>PV31</td>
+      <td>2015JJ00</td>
+      <td>8739.0</td>
+      <td>2627.0</td>
+    </tr>
+    <tr>
+      <th>694</th>
+      <td>PV31</td>
+      <td>2016JJ00</td>
+      <td>8994.0</td>
+      <td>4882.0</td>
+    </tr>
+    <tr>
+      <th>695</th>
+      <td>PV31</td>
+      <td>2017JJ00</td>
+      <td>8821.0</td>
+      <td>3955.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>696 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>The values of the column Regions contain weird spaces at the end:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;PV20  &#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are going to remove them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span><span class="p">[</span><span class="s1">&#39;Regions&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">population</span><span class="p">[</span><span class="s1">&#39;Regions&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By having a look at the metadata (using CTRL-F for looking for PV20), we can find out what the province codes actually mean. Let’s recode that by using a dict to map the keys to more meaningful values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">provinces</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;PV20&quot;</span><span class="p">:</span><span class="s2">&quot;Groningen&quot;</span><span class="p">,</span>
+<span class="s2">&quot;PV21&quot;</span><span class="p">:</span><span class="s2">&quot;Friesland&quot;</span><span class="p">,</span>
+<span class="s2">&quot;PV22&quot;</span><span class="p">:</span><span class="s2">&quot;Drenthe&quot;</span><span class="p">,</span>
+<span class="s2">&quot;PV23&quot;</span><span class="p">:</span><span class="s2">&quot;Overijssel&quot;</span><span class="p">,</span>
+<span class="s2">&quot;PV24&quot;</span><span class="p">:</span><span class="s2">&quot;Flevoland&quot;</span><span class="p">,</span>
+<span class="s2">&quot;PV25&quot;</span><span class="p">:</span><span class="s2">&quot;Gelderland&quot;</span><span class="p">,</span>
+<span class="s2">&quot;PV26&quot;</span><span class="p">:</span><span class="s2">&quot;Utrecht&quot;</span><span class="p">,</span>
+<span class="s2">&quot;PV27&quot;</span><span class="p">:</span><span class="s2">&quot;Noord-Holland&quot;</span><span class="p">,</span>
+<span class="s2">&quot;PV28&quot;</span><span class="p">:</span><span class="s2">&quot;Zuid-Holland&quot;</span><span class="p">,</span>
+<span class="s2">&quot;PV29&quot;</span><span class="p">:</span><span class="s2">&quot;Zeeland&quot;</span><span class="p">,</span>
+<span class="s2">&quot;PV30&quot;</span><span class="p">:</span><span class="s2">&quot;Noord-Brabant&quot;</span><span class="p">,</span>
+<span class="s2">&quot;PV31&quot;</span><span class="p">:</span><span class="s2">&quot;Limburg&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span><span class="p">[</span><span class="s1">&#39;Regions&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">population</span><span class="p">[</span><span class="s1">&#39;Regions&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">provinces</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Regions</th>
+      <th>Periods</th>
+      <th>LiveBornChildren_2</th>
+      <th>NetMigrationExcludingAdministrative_19</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Groningen</td>
+      <td>1960</td>
+      <td>8868.0</td>
+      <td>-1748.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Groningen</td>
+      <td>1961</td>
+      <td>9062.0</td>
+      <td>-1087.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Groningen</td>
+      <td>1962</td>
+      <td>9165.0</td>
+      <td>-623.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Groningen</td>
+      <td>1963</td>
+      <td>9518.0</td>
+      <td>547.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Groningen</td>
+      <td>1964</td>
+      <td>9671.0</td>
+      <td>305.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s also represent the Period in a better way. It’s a string now, and only the first four digits are meaningful. Let’s convert these to an integer. Alternatively, we could opt to convert it to a date (a so-called datetime object).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span><span class="p">[</span><span class="s1">&#39;Periods&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">population</span><span class="p">[</span><span class="s1">&#39;Periods&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="mi">4</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Regions</th>
+      <th>Periods</th>
+      <th>LiveBornChildren_2</th>
+      <th>NetMigrationExcludingAdministrative_19</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Groningen</td>
+      <td>1960</td>
+      <td>8868.0</td>
+      <td>-1748.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Groningen</td>
+      <td>1961</td>
+      <td>9062.0</td>
+      <td>-1087.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Groningen</td>
+      <td>1962</td>
+      <td>9165.0</td>
+      <td>-623.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Groningen</td>
+      <td>1963</td>
+      <td>9518.0</td>
+      <td>547.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Groningen</td>
+      <td>1964</td>
+      <td>9671.0</td>
+      <td>305.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s save this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;population.csv&#39;</span><span class="p">)</span>
+<span class="n">population</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">&#39;population.json&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Economic data<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>We just do exactly the same for our economic dataset</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">economy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;82800ENG_UntypedDataSet_20112018_133529.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">economy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>EconomicSectorsSIC2008</th>
+      <th>Regions</th>
+      <th>Periods</th>
+      <th>GDPVolumeChanges_1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>132</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>1996JJ00</td>
+      <td>9.3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>133</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>1997JJ00</td>
+      <td>-2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>134</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>1998JJ00</td>
+      <td>-0.9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>135</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>1999JJ00</td>
+      <td>-0.7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>136</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2000JJ00</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>137</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2001JJ00</td>
+      <td>3.9</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>138</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2002JJ00</td>
+      <td>2.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>139</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2003JJ00</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>140</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2004JJ00</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>141</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2005JJ00</td>
+      <td>-0.7</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>142</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2006JJ00</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>143</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2007JJ00</td>
+      <td>-2.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>144</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2008JJ00</td>
+      <td>8.7</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>145</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2009JJ00</td>
+      <td>-4.2</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>146</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2010JJ00</td>
+      <td>10.4</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>147</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2011JJ00</td>
+      <td>-2.9</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>148</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2012JJ00</td>
+      <td>-0.5</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>149</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2013JJ00</td>
+      <td>5.7</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>150</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2014JJ00</td>
+      <td>-7.6</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>151</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2015JJ00</td>
+      <td>-8.3</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>152</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2016JJ00</td>
+      <td>-1.8</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>153</td>
+      <td>T001081</td>
+      <td>PV20</td>
+      <td>2017JJ00</td>
+      <td>-0.6</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>154</td>
+      <td>T001081</td>
+      <td>PV21</td>
+      <td>1996JJ00</td>
+      <td>2.6</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>155</td>
+      <td>T001081</td>
+      <td>PV21</td>
+      <td>1997JJ00</td>
+      <td>2.6</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>156</td>
+      <td>T001081</td>
+      <td>PV21</td>
+      <td>1998JJ00</td>
+      <td>6.8</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>157</td>
+      <td>T001081</td>
+      <td>PV21</td>
+      <td>1999JJ00</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>158</td>
+      <td>T001081</td>
+      <td>PV21</td>
+      <td>2000JJ00</td>
+      <td>3.4</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>159</td>
+      <td>T001081</td>
+      <td>PV21</td>
+      <td>2001JJ00</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>160</td>
+      <td>T001081</td>
+      <td>PV21</td>
+      <td>2002JJ00</td>
+      <td>-1.9</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>161</td>
+      <td>T001081</td>
+      <td>PV21</td>
+      <td>2003JJ00</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>234</th>
+      <td>366</td>
+      <td>T001081</td>
+      <td>PV30</td>
+      <td>2010JJ00</td>
+      <td>3.3</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>367</td>
+      <td>T001081</td>
+      <td>PV30</td>
+      <td>2011JJ00</td>
+      <td>3.5</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>368</td>
+      <td>T001081</td>
+      <td>PV30</td>
+      <td>2012JJ00</td>
+      <td>-0.6</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>369</td>
+      <td>T001081</td>
+      <td>PV30</td>
+      <td>2013JJ00</td>
+      <td>-0.9</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>370</td>
+      <td>T001081</td>
+      <td>PV30</td>
+      <td>2014JJ00</td>
+      <td>1.9</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>371</td>
+      <td>T001081</td>
+      <td>PV30</td>
+      <td>2015JJ00</td>
+      <td>3.4</td>
+    </tr>
+    <tr>
+      <th>240</th>
+      <td>372</td>
+      <td>T001081</td>
+      <td>PV30</td>
+      <td>2016JJ00</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>241</th>
+      <td>373</td>
+      <td>T001081</td>
+      <td>PV30</td>
+      <td>2017JJ00</td>
+      <td>3.7</td>
+    </tr>
+    <tr>
+      <th>242</th>
+      <td>374</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>1996JJ00</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>243</th>
+      <td>375</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>1997JJ00</td>
+      <td>5.8</td>
+    </tr>
+    <tr>
+      <th>244</th>
+      <td>376</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>1998JJ00</td>
+      <td>4.9</td>
+    </tr>
+    <tr>
+      <th>245</th>
+      <td>377</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>1999JJ00</td>
+      <td>5.5</td>
+    </tr>
+    <tr>
+      <th>246</th>
+      <td>378</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2000JJ00</td>
+      <td>2.7</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>379</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2001JJ00</td>
+      <td>1.6</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>380</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2002JJ00</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>381</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2003JJ00</td>
+      <td>-0.8</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>382</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2004JJ00</td>
+      <td>2.8</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>383</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2005JJ00</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>252</th>
+      <td>384</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2006JJ00</td>
+      <td>2.9</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>385</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2007JJ00</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>254</th>
+      <td>386</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2008JJ00</td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>387</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2009JJ00</td>
+      <td>-5.3</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>388</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2010JJ00</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>257</th>
+      <td>389</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2011JJ00</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>258</th>
+      <td>390</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2012JJ00</td>
+      <td>-1.5</td>
+    </tr>
+    <tr>
+      <th>259</th>
+      <td>391</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2013JJ00</td>
+      <td>-0.7</td>
+    </tr>
+    <tr>
+      <th>260</th>
+      <td>392</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2014JJ00</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>261</th>
+      <td>393</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2015JJ00</td>
+      <td>2.7</td>
+    </tr>
+    <tr>
+      <th>262</th>
+      <td>394</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2016JJ00</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>263</th>
+      <td>395</td>
+      <td>T001081</td>
+      <td>PV31</td>
+      <td>2017JJ00</td>
+      <td>3.2</td>
+    </tr>
+  </tbody>
+</table>
+<p>264 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We only downloaded the total, so we can safely delete:</span>
+<span class="n">economy</span><span class="p">[</span><span class="s1">&#39;EconomicSectorsSIC2008&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T001081       264
+Name: EconomicSectorsSIC2008, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">economy</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;EconomicSectorsSIC2008&#39;</span><span class="p">,</span><span class="s1">&#39;ID&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">economy</span><span class="p">[</span><span class="s1">&#39;Regions&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">economy</span><span class="p">[</span><span class="s1">&#39;Regions&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="n">economy</span><span class="p">[</span><span class="s1">&#39;Regions&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">economy</span><span class="p">[</span><span class="s1">&#39;Regions&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">provinces</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">economy</span><span class="p">[</span><span class="s1">&#39;Periods&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">economy</span><span class="p">[</span><span class="s1">&#39;Periods&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="mi">4</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">economy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Regions</th>
+      <th>Periods</th>
+      <th>GDPVolumeChanges_1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Groningen</td>
+      <td>1996</td>
+      <td>9.3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Groningen</td>
+      <td>1997</td>
+      <td>-2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Groningen</td>
+      <td>1998</td>
+      <td>-0.9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Groningen</td>
+      <td>1999</td>
+      <td>-0.7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Groningen</td>
+      <td>2000</td>
+      <td>1.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">economy</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;economy.csv&#39;</span><span class="p">)</span>
+<span class="n">economy</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">&#39;economy.json&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Damian Trilling, Penny Sheets, & Frederic Hopp<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
