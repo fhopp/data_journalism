@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Started &#8212; Data Journalism</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Accessing Data" href="02-accessing_data.html" />
+    <link rel="prev" title="Data Journalism" href="../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Journalism</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Data Journalism
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-accessing_data.html">
+   Accessing Data
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/01-getting_started.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/01-getting_started.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/01-getting_started.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Getting Started
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wednesday-week-1-part-1-getting-started-with-jupyter-notebooks">
+     Wednesday, week 1, part 1: getting started with Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#downloading-this-notebook-from-github">
+     Downloading this notebook from github
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-you-use-anaconda-on-your-computer">
+       If you use Anaconda on your computer
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#if-you-use-google-colab">
+       If you use google Colab
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cell-types">
+     Cell types
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-create-a-new-cell-in-anaconda">
+     To create a new cell in Anaconda
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-create-a-new-cell-in-colab">
+     To create a new cell in Colab
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note-that-there-are-various-ways-to-format-things-using-hashtags-allows-for-bigger-bolder-fonts">
+   Note that there are various ways to format things; using hashtags allows for bigger, bolder fonts.
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-hashtags-smaller-fonts-but-still-bigger-and-bolder-than-no-hashtags">
+     More hashtags, smaller fonts, but still bigger and bolder than no-hashtags.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-python-code-in-jupyter">
+     Running Python code in Jupyter
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-modules">
+     Importing Modules
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#methods">
+       Methods
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#functions">
+       Functions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#you-see">
+   You see…
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bonus-accessing-your-google-drive-from-colab">
+     Bonus: Accessing your Google Drive from Colab
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="wednesday-week-1-part-1-getting-started-with-jupyter-notebooks">
+<h2>Wednesday, week 1, part 1: getting started with Jupyter Notebooks<a class="headerlink" href="#wednesday-week-1-part-1-getting-started-with-jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+<p><em>Damian Trilling and Penny Sheets</em></p>
+<p>This notebook is meant to show you what you can do with a Jupyter Notebook. Feel free to play around!</p>
+</div>
+<div class="section" id="downloading-this-notebook-from-github">
+<h2>Downloading this notebook from github<a class="headerlink" href="#downloading-this-notebook-from-github" title="Permalink to this headline">¶</a></h2>
+<p>You can find this file on github. Github is a very popular platform to share code and it has a central role in open-source software development and in open science. People who want to make their data analyses transparent usually share their code here.</p>
+<div class="section" id="if-you-use-anaconda-on-your-computer">
+<h3>If you use Anaconda on your computer<a class="headerlink" href="#if-you-use-anaconda-on-your-computer" title="Permalink to this headline">¶</a></h3>
+<p>Usually, people <em>clone</em> or maybe download whole repositories (projects) from github (and, in fact, you can do so to if you want to), but if you just want to have a single file (such as this one), then you can get it as follows:</p>
+<ol class="simple">
+<li><p>Click on the file to view it on Github. (It may show an error, but this is okay; what is important is to have access to the ‘raw’ file, not to be able to preview it in Github.)</p></li>
+<li><p>Click on the “Raw” button in the upper right corner</p></li>
+<li><p>Depending on your system, the file either downloads directly or you see the raw computer code behind this. That’s fine, just click on “File/save as” in your browser, or right-click.</p></li>
+<li><p>It is <em>very important</em> that you do <em>not</em> choose ‘HTML’, ‘web page’ or something similar in Save-as-dialogue. Choose “All files (*.*)” or similar as file type, and make sure that the filename ends in “.ipynb”.  Also try to do “all files” instead of a text file.  Know where it is that you save the file, of course, on your computer.  It’s probably wisest to create one folder for our class and keep everything there.</p></li>
+<li><p>Open the downloaded file FROM WITHIN in Jupyter Notebook on your computer.</p></li>
+</ol>
+</div>
+<div class="section" id="if-you-use-google-colab">
+<h3>If you use google Colab<a class="headerlink" href="#if-you-use-google-colab" title="Permalink to this headline">¶</a></h3>
+<p>Colab will allow you to run things through the cloud.  You can interface directly with Github from there, and it seems to keep track of your files within your Colab space.  You can aslo save things to Google Drive from within Colab.  We’ll talk more about the benefits &amp; drawbacks of Colab and Anaconda in class during week 1.</p>
+<ol class="simple">
+<li><p>Within the basic welcome Colaboratory screen, you can click on “File - Open Notebook”</p></li>
+<li><p>Then click over to the Github tab, and simply paste in our github page address: <a class="reference external" href="https://github.com/uvacw/datajournalism">https://github.com/uvacw/datajournalism</a></p></li>
+<li><p>Within there the various notebooks will appear, including this one - click on it to open it within Colab and you’re off to the races.</p></li>
+<li><p>BUT!  You need to make a copy of the notebook for yourself before you can edit it/play around.  So, do that first.  You should save in Drive, and then you’ll re-access the notebook not by going to Github, but by going to the “drive” tab at the File - Open Notebook option.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="cell-types">
+<h2>Cell types<a class="headerlink" href="#cell-types" title="Permalink to this headline">¶</a></h2>
+<p>There are different types of cells: Code cells and Markdown (or “Text” in Colab) cells (there are two more, but they are not necessary for our purposes). Markdown/Text cells contain text, and code cells contain, well, code. You can edit a cell by double-clicking on it.</p>
+<p>To ‘run’ a cell in Anaconda (in the case of markdown/text, to format it), press CTRL-Enter. (You can also hit ‘run’ up in the menu buttons.)</p>
+<p>In Colab, you can simply double-dlick the previewed version of the text cell to format it.  To run a code cell, you can do ctrl+enter or you can hit the run arrow next to the cell.</p>
+<p>Try it out now!  Double click on this cell, and then hit CTRL-Enter to format it in Anaconda, or in Colab just click on the right-hand preview of the cell.</p>
+<p>(Tip!!  If you press CTRL-Enter and nothing happens, then it most likely means you’re not in a Markdown/Text cell, but some other kind of cell.)</p>
+<p>If you want to know more about formatting with markdown, have a look at
+<a class="reference external" href="https://guides.github.com/features/mastering-markdown/">https://guides.github.com/features/mastering-markdown/</a></p>
+<p>This is a markdown cell.  Write whatever you want in it.</p>
+</div>
+<div class="section" id="to-create-a-new-cell-in-anaconda">
+<h2>To create a new cell in Anaconda<a class="headerlink" href="#to-create-a-new-cell-in-anaconda" title="Permalink to this headline">¶</a></h2>
+<p>…You hit the ‘plus sign’ button up on the top left of jupyter notebook, at the toolbar.  By default, this is a code cell.  But you can change it to a markdown cell at the dropdown menu to the right of that same toolbar.  Try creating a new markdown cell below this.  Don’t forget control+enter to format it.  (You can also move cells around, using the up and down arrows up in the menus above.)</p>
+</div>
+<div class="section" id="to-create-a-new-cell-in-colab">
+<h2>To create a new cell in Colab<a class="headerlink" href="#to-create-a-new-cell-in-colab" title="Permalink to this headline">¶</a></h2>
+<p>…You just hit either +code or +text in the upper left.</p>
+</div>
+</div>
+<div class="section" id="note-that-there-are-various-ways-to-format-things-using-hashtags-allows-for-bigger-bolder-fonts">
+<h1>Note that there are various ways to format things; using hashtags allows for bigger, bolder fonts.<a class="headerlink" href="#note-that-there-are-various-ways-to-format-things-using-hashtags-allows-for-bigger-bolder-fonts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="more-hashtags-smaller-fonts-but-still-bigger-and-bolder-than-no-hashtags">
+<h2>More hashtags, smaller fonts, but still bigger and bolder than no-hashtags.<a class="headerlink" href="#more-hashtags-smaller-fonts-but-still-bigger-and-bolder-than-no-hashtags" title="Permalink to this headline">¶</a></h2>
+<p>Try creating your new markdown/text cell below here.</p>
+</div>
+<div class="section" id="running-python-code-in-jupyter">
+<h2>Running Python code in Jupyter<a class="headerlink" href="#running-python-code-in-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>Now we can start with some actual python commands, actual code, instead of markdown/text.</p>
+<p>Let’s try to print something… don’t forget to hit control+enter to run the command (or run it through a button).</p>
+<p>Once a line of code has been run, a number appears next to it (in sequential order).  This can be very useful for knowing whether you’ve run code already or not - relevant to when we install certain packages, e.g., or you search for or name specific datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now create your own print command in the next cell.  Print whatever you want.  The key is to make sure you format the command correctly - you need parentheses and quotation marks, and to be sure all are closed out afterward. Python helps you with this quite a bit (for example, look at how the colors change if you format something (in-)correctly), but, you have to practice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Note, in a code cell, you can also preface a line of text with a hashtag, and python will ignore it as code.</span>
+<span class="c1">#This can be useful for very short notes within particular code cells, rather than creating separate markdown/text cells.</span>
+<span class="c1">#But watch the lenghth of your cells!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python also allows us to do very simple calculations.  Just tell it the values and make it do the work:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Many commands have output, but some won’t (just loading a package of tools, or a dataset, e.g.).  But remember to check the number next to the cell to see if you’ve actually run those cells or not.  Often, you have to start back at the begining because you missed a simple but important step.</p>
+<p>Good to know: you can always clear what you’ve done and re-run various (or all) cells, by using the “cell” menu in Anaconda, or by using “edit” and “runtime” menus in Colab.</p>
+<p>**Just note! If you clear everything, then all imported data and modules (see next point) are also cleared.  So you can’t just start running your commands in the middle of the notebook; you’ll often have to go back to the earlier cells to start from scratch.  (Since the code is already written, this takes literally only seconds sometimes to get back to where you were.)</p>
+</div>
+<div class="section" id="importing-modules">
+<h2>Importing Modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">¶</a></h2>
+<p>Because we want to do a lot more than printing words and running simple calculations, we can import modules that help us do fancier things – and in particular, help us to read data easily.  Our main module in this course is called “pandas”.  Whenever you import anything into Python, it needs to have a name.  You can either leave the original name - pandas - (by just typing <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span></code>) or shorten that name so you don’t have to type it again and again and again.  So one shorthand that is commonly used is <code class="docutils literal notranslate"><span class="pre">pd</span></code> for pandas.  Try importing it now with the following command.  You’ll see that no output appears, but you should - if you’ve run it correctly - end up with a number next to the command line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll explain a bit more about pandas in class, but, pandas basically allows us to work with data more easily.  So anytime you see a command that follows here that has ‘pd’ in the line of code, it means pandas is at work.</p>
+<p>Here, pandas can help us read in a dataset from the web, just a random dataset that is often used to illustrate things like statistical programming. The command is simply <code class="docutils literal notranslate"><span class="pre">pd.read_</span></code> and then the type of the file, and its url.  In this case, it is a csv file, but python can also read many other types of files–we’ll address more of those in a minute.</p>
+<p>In this case, the dataset comes from the url listed here, and, because the dataset is originally called ‘iris’, we will also tell python to call the dataset <code class="docutils literal notranslate"><span class="pre">iris</span></code>.  But we could call it anything else we want.</p>
+<p>As for the second line of code here, if we just type the name of the dataset after having read it into jupyter, it also displays a bunch of the dataset for us to see.  This is handy, as long as you don’t have insanely huge datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv&#39;</span><span class="p">)</span>
+<span class="n">iris</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<p>In Python, basically everything is an “object”. That’s also why we assign names to them: It makes the objects re-usable. In the cell above, we created an object (more specifically, a pandas dataframe) that we called <code class="docutils literal notranslate"><span class="pre">iris</span></code>.</p>
+<p>Objects can have “methods” that are associated with them. Pandas dataframes, for example, have some methods that allow you to directly run some simple analyses on them. One of them is <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>.</p>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">()</span></code> at the end. If you want to “call” (= execute, run) a method, you need to end with these parentheses. They also allow you to give some additional “arguments” (parameters, options). Compare the following two method calls:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">percentiles</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>One more note: as with SPSS and syntax help, python is happy to help you.  You can type a command and then put a question mark after it, and it’ll explain that command to you.  Try it here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>iris.describe<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<p>Next to methods, there are also functions. Just like methods, functions take one or more “arguments” (i.e., some input) between <code class="docutils literal notranslate"><span class="pre">()</span></code>. They then return some output. But unlike methods, they are not directly associated with an object.</p>
+<p>You already know one function: <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
+<p>Let’s try out some functions.  First, create two objects to play with:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mystring</span> <span class="o">=</span> <span class="s2">&quot;Hello world&quot;</span>
+<span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, try out the following functions and try to explain what they do to those objects.  What are these functions trying to do?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">mystring</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s combine these techniques.
+Each string has the method <code class="docutils literal notranslate"><span class="pre">.split()</span></code> that splits it into words. With this knowledge, can you calculate the number of words in <code class="docutils literal notranslate"><span class="pre">mystring</span></code> by using the output of this method as input for the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function?</p>
+</div>
+</div>
+</div>
+<div class="section" id="you-see">
+<h1>You see…<a class="headerlink" href="#you-see" title="Permalink to this headline">¶</a></h1>
+<p>It’s actually not that difficult. It can seem overwhelming to not know the codes for things, but, that’s what we’re going to teach you.  And there are tons of resources online to help, as well.</p>
+<p>What’s wonderful about jupyter notebook is that we have code, results, and explanation/notes in one single file.  You will also format your assignments this way, using markdown cells to provide notes.  The ‘output’ or results don’t matter that much in the file itself, because we can always re-run the code each time we open your files.  But the markdown and code cells are essential.</p>
+<p>We are looking forward to exploring the possibilities of Jupyter Notebook, Python, and Pandas with you in the next weeks!</p>
+<div class="section" id="bonus-accessing-your-google-drive-from-colab">
+<h2>Bonus: Accessing your Google Drive from Colab<a class="headerlink" href="#bonus-accessing-your-google-drive-from-colab" title="Permalink to this headline">¶</a></h2>
+<p>(not applicable to Anaconda)</p>
+<p>If you are running this notebook in Google Colab, you can also access your own Google Drive (longer explanation here: <a class="reference external" href="https://www.marktechpost.com/2019/06/07/how-to-connect-google-colab-with-google-drive/">https://www.marktechpost.com/2019/06/07/how-to-connect-google-colab-with-google-drive/</a> ).</p>
+<p>Run this cell and follow the instructions that pop up (follow a link, copy-paste authorization code):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/mnt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can now address all files in your google drive by storing things in or loading things from the folder <code class="docutils literal notranslate"><span class="pre">/mnt/My</span> <span class="pre">Drive</span></code>.</p>
+<p><strong>In other words: Typing <code class="docutils literal notranslate"><span class="pre">/mnt/My</span> <span class="pre">Drive/</span></code> as first part of a file name simply links to your Google Drive. If you have a file <code class="docutils literal notranslate"><span class="pre">iris.csv</span></code> in a folder <code class="docutils literal notranslate"><span class="pre">datajournalism</span></code> on your Google Drive, then you can access it with
+<code class="docutils literal notranslate"><span class="pre">/mnt/My</span> <span class="pre">Drive/datajournalism/iris.csv</span></code></strong></p>
+<p>(Nerd note: ‘/mnt’ is kind of arbitrary. We could use a different name, but we chose that name because it commonly stands for “mount”-ed file systems - files that are in fact stored somewhere else but made accessible as if they were local)</p>
+<p>Thus, <code class="docutils literal notranslate"><span class="pre">/mnt/My</span> <span class="pre">Drive/datajournalism/iris.csv</span></code> is the GoogleColab way of specifiying that you want to access this file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="s2">&quot;https://github.com/uvacw/datajournalism/raw/master/googledrive1.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01-getting_started_35_0.png" src="../_images/01-getting_started_35_0.png" />
+</div>
+</div>
+<p>Let’s write the iris dataset we loaded above to our google drive (just in the main folder):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;/mnt/My Drive/iris.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can of course also create (or access) subfolders in your drive. Let’s make a folder “datajournalism” on your drive. We are first importing to modules for creating folders and for displaying folder contents. You do not need to remember these - this is just to show you what can be done. You can as well use the Google Drive web interface</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;/mnt/My Drive/datajournalism&quot;</span><span class="p">)</span>
+<span class="n">iris</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;/mnt/My Drive/datajournalism/iris.csv&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All CSV files in my data journalism folder:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;/mnt/My Drive/datajournalism/*.csv&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../intro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Data Journalism</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="02-accessing_data.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Accessing Data</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Damian Trilling, Penny Sheets, & Frederic Hopp<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
