@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Journalism &#8212; Data Journalism</title>
+    <title>Analyzing Text &#8212; Data Journalism</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Visualization" href="07-visualizations.html" />
+    <link rel="prev" title="Example “WOZ-waarde”" href="05-aggregate_wozwaarde.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -96,15 +98,55 @@
   Notebooks
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-getting_started.html">
-   Getting Started
+   Getting started with Jupyter Notebooks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02-accessing_data.html">
    Accessing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-analyzing_numbers.html">
+   Basic Statistics &amp; Analyzing Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-join_and_aggregate.html">
+   Python Data Wrangling (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04x-join_and_aggregate_makedataset.html">
+   Python Data Wrangling (2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-aggregate_wozwaarde.html">
+   Example “WOZ-waarde”
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Analyzing Text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-visualizations.html">
+   Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-datawrangling_recap.html">
+   Recap Data Wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-interactive_visualizations.html">
+   Interactive Data Visualization
   </a>
  </li>
 </ul>
@@ -213,14 +255,9 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Data Journalism
+   Analyzing Text
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#practical-python-exercise-analyzing-text">
-     Practical Python exercise: Analyzing text
-    </a>
-   </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#download-the-data">
      Download the data
@@ -283,14 +320,11 @@
         
               <div>
                 
-  <div class="section" id="data-journalism">
-<h1>Data Journalism<a class="headerlink" href="#data-journalism" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="practical-python-exercise-analyzing-text">
-<h2>Practical Python exercise: Analyzing text<a class="headerlink" href="#practical-python-exercise-analyzing-text" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="analyzing-text">
+<h1>Analyzing Text<a class="headerlink" href="#analyzing-text" title="Permalink to this headline">¶</a></h1>
 <p><em>Damian Trilling and Penny Sheets</em></p>
 <p>This notebook is meant to show you some more ways of analyzing data that go beyond methods like <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> or <code class="docutils literal notranslate"><span class="pre">Counter()</span></code> etc., which we used last week already. In particular, we are going to look into analyzing textual data.</p>
 <p>We will both look at <em>bottom up</em> and <em>top down</em> approaches.</p>
-</div>
 <div class="section" id="download-the-data">
 <h2>Download the data<a class="headerlink" href="#download-the-data" title="Permalink to this headline">¶</a></h2>
 <p>We will use a dataset by Schumacher et al. (2016). From the abstract:</p>
@@ -714,6 +748,24 @@
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="05-aggregate_wozwaarde.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Example “WOZ-waarde”</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="07-visualizations.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Data Visualization</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

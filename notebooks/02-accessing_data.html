@@ -51,7 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Getting Started" href="01-getting_started.html" />
+    <link rel="next" title="Basic Statistics &amp; Analyzing Numbers" href="03-analyzing_numbers.html" />
+    <link rel="prev" title="Getting started with Jupyter Notebooks" href="01-getting_started.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -100,12 +101,52 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-getting_started.html">
-   Getting Started
+   Getting started with Jupyter Notebooks
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Accessing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-analyzing_numbers.html">
+   Basic Statistics &amp; Analyzing Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-join_and_aggregate.html">
+   Python Data Wrangling (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04x-join_and_aggregate_makedataset.html">
+   Python Data Wrangling (2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-aggregate_wozwaarde.html">
+   Example “WOZ-waarde”
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-analyzing_text.html">
+   Analyzing Text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-visualizations.html">
+   Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-datawrangling_recap.html">
+   Recap Data Wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-interactive_visualizations.html">
+   Interactive Data Visualization
   </a>
  </li>
 </ul>
@@ -213,16 +254,9 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#wednesday-week-1-part-2-accessing-data">
-   Wednesday, week 1, part 2: accessing data
+  <a class="reference internal nav-link" href="#importing-modules">
+   Importing Modules
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importing-modules">
-     Importing Modules
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#csv-files">
@@ -291,13 +325,11 @@
                 
   <div class="section" id="accessing-data">
 <h1>Accessing Data<a class="headerlink" href="#accessing-data" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="wednesday-week-1-part-2-accessing-data">
-<h2>Wednesday, week 1, part 2: accessing data<a class="headerlink" href="#wednesday-week-1-part-2-accessing-data" title="Permalink to this headline">¶</a></h2>
 <p><em>Damian Trilling and Penny Sheets</em></p>
 <p>This notebook is meant to show you different ways of accessing data. Data can be available as (a) local files (on your computer), (b) remote files (somewhere else), or (c) APIs (application programming interfaces). We will show you ways for dealing with all of these.</p>
 <p>But before we do that, we need to import some modules into Jupyter that will help us find and read data.  You already know our basic module, pandas.  Let’s import it again just in case your computer cleared it during the break (or in case you’re doing this notebook again separately, after class).</p>
 <div class="section" id="importing-modules">
-<h3>Importing Modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">¶</a></h3>
+<h2>Importing Modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">¶</a></h2>
 <p>It is a good custom to import all modules that you need at the beginning of your notebook. We’ll explain in the lesson (or in subsequent weeks) what these modules do.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -310,7 +342,6 @@
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -743,10 +774,19 @@ Download <a class="reference external" href="https://open.data.amsterdam.nl/Eten
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Getting Started</p>
+                <p class="prevnext-title">Getting started with Jupyter Notebooks</p>
             </div>
         </a>
     </div>
+     <div id="next">
+        <a class="right-next" href="03-analyzing_numbers.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Basic Statistics &amp; Analyzing Numbers</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

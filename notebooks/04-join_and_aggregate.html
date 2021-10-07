@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Journalism &#8212; Data Journalism</title>
+    <title>Python Data Wrangling (1) &#8212; Data Journalism</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Data Wrangling (2)" href="04x-join_and_aggregate_makedataset.html" />
+    <link rel="prev" title="Basic Statistics &amp; Analyzing Numbers" href="03-analyzing_numbers.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -96,15 +98,55 @@
   Notebooks
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-getting_started.html">
-   Getting Started
+   Getting started with Jupyter Notebooks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02-accessing_data.html">
    Accessing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-analyzing_numbers.html">
+   Basic Statistics &amp; Analyzing Numbers
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Python Data Wrangling (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04x-join_and_aggregate_makedataset.html">
+   Python Data Wrangling (2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-aggregate_wozwaarde.html">
+   Example “WOZ-waarde”
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-analyzing_text.html">
+   Analyzing Text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-visualizations.html">
+   Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-datawrangling_recap.html">
+   Recap Data Wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-interactive_visualizations.html">
+   Interactive Data Visualization
   </a>
  </li>
 </ul>
@@ -213,15 +255,8 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Data Journalism
+   Python Data Wrangling (1)
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#practical-python-exercise-merging-and-aggregating">
-     Practical Python exercise: Merging and aggregating
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#your-task">
@@ -283,10 +318,8 @@
         
               <div>
                 
-  <div class="section" id="data-journalism">
-<h1>Data Journalism<a class="headerlink" href="#data-journalism" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="practical-python-exercise-merging-and-aggregating">
-<h2>Practical Python exercise: Merging and aggregating<a class="headerlink" href="#practical-python-exercise-merging-and-aggregating" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="python-data-wrangling-1">
+<h1>Python Data Wrangling (1)<a class="headerlink" href="#python-data-wrangling-1" title="Permalink to this headline">¶</a></h1>
 <p><em>Damian Trilling and Penny Sheets</em></p>
 <p>This notebook outlines thew</p>
 <ul class="simple">
@@ -315,7 +348,6 @@ die the</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;population.json&#39;</span><span class="p">)</span>
 <span class="n">economy</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;economy.json&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -2275,6 +2307,24 @@ Name: Regions, Length: 264, dtype: bool
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="03-analyzing_numbers.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Basic Statistics &amp; Analyzing Numbers</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="04x-join_and_aggregate_makedataset.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Python Data Wrangling (2)</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

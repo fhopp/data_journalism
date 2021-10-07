@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Journalism &#8212; Data Journalism</title>
+    <title>Interactive Data Visualization &#8212; Data Journalism</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Recap Data Wrangling" href="08-datawrangling_recap.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -96,15 +97,55 @@
   Notebooks
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-getting_started.html">
-   Getting Started
+   Getting started with Jupyter Notebooks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02-accessing_data.html">
    Accessing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-analyzing_numbers.html">
+   Basic Statistics &amp; Analyzing Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-join_and_aggregate.html">
+   Python Data Wrangling (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04x-join_and_aggregate_makedataset.html">
+   Python Data Wrangling (2)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-aggregate_wozwaarde.html">
+   Example “WOZ-waarde”
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-analyzing_text.html">
+   Analyzing Text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-visualizations.html">
+   Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-datawrangling_recap.html">
+   Recap Data Wrangling
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Interactive Data Visualization
   </a>
  </li>
 </ul>
@@ -213,14 +254,9 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Data Journalism
+   Interactive Data Visualization
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#practical-python-exercise-interactive-data-visualization">
-     Practical Python exercise : Interactive data visualization
-    </a>
-   </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#download-the-sample-data">
      Download the sample data
@@ -288,10 +324,8 @@
         
               <div>
                 
-  <div class="section" id="data-journalism">
-<h1>Data Journalism<a class="headerlink" href="#data-journalism" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="practical-python-exercise-interactive-data-visualization">
-<h2>Practical Python exercise : Interactive data visualization<a class="headerlink" href="#practical-python-exercise-interactive-data-visualization" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="interactive-data-visualization">
+<h1>Interactive Data Visualization<a class="headerlink" href="#interactive-data-visualization" title="Permalink to this headline">¶</a></h1>
 <p><em>Damian Trilling and Penny Sheets</em></p>
 <p>This notebook gives some examples for how to create interactive visualizations for the web.</p>
 <p>We will use the following three visualization packages:</p>
@@ -302,7 +336,6 @@
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">bokeh</span></code> allows you to create interactive visualizations in which users can hover over elements, zoom in, etc.
 <code class="docutils literal notranslate"><span class="pre">pygal</span></code> allows you to create standard charts with hover-effects. <code class="docutils literal notranslate"><span class="pre">plotly</span></code> is a very extensive package that is related to a whole ecosystem to build interactive apps, but since short time, you can make use of some of its functionality directly via <code class="docutils literal notranslate"><span class="pre">pandas</span></code>!</p>
-</div>
 <div class="section" id="download-the-sample-data">
 <h2>Download the sample data<a class="headerlink" href="#download-the-sample-data" title="Permalink to this headline">¶</a></h2>
 <p>The first time you run this notebook, you will need to download some example data.
@@ -2388,6 +2421,15 @@ You can find a lot of (free) HTML tutorials online.</p>
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="08-datawrangling_recap.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Recap Data Wrangling</p>
+            </div>
+        </a>
+    </div>
 
 </div>
         
