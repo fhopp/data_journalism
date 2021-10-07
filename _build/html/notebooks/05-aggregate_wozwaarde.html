@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Journalism &#8212; Data Journalism</title>
+    <title>Example “WOZ-waarde” &#8212; Data Journalism</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Analyzing Text" href="06-analyzing_text.html" />
+    <link rel="prev" title="Python Data Wrangling (2)" href="04x-join_and_aggregate_makedataset.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -96,15 +98,55 @@
   Notebooks
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-getting_started.html">
-   Getting Started
+   Getting started with Jupyter Notebooks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02-accessing_data.html">
    Accessing Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-analyzing_numbers.html">
+   Basic Statistics &amp; Analyzing Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-join_and_aggregate.html">
+   Python Data Wrangling (1)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04x-join_and_aggregate_makedataset.html">
+   Python Data Wrangling (2)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Example “WOZ-waarde”
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06-analyzing_text.html">
+   Analyzing Text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07-visualizations.html">
+   Data Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08-datawrangling_recap.html">
+   Recap Data Wrangling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09-interactive_visualizations.html">
+   Interactive Data Visualization
   </a>
  </li>
 </ul>
@@ -213,14 +255,9 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Data Journalism
+   Example “WOZ-waarde”
   </a>
   <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-woz-waarde">
-     Example “WOZ-waarde”
-    </a>
-   </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cleaning-up-and-recoding">
      Cleaning up and recoding
@@ -265,12 +302,10 @@
         
               <div>
                 
-  <div class="section" id="data-journalism">
-<h1>Data Journalism<a class="headerlink" href="#data-journalism" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="example-woz-waarde">
-<h2>Example “WOZ-waarde”<a class="headerlink" href="#example-woz-waarde" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="example-woz-waarde">
+<h1>Example “WOZ-waarde”<a class="headerlink" href="#example-woz-waarde" title="Permalink to this headline">¶</a></h1>
 <p><em>Damian Trilling and Penny Sheets</em></p>
-<p>This week, we will particular look at techniques for aggregating data and for joining datasets.
+<p>This week, we will particularly look at techniques for aggregating data and for joining datasets.
 We use data on housing prices from <a class="reference external" href="https://data.amsterdam.nl/">https://data.amsterdam.nl/</a> .</p>
 <p>As always, we first import some modules we need and load our data file.</p>
 <div class="cell docutils container">
@@ -286,7 +321,6 @@ We use data on housing prices from <a class="reference external" href="https://d
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;wozwaarde.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -548,6 +582,24 @@ That means that you have multiple measurements of the same thing (the house vlau
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="04x-join_and_aggregate_makedataset.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Python Data Wrangling (2)</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="06-analyzing_text.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Analyzing Text</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Innovating Journalism
-# ## Practical Python exercise Joining and Merging
-# ## EXTRA: How did we prepare the dataset?
+# # Python Data Wrangling (2)
 # 
 # *Damian Trilling and Penny Sheets*
 # 
@@ -17,6 +15,8 @@
 # 
 # - (3) Enrichment
 # - (4) Analysis
+# 
+# ## EXTRA: How did we prepare the dataset?
 
 # ### Population data
 # 

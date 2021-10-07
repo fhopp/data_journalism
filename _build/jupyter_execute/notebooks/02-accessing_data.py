@@ -2,7 +2,6 @@
 # coding: utf-8
 
 # # Accessing Data
-# ## Wednesday, week 1, part 2: accessing data
 # 
 # *Damian Trilling and Penny Sheets*
 # 

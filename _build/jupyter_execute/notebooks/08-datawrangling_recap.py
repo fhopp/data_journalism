@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Data Journalism: Recap Data wrangling
+# # Recap Data Wrangling
 # 
-# Penny Sheets and Damian Trilling
+# _Penny Sheets and Damian Trilling_
 # 
 # In this recap notebook, we will exercise with data wrangling techniques, using a table scraping tool that extracts tables (well, tries to) extract tables from PDF.
 # 

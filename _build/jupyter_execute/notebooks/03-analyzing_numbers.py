@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Data Journalism
-# ## Monday, week 2: basic statistics & analyzing numbers
+# # Basic Statistics & Analyzing Numbers
 # 
 # *Damian Trilling and Penny Sheets*
 # 

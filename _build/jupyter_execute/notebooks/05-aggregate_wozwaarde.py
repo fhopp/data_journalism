@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Data Journalism
-# ## Example "WOZ-waarde"
+# # Example "WOZ-waarde"
 # 
 # *Damian Trilling and Penny Sheets*
 # 
-# This week, we will particular look at techniques for aggregating data and for joining datasets.
+# This week, we will particularly look at techniques for aggregating data and for joining datasets.
 # We use data on housing prices from https://data.amsterdam.nl/ .
 
 # As always, we first import some modules we need and load our data file.

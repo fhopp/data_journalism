@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Getting Started
-# ## Wednesday, week 1, part 1: getting started with Jupyter Notebooks
+# # Getting started with Jupyter Notebooks
 # 
 # *Damian Trilling and Penny Sheets*
 # 

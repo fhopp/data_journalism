@@ -8,4 +8,12 @@ parts:
     chapters:
     - file: notebooks/01-getting_started.ipynb
     - file: notebooks/02-accessing_data.ipynb
+    - file: notebooks/03-analyzing_numbers.ipynb
+    - file: notebooks/04-join_and_aggregate.ipynb
+    - file: notebooks/04x-join_and_aggregate_makedataset.ipynb
+    - file: notebooks/05-aggregate_wozwaarde.ipynb
+    - file: notebooks/06-analyzing_text.ipynb
+    - file: notebooks/07-visualizations.ipynb
+    - file: notebooks/08-datawrangling_recap.ipynb
+    - file: notebooks/09-interactive_visualizations.ipynb
     

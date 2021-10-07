@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Data Journalism
-# ## Practical Python exercise: Analyzing text
+# # Analyzing Text
 # 
 # *Damian Trilling and Penny Sheets*
 # 
