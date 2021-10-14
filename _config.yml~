@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Data Journalism
-author: Frederic Hopp
+author: Damian Trilling, Penny Sheets, & Frederic Hopp
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -30,5 +30,3 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
-  comments:
-    hypothesis: true
