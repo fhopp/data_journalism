@@ -1,0 +1,3182 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessing Data &#8212; Data Journalism</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python" href="python.html" />
+    <link rel="prev" title="On Jupyter Notebooks" href="01-getting_started.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Journalism</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Course Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="instructors.html">
+   Instructors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Schedule
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-getting_started.html">
+   On Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Accessing Data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/02-accessing_data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fhopp/data_journalism"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fhopp/data_journalism/issues/new?title=Issue%20on%20page%20%2Fcontent/02-accessing_data.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fhopp/data_journalism/master?urlpath=tree/docs/content/02-accessing_data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-modules">
+   Importing Modules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#csv-files">
+   CSV files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloading-data">
+   Downloading data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note-not-all-csv-files-are-the-same">
+   Note!!! Not all CSV files are the same…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trouble-with-your-csv-files">
+   Trouble with your CSV files?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-if-the-data-isn-t-in-csv-format-but-is-online">
+   What if the data isn’t in .csv format, but is online?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-files">
+   JSON files
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#playing-around-with-nested-json-data-and-extracting-meaningful-information">
+     Playing around with nested JSON data and extracting meaningful information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apis">
+   APIs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#play-around-and-some-non-graded-homework">
+   Play around - and some (non-graded) homework
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="accessing-data">
+<h1>Accessing Data<a class="headerlink" href="#accessing-data" title="Permalink to this headline">¶</a></h1>
+<p><em>Damian Trilling and Penny Sheets</em></p>
+<p>This notebook is meant to show you different ways of accessing data. Data can be available as (a) local files (on your computer), (b) remote files (somewhere else), or (c) APIs (application programming interfaces). We will show you ways for dealing with all of these.</p>
+<p>But before we do that, we need to import some modules into Jupyter that will help us find and read data.  You already know our basic module, pandas.  Let’s import it again just in case your computer cleared it during the break (or in case you’re doing this notebook again separately, after class).</p>
+<div class="section" id="importing-modules">
+<h2>Importing Modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">¶</a></h2>
+<p>It is a good custom to import all modules that you need at the beginning of your notebook. We’ll explain in the lesson (or in subsequent weeks) what these modules do.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="csv-files">
+<h2>CSV files<a class="headerlink" href="#csv-files" title="Permalink to this headline">¶</a></h2>
+<p>Remember what we did in the first part of class today, working with that Iris dataset? We used pandas to read a CSV file directly from the web and gave its descriptive statistics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv&#39;</span><span class="p">)</span>
+<span class="n">iris</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.843333</td>
+      <td>3.057333</td>
+      <td>3.758000</td>
+      <td>1.199333</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.828066</td>
+      <td>0.435866</td>
+      <td>1.765298</td>
+      <td>0.762238</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>4.300000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.100000</td>
+      <td>2.800000</td>
+      <td>1.600000</td>
+      <td>0.300000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.800000</td>
+      <td>3.000000</td>
+      <td>4.350000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.400000</td>
+      <td>3.300000</td>
+      <td>5.100000</td>
+      <td>1.800000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>7.900000</td>
+      <td>4.400000</td>
+      <td>6.900000</td>
+      <td>2.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If we want to, we could also plot a histogram:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">sepal_length</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/02-accessing_data_10_1.png" src="../_images/02-accessing_data_10_1.png" />
+</div>
+</div>
+<p>Let’s say you want to configure that histogram differently, or get axis lables, etc.  Use the help menu to see how to do that:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>iris.sepal_length.hist<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
+iris<span class=" -Color -Color-Blue">.</span>sepal_length<span class=" -Color -Color-Blue">.</span>hist<span class=" -Color -Color-Blue">(</span>
+    by<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    ax<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    grid<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;bool&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">,</span>
+    xlabelsize<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;int | None&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    xrot<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;float | None&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    ylabelsize<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;int | None&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    yrot<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;float | None&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    figsize<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;tuple[int, int] | None&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    bins<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;int | Sequence[int]&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Cyan">10</span><span class=" -Color -Color-Blue">,</span>
+    backend<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;str | None&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    legend<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;bool&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    <span class=" -Color -Color-Blue">**</span>kwargs<span class=" -Color -Color-Blue">,</span>
+<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Draw histogram of the input series using matplotlib.
+
+Parameters
+----------
+by : object, optional
+    If passed, then used to form histograms for separate groups.
+ax : matplotlib axis object
+    If not passed, uses gca().
+grid : bool, default True
+    Whether to show axis grid lines.
+xlabelsize : int, default None
+    If specified changes the x-axis label size.
+xrot : float, default None
+    Rotation of x axis labels.
+ylabelsize : int, default None
+    If specified changes the y-axis label size.
+yrot : float, default None
+    Rotation of y axis labels.
+figsize : tuple, default None
+    Figure size in inches by default.
+bins : int or sequence, default 10
+    Number of histogram bins to be used. If an integer is given, bins + 1
+    bin edges are calculated and returned. If bins is a sequence, gives
+    bin edges, including left edge of first bin and right edge of last
+    bin. In this case, bins is returned unmodified.
+backend : str, default None
+    Backend to use instead of the backend specified in the option
+    ``plotting.backend``. For instance, &#39;matplotlib&#39;. Alternatively, to
+    specify the ``plotting.backend`` for the whole session, set
+    ``pd.options.plotting.backend``.
+
+    .. versionadded:: 1.0.0
+
+legend : bool, default False
+    Whether to show the legend.
+
+    .. versionadded:: 1.1.0
+
+**kwargs
+    To be passed to the actual plotting function.
+
+Returns
+-------
+matplotlib.AxesSubplot
+    A histogram plot.
+
+See Also
+--------
+matplotlib.axes.Axes.hist : Plot a histogram using matplotlib.
+<span class=" -Color -Color-Red">File:</span>      ~/opt/anaconda3/envs/dj21/lib/python3.7/site-packages/pandas/plotting/_core.py
+<span class=" -Color -Color-Red">Type:</span>      method
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="downloading-data">
+<h2>Downloading data<a class="headerlink" href="#downloading-data" title="Permalink to this headline">¶</a></h2>
+<p>Probably, if you really want to analyze a dataset, you want to store it locally (=on your computer). Let’s download a file with some stock exchange ratings: https://raw.githubusercontent.com/damian0604/bdaca/master/ipynb/stock.csv</p>
+<p>Download it (file-save as or right-clicking) as “all file types” (or .csv); be sure that the extension is correct. Be sure to save it IN THE SAME FOLDER as this jupyter notebook. (Otherwise jupyter won’t find it.)</p>
+</div>
+<div class="section" id="note-not-all-csv-files-are-the-same">
+<h2>Note!!! Not all CSV files are the same…<a class="headerlink" href="#note-not-all-csv-files-are-the-same" title="Permalink to this headline">¶</a></h2>
+<p>CSV stands for Comma Seperated Value, which indicates that it consists of values (columns) seperated by commas. Just open a CSV file in an editor like Notepad or TextEdit instead of in Excel to understand what we mean.</p>
+<p>Unfortunately, there are many different dialects. For instance, sometimes, a semicolon or a tab is used instead of a comma; sometimes, the first line of a CSV file contains column headers, sometimes not) You can indicate these type of details yourself if pandas doesn’t guess correctly.</p>
+<p>Pay special attention when opening a CSV file with Excel: Excel changes the formatting! For instance, it can happen that you open a file that uses commas as seperators in Excel, and when you save it, it suddenly uses semicolons instead.</p>
+<p>Another reason not to open your files in Excel first: Excel often creates a strange ‘encoding’ of the characters that causes problems here.  This is why we work just with the raw .csv file if possible.  If you are getting an encoding error, the first step is to re-download the data and do NOT open it in excel (even by mistake, by double-clicking on it).</p>
+<p>We can then open it in the same way as we did before by providing its filename:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># stockdata = pd.read_csv(&#39;stock.csv&#39;) # if you downloaded and saved it locally</span>
+<span class="n">stockdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/damian0604/bdaca/master/ipynb/stock.csv&#39;</span><span class="p">)</span> <span class="c1"># when reading directly from source (online)</span>
+<span class="c1"># or, for google colab:</span>
+<span class="c1"># stockdata = pd.read_csv(&#39;/mnt/My Drive/datajournalism/stock.csv&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s have a look…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stockdata</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Volume</th>
+      <th>Adj Close</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2016-01-01</td>
+      <td>21.095</td>
+      <td>21.095</td>
+      <td>21.095</td>
+      <td>21.095</td>
+      <td>0</td>
+      <td>20.6742</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2015-12-31</td>
+      <td>21.135</td>
+      <td>21.140</td>
+      <td>20.915</td>
+      <td>21.095</td>
+      <td>1680700</td>
+      <td>20.6742</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2015-12-30</td>
+      <td>21.330</td>
+      <td>21.375</td>
+      <td>21.110</td>
+      <td>21.185</td>
+      <td>5476800</td>
+      <td>20.7624</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2015-12-29</td>
+      <td>21.000</td>
+      <td>21.410</td>
+      <td>20.995</td>
+      <td>21.325</td>
+      <td>6261600</td>
+      <td>20.8996</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2015-12-28</td>
+      <td>21.440</td>
+      <td>21.450</td>
+      <td>20.705</td>
+      <td>20.880</td>
+      <td>5168400</td>
+      <td>20.4635</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>518</th>
+      <td>2014-01-07</td>
+      <td>25.810</td>
+      <td>26.065</td>
+      <td>25.720</td>
+      <td>26.030</td>
+      <td>5330200</td>
+      <td>22.9539</td>
+    </tr>
+    <tr>
+      <th>519</th>
+      <td>2014-01-06</td>
+      <td>26.015</td>
+      <td>26.030</td>
+      <td>25.790</td>
+      <td>25.810</td>
+      <td>4775300</td>
+      <td>22.7599</td>
+    </tr>
+    <tr>
+      <th>520</th>
+      <td>2014-01-03</td>
+      <td>26.000</td>
+      <td>26.195</td>
+      <td>25.875</td>
+      <td>26.065</td>
+      <td>4298100</td>
+      <td>22.9848</td>
+    </tr>
+    <tr>
+      <th>521</th>
+      <td>2014-01-02</td>
+      <td>25.985</td>
+      <td>26.130</td>
+      <td>25.855</td>
+      <td>25.920</td>
+      <td>5113500</td>
+      <td>22.8569</td>
+    </tr>
+    <tr>
+      <th>522</th>
+      <td>2014-01-01</td>
+      <td>25.905</td>
+      <td>25.905</td>
+      <td>25.905</td>
+      <td>25.905</td>
+      <td>0</td>
+      <td>22.8437</td>
+    </tr>
+  </tbody>
+</table>
+<p>523 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>The lefthand column here–called the index–gives you numbers in this case; these are simply the case numbers for each ‘row’ in the dataset; they may or may not have any meaning on their own, depending on the dataset.  You can also - later in this notebook and later in subsequent weeks - learn how to change these numbers or assign a different column to be the index.</p>
+<p>Because this data seems to be ordered by date in some way, it might be interesting to explore it by making a plot. In this case the plot is different than the histogram; it’s not about frequencies of specific values, but rather a plot of all the cases at their value of ‘low’.</p>
+<p>We are using a method here called ‘plot’, provided by pandas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stockdata</span><span class="p">[</span><span class="s1">&#39;Low&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/02-accessing_data_20_1.png" src="../_images/02-accessing_data_20_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="trouble-with-your-csv-files">
+<h2>Trouble with your CSV files?<a class="headerlink" href="#trouble-with-your-csv-files" title="Permalink to this headline">¶</a></h2>
+<p>For more info on how to format your ‘read_csv’ commands, or if you’re running into problems related to the comma-versus-tab-versus-semicolon issue, look at the help function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>pd.read_csv<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
+pd<span class=" -Color -Color-Blue">.</span>read_csv<span class=" -Color -Color-Blue">(</span>
+    filepath_or_buffer<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;FilePathOrBuffer&#39;,</span>
+    sep<span class=" -Color -Color-Blue">=&lt;</span>no_default<span class=" -Color -Color-Blue">&gt;,</span>
+    delimiter<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    header<span class=" -Color -Color-Blue">=&#39;infer&#39;,</span>
+    names<span class=" -Color -Color-Blue">=&lt;</span>no_default<span class=" -Color -Color-Blue">&gt;,</span>
+    index_col<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    usecols<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    squeeze<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    prefix<span class=" -Color -Color-Blue">=&lt;</span>no_default<span class=" -Color -Color-Blue">&gt;,</span>
+    mangle_dupe_cols<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">,</span>
+    dtype<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;DtypeArg | None&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    engine<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    converters<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    true_values<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    false_values<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    skipinitialspace<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    skiprows<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    skipfooter<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">0</span><span class=" -Color -Color-Blue">,</span>
+    nrows<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    na_values<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    keep_default_na<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">,</span>
+    na_filter<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">,</span>
+    verbose<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    skip_blank_lines<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">,</span>
+    parse_dates<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    infer_datetime_format<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    keep_date_col<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    date_parser<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    dayfirst<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    cache_dates<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">,</span>
+    iterator<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    chunksize<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    compression<span class=" -Color -Color-Blue">=&#39;infer&#39;,</span>
+    thousands<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    decimal<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;str&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Blue">&#39;.&#39;,</span>
+    lineterminator<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    quotechar<span class=" -Color -Color-Blue">=&#39;&quot;&#39;,</span>
+    quoting<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">0</span><span class=" -Color -Color-Blue">,</span>
+    doublequote<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">,</span>
+    escapechar<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    comment<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    encoding<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    encoding_errors<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;str | None&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Blue">&#39;strict&#39;,</span>
+    dialect<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    error_bad_lines<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    warn_bad_lines<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    on_bad_lines<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    delim_whitespace<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    low_memory<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">,</span>
+    memory_map<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    float_precision<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    storage_options<span class=" -Color -Color-Blue">:</span> <span class=" -Color -Color-Blue">&#39;StorageOptions&#39;</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Read a comma-separated values (csv) file into DataFrame.
+
+Also supports optionally iterating or breaking of the file
+into chunks.
+
+Additional help can be found in the online docs for
+`IO Tools &lt;https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html&gt;`_.
+
+Parameters
+----------
+filepath_or_buffer : str, path object or file-like object
+    Any valid string path is acceptable. The string could be a URL. Valid
+    URL schemes include http, ftp, s3, gs, and file. For file URLs, a host is
+    expected. A local file could be: file://localhost/path/to/table.csv.
+
+    If you want to pass in a path object, pandas accepts any ``os.PathLike``.
+
+    By file-like object, we refer to objects with a ``read()`` method, such as
+    a file handle (e.g. via builtin ``open`` function) or ``StringIO``.
+sep : str, default &#39;,&#39;
+    Delimiter to use. If sep is None, the C engine cannot automatically detect
+    the separator, but the Python parsing engine can, meaning the latter will
+    be used and automatically detect the separator by Python&#39;s builtin sniffer
+    tool, ``csv.Sniffer``. In addition, separators longer than 1 character and
+    different from ``&#39;\s+&#39;`` will be interpreted as regular expressions and
+    will also force the use of the Python parsing engine. Note that regex
+    delimiters are prone to ignoring quoted data. Regex example: ``&#39;\r\t&#39;``.
+delimiter : str, default ``None``
+    Alias for sep.
+header : int, list of int, default &#39;infer&#39;
+    Row number(s) to use as the column names, and the start of the
+    data.  Default behavior is to infer the column names: if no names
+    are passed the behavior is identical to ``header=0`` and column
+    names are inferred from the first line of the file, if column
+    names are passed explicitly then the behavior is identical to
+    ``header=None``. Explicitly pass ``header=0`` to be able to
+    replace existing names. The header can be a list of integers that
+    specify row locations for a multi-index on the columns
+    e.g. [0,1,3]. Intervening rows that are not specified will be
+    skipped (e.g. 2 in this example is skipped). Note that this
+    parameter ignores commented lines and empty lines if
+    ``skip_blank_lines=True``, so ``header=0`` denotes the first line of
+    data rather than the first line of the file.
+names : array-like, optional
+    List of column names to use. If the file contains a header row,
+    then you should explicitly pass ``header=0`` to override the column names.
+    Duplicates in this list are not allowed.
+index_col : int, str, sequence of int / str, or False, default ``None``
+  Column(s) to use as the row labels of the ``DataFrame``, either given as
+  string name or column index. If a sequence of int / str is given, a
+  MultiIndex is used.
+
+  Note: ``index_col=False`` can be used to force pandas to *not* use the first
+  column as the index, e.g. when you have a malformed file with delimiters at
+  the end of each line.
+usecols : list-like or callable, optional
+    Return a subset of the columns. If list-like, all elements must either
+    be positional (i.e. integer indices into the document columns) or strings
+    that correspond to column names provided either by the user in `names` or
+    inferred from the document header row(s). For example, a valid list-like
+    `usecols` parameter would be ``[0, 1, 2]`` or ``[&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;]``.
+    Element order is ignored, so ``usecols=[0, 1]`` is the same as ``[1, 0]``.
+    To instantiate a DataFrame from ``data`` with element order preserved use
+    ``pd.read_csv(data, usecols=[&#39;foo&#39;, &#39;bar&#39;])[[&#39;foo&#39;, &#39;bar&#39;]]`` for columns
+    in ``[&#39;foo&#39;, &#39;bar&#39;]`` order or
+    ``pd.read_csv(data, usecols=[&#39;foo&#39;, &#39;bar&#39;])[[&#39;bar&#39;, &#39;foo&#39;]]``
+    for ``[&#39;bar&#39;, &#39;foo&#39;]`` order.
+
+    If callable, the callable function will be evaluated against the column
+    names, returning names where the callable function evaluates to True. An
+    example of a valid callable argument would be ``lambda x: x.upper() in
+    [&#39;AAA&#39;, &#39;BBB&#39;, &#39;DDD&#39;]``. Using this parameter results in much faster
+    parsing time and lower memory usage.
+squeeze : bool, default False
+    If the parsed data only contains one column then return a Series.
+prefix : str, optional
+    Prefix to add to column numbers when no header, e.g. &#39;X&#39; for X0, X1, ...
+mangle_dupe_cols : bool, default True
+    Duplicate columns will be specified as &#39;X&#39;, &#39;X.1&#39;, ...&#39;X.N&#39;, rather than
+    &#39;X&#39;...&#39;X&#39;. Passing in False will cause data to be overwritten if there
+    are duplicate names in the columns.
+dtype : Type name or dict of column -&gt; type, optional
+    Data type for data or columns. E.g. {&#39;a&#39;: np.float64, &#39;b&#39;: np.int32,
+    &#39;c&#39;: &#39;Int64&#39;}
+    Use `str` or `object` together with suitable `na_values` settings
+    to preserve and not interpret dtype.
+    If converters are specified, they will be applied INSTEAD
+    of dtype conversion.
+engine : {&#39;c&#39;, &#39;python&#39;}, optional
+    Parser engine to use. The C engine is faster while the python engine is
+    currently more feature-complete.
+converters : dict, optional
+    Dict of functions for converting values in certain columns. Keys can either
+    be integers or column labels.
+true_values : list, optional
+    Values to consider as True.
+false_values : list, optional
+    Values to consider as False.
+skipinitialspace : bool, default False
+    Skip spaces after delimiter.
+skiprows : list-like, int or callable, optional
+    Line numbers to skip (0-indexed) or number of lines to skip (int)
+    at the start of the file.
+
+    If callable, the callable function will be evaluated against the row
+    indices, returning True if the row should be skipped and False otherwise.
+    An example of a valid callable argument would be ``lambda x: x in [0, 2]``.
+skipfooter : int, default 0
+    Number of lines at bottom of file to skip (Unsupported with engine=&#39;c&#39;).
+nrows : int, optional
+    Number of rows of file to read. Useful for reading pieces of large files.
+na_values : scalar, str, list-like, or dict, optional
+    Additional strings to recognize as NA/NaN. If dict passed, specific
+    per-column NA values.  By default the following values are interpreted as
+    NaN: &#39;&#39;, &#39;#N/A&#39;, &#39;#N/A N/A&#39;, &#39;#NA&#39;, &#39;-1.#IND&#39;, &#39;-1.#QNAN&#39;, &#39;-NaN&#39;, &#39;-nan&#39;,
+    &#39;1.#IND&#39;, &#39;1.#QNAN&#39;, &#39;&lt;NA&gt;&#39;, &#39;N/A&#39;, &#39;NA&#39;, &#39;NULL&#39;, &#39;NaN&#39;, &#39;n/a&#39;,
+    &#39;nan&#39;, &#39;null&#39;.
+keep_default_na : bool, default True
+    Whether or not to include the default NaN values when parsing the data.
+    Depending on whether `na_values` is passed in, the behavior is as follows:
+
+    * If `keep_default_na` is True, and `na_values` are specified, `na_values`
+      is appended to the default NaN values used for parsing.
+    * If `keep_default_na` is True, and `na_values` are not specified, only
+      the default NaN values are used for parsing.
+    * If `keep_default_na` is False, and `na_values` are specified, only
+      the NaN values specified `na_values` are used for parsing.
+    * If `keep_default_na` is False, and `na_values` are not specified, no
+      strings will be parsed as NaN.
+
+    Note that if `na_filter` is passed in as False, the `keep_default_na` and
+    `na_values` parameters will be ignored.
+na_filter : bool, default True
+    Detect missing value markers (empty strings and the value of na_values). In
+    data without any NAs, passing na_filter=False can improve the performance
+    of reading a large file.
+verbose : bool, default False
+    Indicate number of NA values placed in non-numeric columns.
+skip_blank_lines : bool, default True
+    If True, skip over blank lines rather than interpreting as NaN values.
+parse_dates : bool or list of int or names or list of lists or dict, default False
+    The behavior is as follows:
+
+    * boolean. If True -&gt; try parsing the index.
+    * list of int or names. e.g. If [1, 2, 3] -&gt; try parsing columns 1, 2, 3
+      each as a separate date column.
+    * list of lists. e.g.  If [[1, 3]] -&gt; combine columns 1 and 3 and parse as
+      a single date column.
+    * dict, e.g. {&#39;foo&#39; : [1, 3]} -&gt; parse columns 1, 3 as date and call
+      result &#39;foo&#39;
+
+    If a column or index cannot be represented as an array of datetimes,
+    say because of an unparsable value or a mixture of timezones, the column
+    or index will be returned unaltered as an object data type. For
+    non-standard datetime parsing, use ``pd.to_datetime`` after
+    ``pd.read_csv``. To parse an index or column with a mixture of timezones,
+    specify ``date_parser`` to be a partially-applied
+    :func:`pandas.to_datetime` with ``utc=True``. See
+    :ref:`io.csv.mixed_timezones` for more.
+
+    Note: A fast-path exists for iso8601-formatted dates.
+infer_datetime_format : bool, default False
+    If True and `parse_dates` is enabled, pandas will attempt to infer the
+    format of the datetime strings in the columns, and if it can be inferred,
+    switch to a faster method of parsing them. In some cases this can increase
+    the parsing speed by 5-10x.
+keep_date_col : bool, default False
+    If True and `parse_dates` specifies combining multiple columns then
+    keep the original columns.
+date_parser : function, optional
+    Function to use for converting a sequence of string columns to an array of
+    datetime instances. The default uses ``dateutil.parser.parser`` to do the
+    conversion. Pandas will try to call `date_parser` in three different ways,
+    advancing to the next if an exception occurs: 1) Pass one or more arrays
+    (as defined by `parse_dates`) as arguments; 2) concatenate (row-wise) the
+    string values from the columns defined by `parse_dates` into a single array
+    and pass that; and 3) call `date_parser` once for each row using one or
+    more strings (corresponding to the columns defined by `parse_dates`) as
+    arguments.
+dayfirst : bool, default False
+    DD/MM format dates, international and European format.
+cache_dates : bool, default True
+    If True, use a cache of unique, converted dates to apply the datetime
+    conversion. May produce significant speed-up when parsing duplicate
+    date strings, especially ones with timezone offsets.
+
+    .. versionadded:: 0.25.0
+iterator : bool, default False
+    Return TextFileReader object for iteration or getting chunks with
+    ``get_chunk()``.
+
+    .. versionchanged:: 1.2
+
+       ``TextFileReader`` is a context manager.
+chunksize : int, optional
+    Return TextFileReader object for iteration.
+    See the `IO Tools docs
+    &lt;https://pandas.pydata.org/pandas-docs/stable/io.html#io-chunking&gt;`_
+    for more information on ``iterator`` and ``chunksize``.
+
+    .. versionchanged:: 1.2
+
+       ``TextFileReader`` is a context manager.
+compression : {&#39;infer&#39;, &#39;gzip&#39;, &#39;bz2&#39;, &#39;zip&#39;, &#39;xz&#39;, None}, default &#39;infer&#39;
+    For on-the-fly decompression of on-disk data. If &#39;infer&#39; and
+    `filepath_or_buffer` is path-like, then detect compression from the
+    following extensions: &#39;.gz&#39;, &#39;.bz2&#39;, &#39;.zip&#39;, or &#39;.xz&#39; (otherwise no
+    decompression). If using &#39;zip&#39;, the ZIP file must contain only one data
+    file to be read in. Set to None for no decompression.
+thousands : str, optional
+    Thousands separator.
+decimal : str, default &#39;.&#39;
+    Character to recognize as decimal point (e.g. use &#39;,&#39; for European data).
+lineterminator : str (length 1), optional
+    Character to break file into lines. Only valid with C parser.
+quotechar : str (length 1), optional
+    The character used to denote the start and end of a quoted item. Quoted
+    items can include the delimiter and it will be ignored.
+quoting : int or csv.QUOTE_* instance, default 0
+    Control field quoting behavior per ``csv.QUOTE_*`` constants. Use one of
+    QUOTE_MINIMAL (0), QUOTE_ALL (1), QUOTE_NONNUMERIC (2) or QUOTE_NONE (3).
+doublequote : bool, default ``True``
+   When quotechar is specified and quoting is not ``QUOTE_NONE``, indicate
+   whether or not to interpret two consecutive quotechar elements INSIDE a
+   field as a single ``quotechar`` element.
+escapechar : str (length 1), optional
+    One-character string used to escape other characters.
+comment : str, optional
+    Indicates remainder of line should not be parsed. If found at the beginning
+    of a line, the line will be ignored altogether. This parameter must be a
+    single character. Like empty lines (as long as ``skip_blank_lines=True``),
+    fully commented lines are ignored by the parameter `header` but not by
+    `skiprows`. For example, if ``comment=&#39;#&#39;``, parsing
+    ``#empty\na,b,c\n1,2,3`` with ``header=0`` will result in &#39;a,b,c&#39; being
+    treated as the header.
+encoding : str, optional
+    Encoding to use for UTF when reading/writing (ex. &#39;utf-8&#39;). `List of Python
+    standard encodings
+    &lt;https://docs.python.org/3/library/codecs.html#standard-encodings&gt;`_ .
+
+    .. versionchanged:: 1.2
+
+       When ``encoding`` is ``None``, ``errors=&quot;replace&quot;`` is passed to
+       ``open()``. Otherwise, ``errors=&quot;strict&quot;`` is passed to ``open()``.
+       This behavior was previously only the case for ``engine=&quot;python&quot;``.
+
+    .. versionchanged:: 1.3.0
+
+       ``encoding_errors`` is a new argument. ``encoding`` has no longer an
+       influence on how encoding errors are handled.
+
+encoding_errors : str, optional, default &quot;strict&quot;
+    How encoding errors are treated. `List of possible values
+    &lt;https://docs.python.org/3/library/codecs.html#error-handlers&gt;`_ .
+
+    .. versionadded:: 1.3.0
+
+dialect : str or csv.Dialect, optional
+    If provided, this parameter will override values (default or not) for the
+    following parameters: `delimiter`, `doublequote`, `escapechar`,
+    `skipinitialspace`, `quotechar`, and `quoting`. If it is necessary to
+    override values, a ParserWarning will be issued. See csv.Dialect
+    documentation for more details.
+error_bad_lines : bool, default ``None``
+    Lines with too many fields (e.g. a csv line with too many commas) will by
+    default cause an exception to be raised, and no DataFrame will be returned.
+    If False, then these &quot;bad lines&quot; will be dropped from the DataFrame that is
+    returned.
+
+    .. deprecated:: 1.3.0
+       The ``on_bad_lines`` parameter should be used instead to specify behavior upon
+       encountering a bad line instead.
+warn_bad_lines : bool, default ``None``
+    If error_bad_lines is False, and warn_bad_lines is True, a warning for each
+    &quot;bad line&quot; will be output.
+
+    .. deprecated:: 1.3.0
+       The ``on_bad_lines`` parameter should be used instead to specify behavior upon
+       encountering a bad line instead.
+on_bad_lines : {&#39;error&#39;, &#39;warn&#39;, &#39;skip&#39;}, default &#39;error&#39;
+    Specifies what to do upon encountering a bad line (a line with too many fields).
+    Allowed values are :
+
+        - &#39;error&#39;, raise an Exception when a bad line is encountered.
+        - &#39;warn&#39;, raise a warning when a bad line is encountered and skip that line.
+        - &#39;skip&#39;, skip bad lines without raising or warning when they are encountered.
+
+    .. versionadded:: 1.3.0
+
+delim_whitespace : bool, default False
+    Specifies whether or not whitespace (e.g. ``&#39; &#39;`` or ``&#39;    &#39;``) will be
+    used as the sep. Equivalent to setting ``sep=&#39;\s+&#39;``. If this option
+    is set to True, nothing should be passed in for the ``delimiter``
+    parameter.
+low_memory : bool, default True
+    Internally process the file in chunks, resulting in lower memory use
+    while parsing, but possibly mixed type inference.  To ensure no mixed
+    types either set False, or specify the type with the `dtype` parameter.
+    Note that the entire file is read into a single DataFrame regardless,
+    use the `chunksize` or `iterator` parameter to return the data in chunks.
+    (Only valid with C parser).
+memory_map : bool, default False
+    If a filepath is provided for `filepath_or_buffer`, map the file object
+    directly onto memory and access the data directly from there. Using this
+    option can improve performance because there is no longer any I/O overhead.
+float_precision : str, optional
+    Specifies which converter the C engine should use for floating-point
+    values. The options are ``None`` or &#39;high&#39; for the ordinary converter,
+    &#39;legacy&#39; for the original lower precision pandas converter, and
+    &#39;round_trip&#39; for the round-trip converter.
+
+    .. versionchanged:: 1.2
+
+storage_options : dict, optional
+    Extra options that make sense for a particular storage connection, e.g.
+    host, port, username, password, etc. For HTTP(S) URLs the key-value pairs
+    are forwarded to ``urllib`` as header options. For other URLs (e.g.
+    starting with &quot;s3://&quot;, and &quot;gcs://&quot;) the key-value pairs are forwarded to
+    ``fsspec``. Please see ``fsspec`` and ``urllib`` for more details.
+
+    .. versionadded:: 1.2
+
+Returns
+-------
+DataFrame or TextParser
+    A comma-separated values (csv) file is returned as two-dimensional
+    data structure with labeled axes.
+
+See Also
+--------
+DataFrame.to_csv : Write DataFrame to a comma-separated values (csv) file.
+read_csv : Read a comma-separated values (csv) file into DataFrame.
+read_fwf : Read a table of fixed-width formatted lines into DataFrame.
+
+Examples
+--------
+&gt;&gt;&gt; pd.read_csv(&#39;data.csv&#39;)  # doctest: +SKIP
+<span class=" -Color -Color-Red">File:</span>      ~/opt/anaconda3/envs/dj21/lib/python3.7/site-packages/pandas/io/parsers/readers.py
+<span class=" -Color -Color-Red">Type:</span>      function
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="what-if-the-data-isn-t-in-csv-format-but-is-online">
+<h2>What if the data isn’t in .csv format, but is online?<a class="headerlink" href="#what-if-the-data-isn-t-in-csv-format-but-is-online" title="Permalink to this headline">¶</a></h2>
+<p>There is actually a very simple, brilliant, scraping tool that allows you to grab content from tables online and turn that into a csv file.  Then you can use the tools we just used to analyze the csv file (including saving it to your computer and importing it into jupyter for analysis).  The tool is called read_html and allows you to basically put in any website URL and scrape the tables from it.  It probably won’t work with all websites (and probably not everything it scrapes is relevant/useful to you), but, it is really handy when it does work.  Let’s look, for example, at wikipedia’s page involving the premier Dutch football league.</p>
+<p>First, load the URL into your browswer in another tab to look at the original page.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alltables</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_html</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/Eredivisie&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Look at the following code carefully to see what we’re doing here. We’re introducing a new method (“format”) which works for any string; this fills in a value between curly brackets. We also are using function we already know from the first part of today’s lesson: “len”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We have downloaded </span><span class="si">{}</span><span class="s1"> tables&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alltables</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We have downloaded 19 tables
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is another, perhaps simpler way to do this, but also less versatile if you want to do fancier stuff someday.</p>
+<p><strong>The point here is that there are multiple ways to do many things in python; we just want you to master one way and know why it’s useful to you.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We have downloaded&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">alltables</span><span class="p">),</span> <span class="s1">&#39;tables.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We have downloaded 19 tables.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s look at, say, the third table in this set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alltables</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1">#why is this not 3? It is because python uses 0-based indexing, which means that data, values, rows, and items </span>
+<span class="c1">#in lists, which you&#39;ve seen in your coding tutorials, all start at 0. So the first object in a list or index</span>
+<span class="c1">#is always in position &quot;0&quot;, and the second in position &quot;1&quot;, and so on.  In this case, to get the 3rd table in</span>
+<span class="c1">#this new little set of tables, we have to specify &quot;2&quot; rather than &quot;3&quot;.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Club</th>
+      <th>Winner</th>
+      <th>Runner-up</th>
+      <th>Winning years</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ajax</td>
+      <td>35</td>
+      <td>23</td>
+      <td>1917–18, 1918–19, 1930–31, 1931–32, 1933–34, 1...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>PSV Eindhoven</td>
+      <td>24</td>
+      <td>14</td>
+      <td>1928–29, 1934–35, 1950–51, 1962–63, 1974–75, 1...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Feyenoord</td>
+      <td>15</td>
+      <td>21</td>
+      <td>1923–24, 1927–28, 1935–36, 1937–38, 1939–40, 1...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>HVV Den Haag</td>
+      <td>10</td>
+      <td>1</td>
+      <td>1890–91, 1895–96, 1899–1900, 1900–01, 1901–02,...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Sparta Rotterdam</td>
+      <td>6</td>
+      <td>–</td>
+      <td>1908–09, 1910–11, 1911–12, 1912–13, 1914–15, 1...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>RAP</td>
+      <td>5</td>
+      <td>3</td>
+      <td>1891–92, 1893–94, 1896–97, 1897–98, 1898–99</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Go Ahead Eagles</td>
+      <td>4</td>
+      <td>5</td>
+      <td>1916–17, 1921–22, 1929–30, 1932–33</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Koninklijke HFC</td>
+      <td>3</td>
+      <td>3</td>
+      <td>1889–90, 1892–93, 1894–95</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Willem II</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1915–16, 1951–52, 1954–55</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>HBS Craeyenhout</td>
+      <td>3</td>
+      <td>–</td>
+      <td>1903–04, 1905–06, 1924–25</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>AZ</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1980–81, 2008–09</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Heracles Almelo</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1926–27, 1940–41</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>ADO Den Haag</td>
+      <td>2</td>
+      <td>–</td>
+      <td>1941–42, 1942–43</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>RCH</td>
+      <td>2</td>
+      <td>–</td>
+      <td>1922–23, 1952–53</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>NAC Breda</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1920–21</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>FC Twente</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2009–10</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>DWS</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1963–64</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Roda JC Kerkrade*</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1955–56</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Be Quick</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1919–20</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>FC Eindhoven</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1953–54</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>SC Enschede</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1925–26</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>DOS</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1957–58</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>FC Den Bosch</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1947–48</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>De Volewijckers</td>
+      <td>1</td>
+      <td>–</td>
+      <td>1943–44</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>HFC Haarlem</td>
+      <td>1</td>
+      <td>–</td>
+      <td>1945–46</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Limburgia</td>
+      <td>1</td>
+      <td>–</td>
+      <td>1949–50</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>SVV</td>
+      <td>1</td>
+      <td>–</td>
+      <td>1948–49</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Quick Den Haag</td>
+      <td>1</td>
+      <td>–</td>
+      <td>1907–08</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>VV Concordia</td>
+      <td>1</td>
+      <td>–</td>
+      <td>1888–89</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now we can save this table to a csv file, which we will call ‘test’:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alltables</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;test.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, see if you can go back and read in this test.csv file, have a look at the dataset.</p>
+<p>If we had more time, we would try to figure out how to rename the columns, and play around with plotting the number of times each team won, for example. (Try this at home, and see if you can do it!  Using the read help command from earlier should help you figure out how to rename columns…or when in doubt, just search online for help!)</p>
+</div>
+<div class="section" id="json-files">
+<h2>JSON files<a class="headerlink" href="#json-files" title="Permalink to this headline">¶</a></h2>
+<p>Another type of file we frequently encounter online is the so-called “jason” file - aka, JSON. JSON files allow for nested data structures–like databases.</p>
+<p>JSON is (basically) the same as a collection of Python dicts (dictionaries–we haven’t talked about these yet in class, but you did learn about this in your coding tutorials. As a reminder, dicts are collections of key:value pairs, which means you have a category of something (key) and values within it (values)). I’ll explain this in class more. Bottom line: it’s very easy to look up things by their key, but not by their values. So, knowing our way around these dicts and how they are nested within one another - in a json file - is important.</p>
+<p>Let’s download such a file and store it in the same directory as your jupyter notebook.
+Download https://open.data.amsterdam.nl/EtenDrinken.json .</p>
+<p>First, see what happens if you load this link in your browser. You can get a feel for the structure of the dataset, if your browser is relatively fancy.</p>
+<p>Next: we could use pandas to put the JSON file into a table (see next command) – but as you see, because the data is <em>nested</em>, we still have dicts within some of the cells:</p>
+<p><strong>Note:</strong> The location (often called <em>path</em>) where you stored the file is important to remember when you load the data into your notebook. I have saved the json file to a folder called <em>datasets</em>, which is located one folder ‘above’ the current folder where our notebook reside in. So, I have to tell Python to go back one folder (‘../’), then into the datasets folder (datasets/), and from there open the file ‘EtenDrinken.json’. If you stored the datafile in the same folder as your notebook is in, you can just load it by providing the file name!</p>
+<p><strong>Where am I?</strong> If you are unsure where your notebook is running from, simply use the following cell magic to get the path to your current notebook:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pwd
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/fhopp/Library/Mobile Documents/com~apple~CloudDocs/FRH/Science/ASCoR/Teaching/data_journalism/21/book_dj/content
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;../datasets/EtenDrinken.json&#39;</span><span class="p">)</span>
+<span class="c1"># pd.read_json(&#39;EtenDrinken.json&#39;) if your file is in the same folder as this notebook</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>trcid</th>
+      <th>title</th>
+      <th>details</th>
+      <th>types</th>
+      <th>location</th>
+      <th>urls</th>
+      <th>media</th>
+      <th>dates</th>
+      <th>lastupdated</th>
+      <th>eigenschappen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>853c93aa-4599-41ad-9d79-638902925dc9</td>
+      <td>Eetsalon van Dobben B.V.</td>
+      <td>{'de': {'language': 'de', 'title': 'Eetsalon v...</td>
+      <td>[{'type': '', 'catid': '3.2.1'}]</td>
+      <td>{'name': '', 'city': 'AMSTERDAM', 'adress': 'K...</td>
+      <td>[http://www.eetsalonvandobben.nl, http://www.f...</td>
+      <td>[{'url': 'https://media.iamsterdam.com/ndtrc/I...</td>
+      <td>{'startdate': '27-01-2011', 'enddate': ''}</td>
+      <td>2016-09-19 13:58:20</td>
+      <td>{'3.6': {'Catid': '3.6', 'Value': 'True', 'Cat...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>a9dca5a2-aaeb-4d11-9025-f8ab29d6e042</td>
+      <td>Eetsalon van Dobben de Pijp</td>
+      <td>{'de': {'language': 'de', 'title': 'Eetsalon v...</td>
+      <td>[{'type': '', 'catid': '3.2.1'}]</td>
+      <td>{'name': 'Eetsalon van Dobben de Pijp', 'city'...</td>
+      <td>[]</td>
+      <td>[{'url': 'https://media.iamsterdam.com/ndtrc/I...</td>
+      <td>[]</td>
+      <td>2016-04-03 10:40:22</td>
+      <td>{'3.6': {'Catid': '3.6', 'Value': 'True', 'Cat...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2ed5f9de-2850-4bcd-affe-4b19b4144906</td>
+      <td>Cora Delicatessen &amp; Broodjes</td>
+      <td>{'de': {'language': 'de', 'title': 'Cora Delic...</td>
+      <td>[{'type': '', 'catid': '3.2.1'}]</td>
+      <td>{'name': 'Cora Delicatessen &amp; Broodjes', 'city...</td>
+      <td>[http://www.cora-broodjes.nl/]</td>
+      <td>[{'url': 'https://media.iamsterdam.com/ndtrc/I...</td>
+      <td>[]</td>
+      <td>2015-06-23 10:08:59</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>54d3daf4-610d-4328-a657-65a05c047eb9</td>
+      <td>Jonk Haringhandel</td>
+      <td>{'de': {'language': 'de', 'title': 'Jonk Harin...</td>
+      <td>[{'type': '', 'catid': '3.2.1'}]</td>
+      <td>{'name': 'Jonk Haringhandel', 'city': 'AMSTERD...</td>
+      <td>[]</td>
+      <td>[{'url': 'https://media.iamsterdam.com/ndtrc/I...</td>
+      <td>[]</td>
+      <td>2017-01-17 17:17:36</td>
+      <td>{'3.6': {'Catid': '3.6', 'Value': 'True', 'Cat...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>41de3334-b0b2-43be-b226-b39b106d96f6</td>
+      <td>Vlaamsch Broodhuys</td>
+      <td>{'de': {'language': 'de', 'title': 'Vlaamsch B...</td>
+      <td>[{'type': '', 'catid': '3.2.1'}]</td>
+      <td>{'name': 'Vlaamsch Broodhuys', 'city': 'AMSTER...</td>
+      <td>[http://www.vlaamschbroodhuys.nl/index.php/gb]</td>
+      <td>[{'url': 'https://media.iamsterdam.com/ndtrc/I...</td>
+      <td>{'startdate': '08-08-2013', 'enddate': ''}</td>
+      <td>2017-01-18 14:56:34</td>
+      <td>{'42.2': {'Catid': '42.2', 'Value': {}, 'Categ...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>767</th>
+      <td>07c43eb7-dc3f-4643-933e-6d8c7cfc39af</td>
+      <td>Strandpaviljoen Timboektoe</td>
+      <td>{'de': {'language': 'de', 'title': 'Strandbar ...</td>
+      <td>[{'type': '', 'catid': '3.1.5'}]</td>
+      <td>{'name': 'Strandpaviljoen Timboektoe', 'city':...</td>
+      <td>[http://www.timboektoe.org, http://www.faceboo...</td>
+      <td>[{'url': 'https://media.ndtrc.nl/Images/07/07c...</td>
+      <td>[]</td>
+      <td>2017-07-25 14:04:21</td>
+      <td>{'34.2': {'Catid': '34.2', 'Value': {}, 'Categ...</td>
+    </tr>
+    <tr>
+      <th>768</th>
+      <td>680a178e-0941-4db0-bb6a-120710536630</td>
+      <td>Paviljoen Zeezicht</td>
+      <td>{'de': {'language': 'de', 'title': 'Strandbar ...</td>
+      <td>[{'type': '', 'catid': '3.1.5'}]</td>
+      <td>{'name': 'Paviljoen Zeezicht', 'city': 'IJMUID...</td>
+      <td>[http://www.paviljoenzeezicht.nl]</td>
+      <td>[{'url': 'https://media.ndtrc.nl/Images/201102...</td>
+      <td>[]</td>
+      <td>2017-07-26 12:15:29</td>
+      <td>{'34.2': {'Catid': '34.2', 'Value': {}, 'Categ...</td>
+    </tr>
+    <tr>
+      <th>769</th>
+      <td>eaca1623-baef-4e4b-9fcb-c19de652e042</td>
+      <td>Paviljoen Nova Zembla</td>
+      <td>{'de': {'language': 'de', 'title': 'Strandbar ...</td>
+      <td>[{'type': '', 'catid': '3.1.5'}]</td>
+      <td>{'name': '', 'city': 'IJMUIDEN', 'adress': 'Ke...</td>
+      <td>[http://www.paviljoennovazembla.nl/]</td>
+      <td>[{'url': 'https://media.ndtrc.nl/Images/201202...</td>
+      <td>[]</td>
+      <td>2017-07-26 12:14:43</td>
+      <td>{'10.11': {'Catid': '10.11', 'Value': 'True', ...</td>
+    </tr>
+    <tr>
+      <th>770</th>
+      <td>b75d4392-ae17-4820-a62a-1ead2a604ab2</td>
+      <td>Beach Inn</td>
+      <td>{'de': {'language': 'de', 'title': 'Beach Inn'...</td>
+      <td>[{'type': '', 'catid': '3.1.5'}]</td>
+      <td>{'name': 'Beach Inn', 'city': 'IJMUIDEN', 'adr...</td>
+      <td>[http://www.beachinn-events.nl/, http://www.fa...</td>
+      <td>[{'url': 'https://media.ndtrc.nl/Images/201303...</td>
+      <td>[]</td>
+      <td>2017-07-26 12:13:07</td>
+      <td>{'34.13': {'Catid': '34.13', 'Value': 'true'},...</td>
+    </tr>
+    <tr>
+      <th>771</th>
+      <td>7e7be9d0-1391-4875-b284-ea93ea87e0dd</td>
+      <td>Paviljoen Noordzee</td>
+      <td>{'de': {'language': 'de', 'title': 'Strandbar ...</td>
+      <td>[{'type': '', 'catid': '3.1.5'}]</td>
+      <td>{'name': '', 'city': 'IJMUIDEN', 'adress': 'Ke...</td>
+      <td>[http://www.paviljoennoordzee.nl]</td>
+      <td>[{'url': 'https://media.ndtrc.nl/Images/201101...</td>
+      <td>[]</td>
+      <td>2017-07-26 12:13:56</td>
+      <td>{'34.1': {'Catid': '34.1', 'Value': {}, 'Categ...</td>
+    </tr>
+  </tbody>
+</table>
+<p>772 rows × 10 columns</p>
+</div></div></div>
+</div>
+<p>Sometimes, pandas can be an easy solution for dealing with JSON files, but in this case, it doesn’t seem to be the best choice.</p>
+<p>So, let’s read the JSON file into a list of dictionaries instead, since most of these columns seem to include dictionaries. We’re going to call it “eat”, this new list of dictionaries, because we know from the site this has something to do with eating and drinking.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eat</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../datasets/EtenDrinken.json&#39;</span><span class="p">))</span>
+<span class="c1">#note: nothing happens in terms of output for this command.  </span>
+<span class="c1">#but now it&#39;s in a format we can more easily explore in python.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="playing-around-with-nested-json-data-and-extracting-meaningful-information">
+<h3>Playing around with nested JSON data and extracting meaningful information<a class="headerlink" href="#playing-around-with-nested-json-data-and-extracting-meaningful-information" title="Permalink to this headline">¶</a></h3>
+<p>NOTE!! You don’t need to be able to do all of this already, but it’s mostly important that you try to understand the logic behind these various commands. We’ll review a lot of this later on when we get to analysis, anyway.</p>
+<p>Let’s check what <code class="docutils literal notranslate"><span class="pre">eat</span></code> is and what is in there</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">eat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">eat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>772
+</pre></div>
+</div>
+</div>
+</div>
+<p>Maybe let’s just look at the <em>first</em> restaurant</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">eat</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="c1">#pprint stands for &#39;pretty print&#39;--it&#39;s not terribly pretty, </span>
+<span class="c1">#but nicer than if you do just a plain old print (try it out!)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;dates&#39;: {&#39;enddate&#39;: &#39;&#39;, &#39;startdate&#39;: &#39;27-01-2011&#39;},
+ &#39;details&#39;: {&#39;de&#39;: {&#39;calendarsummary&#39;: &#39;Mo -Mi : 10:00 - 21:00 Uhr\n&#39;
+                                       &#39;Do : 10:00 - 01:00 Uhr\n&#39;
+                                       &#39;Fr , Sa : 10:00 - 02:00 Uhr\n&#39;
+                                       &#39;So : 10:30 - 20:00 Uhr.&#39;,
+                    &#39;language&#39;: &#39;de&#39;,
+                    &#39;longdescription&#39;: &#39;&#39;,
+                    &#39;shortdescription&#39;: &#39;&#39;,
+                    &#39;title&#39;: &#39;Eetsalon van Dobben B.V.&#39;},
+             &#39;en&#39;: {&#39;calendarsummary&#39;: &#39;Mo -We : 10:00 - 21:00 hour\n&#39;
+                                       &#39;Th : 10:00 - 01:00 hour\n&#39;
+                                       &#39;Fr , Sa : 10:00 - 02:00 hour\n&#39;
+                                       &#39;Su: 10:30 - 20:00 hour.&#39;,
+                    &#39;language&#39;: &#39;en&#39;,
+                    &#39;longdescription&#39;: &#39;&#39;,
+                    &#39;shortdescription&#39;: &#39;This typical Amsterdam deluxe &#39;
+                                        &#39;lunchroom is the meeting place of &#39;
+                                        &#39;artists, soccer players and many &#39;
+                                        &#39;other locals. Its Van Dobben &#39;
+                                        &#39;croquette is famed far beyond the &#39;
+                                        &#39;city limits.&#39;,
+                    &#39;title&#39;: &#39;Eetsalon van Dobben B.V.&#39;},
+             &#39;es&#39;: {&#39;calendarsummary&#39;: &#39;Lu -Mi : 10:00 - 21:00 Hora\n&#39;
+                                       &#39;Ju : 10:00 - 01:00 Hora\n&#39;
+                                       &#39;Vi , Sa : 10:00 - 02:00 Hora\n&#39;
+                                       &#39;Do : 10:30 - 20:00 Hora.&#39;,
+                    &#39;language&#39;: &#39;es&#39;,
+                    &#39;longdescription&#39;: &#39;&#39;,
+                    &#39;shortdescription&#39;: &#39;&#39;,
+                    &#39;title&#39;: &#39;Eetsalon van Dobben B.V.&#39;},
+             &#39;fr&#39;: {&#39;calendarsummary&#39;: &#39;Lu -Me : 10:00 - 21:00 heure\n&#39;
+                                       &#39;Je : 10:00 - 01:00 heure\n&#39;
+                                       &#39;Ve , Sa : 10:00 - 02:00 heure\n&#39;
+                                       &#39;Di : 10:30 - 20:00 heure.&#39;,
+                    &#39;language&#39;: &#39;fr&#39;,
+                    &#39;longdescription&#39;: &#39;&#39;,
+                    &#39;shortdescription&#39;: &#39;&#39;,
+                    &#39;title&#39;: &#39;Eetsalon van Dobben B.V.&#39;},
+             &#39;it&#39;: {&#39;calendarsummary&#39;: &#39;Lu -Me : 10:00 - 21:00 Ora\n&#39;
+                                       &#39;Gi : 10:00 - 01:00 Ora\n&#39;
+                                       &#39;Ve , Sa : 10:00 - 02:00 Ora\n&#39;
+                                       &#39;Do : 10:30 - 20:00 Ora.&#39;,
+                    &#39;language&#39;: &#39;it&#39;,
+                    &#39;longdescription&#39;: &#39;&#39;,
+                    &#39;shortdescription&#39;: &#39;&#39;,
+                    &#39;title&#39;: &#39;Eetsalon van Dobben B.V.&#39;},
+             &#39;nl&#39;: {&#39;calendarsummary&#39;: &#39;Ma-wo: 10:00 - 21:00 uur\n&#39;
+                                       &#39;do: 10:00 - 01:00 uur\n&#39;
+                                       &#39;vr, za: 10:00 - 02:00 uur\n&#39;
+                                       &#39;zo: 10:30 - 20:00 uur.&#39;,
+                    &#39;language&#39;: &#39;nl&#39;,
+                    &#39;longdescription&#39;: &#39;&#39;,
+                    &#39;shortdescription&#39;: &#39;Deze typisch Amsterdamse luxe &#39;
+                                        &#39;lunchroom is een pleisterplaats voor &#39;
+                                        &#39;artiesten, voetballers en vele andere &#39;
+                                        &#39;Amsterdammers. Tot ver buiten de &#39;
+                                        &#39;stadsgrenzen is de Van Dobben croquet &#39;
+                                        &#39;een begrip.&#39;,
+                    &#39;title&#39;: &#39;Eetsalon van Dobben B.V.&#39;}},
+ &#39;eigenschappen&#39;: {&#39;3.6&#39;: {&#39;Category&#39;: &#39;Lid VVV&#39;,
+                           &#39;CategoryArea&#39;: &#39;Lidmaatschappen&#39;,
+                           &#39;Catid&#39;: &#39;3.6&#39;,
+                           &#39;Value&#39;: &#39;True&#39;},
+                   &#39;34.1&#39;: {&#39;Category&#39;: &#39;Type eetgelegenheid&#39;,
+                            &#39;CategoryArea&#39;: &#39;Eetgelegenheid&#39;,
+                            &#39;Catid&#39;: &#39;34.1&#39;,
+                            &#39;Value&#39;: {}},
+                   &#39;34.2&#39;: {&#39;Category&#39;: &#39;Nationaliteit keuken&#39;,
+                            &#39;CategoryArea&#39;: &#39;Eetgelegenheid&#39;,
+                            &#39;Catid&#39;: &#39;34.2&#39;,
+                            &#39;Value&#39;: {}}},
+ &#39;lastupdated&#39;: &#39;2016-09-19 13:58:20&#39;,
+ &#39;location&#39;: {&#39;adress&#39;: &#39;Korte Reguliersdwstr 5-9&#39;,
+              &#39;city&#39;: &#39;AMSTERDAM&#39;,
+              &#39;latitude&#39;: &#39;52,3660560&#39;,
+              &#39;longitude&#39;: &#39;4,8953060&#39;,
+              &#39;name&#39;: &#39;&#39;,
+              &#39;zipcode&#39;: &#39;1017 BH&#39;},
+ &#39;media&#39;: [{&#39;main&#39;: &#39;true&#39;,
+            &#39;url&#39;: &#39;https://media.iamsterdam.com/ndtrc/Images/20110127/2e2b84ef-227d-42a9-ac47-992a26607175.jpg&#39;}],
+ &#39;title&#39;: &#39;Eetsalon van Dobben B.V.&#39;,
+ &#39;trcid&#39;: &#39;853c93aa-4599-41ad-9d79-638902925dc9&#39;,
+ &#39;types&#39;: [{&#39;catid&#39;: &#39;3.2.1&#39;, &#39;type&#39;: &#39;&#39;}],
+ &#39;urls&#39;: [&#39;http://www.eetsalonvandobben.nl&#39;,
+          &#39;http://www.facebook.com/Eetsalon-Van-Dobben-322959054713/&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#do your normal print command here to see the value of pprint.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now directly access the elements we are intereted in:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;en&#39;</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Eetsalon van Dobben B.V.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;location&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;&#39;,
+ &#39;city&#39;: &#39;AMSTERDAM&#39;,
+ &#39;adress&#39;: &#39;Korte Reguliersdwstr 5-9&#39;,
+ &#39;zipcode&#39;: &#39;1017 BH&#39;,
+ &#39;latitude&#39;: &#39;52,3660560&#39;,
+ &#39;longitude&#39;: &#39;4,8953060&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that location is itself a dict with a number of key:value pairs. One of these is the zipcode.  So if we want specifically the zipcode for the first restaurant, we have to enter both levels, essentially telling python to call up the first dict, and then look within that one for the second.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;location&#39;</span><span class="p">][</span><span class="s1">&#39;zipcode&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1017 BH&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s say I want to figure out where the most restaurants are, by area, within Amsterdam. But I don’t want to do this one-by-one.</p>
+<p>Once we know what we want, we can replace our specific restaurant <code class="docutils literal notranslate"><span class="pre">eat[0]</span></code> by a generic <code class="docutils literal notranslate"><span class="pre">restaurant</span></code> within a <em>loop</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s get all zipcodes</span>
+<span class="c1">#first, we make a blank list.</span>
+<span class="n">zipcodes</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1">#then, we make a loop, pulling the zipcode of each restaurant, and add that to the list with &quot;append&quot; as a METHOD.</span>
+<span class="k">for</span> <span class="n">restaurant</span> <span class="ow">in</span> <span class="n">eat</span><span class="p">:</span>
+    <span class="n">zipcodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">restaurant</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">][</span><span class="s1">&#39;zipcode&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">zipcodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>772
+</pre></div>
+</div>
+</div>
+</div>
+<p>What do you think the purpose is of this previous step?</p>
+<p>Next, let’s use a counter tool (something we imported above) to count the 20 most frequent zipcodes in this database. You could do 20, or 5, or 10, or 100 - whatever you want.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Counter</span><span class="p">(</span><span class="n">zipcodes</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;1072 LH&#39;, 6),
+ (&#39;2042 AD&#39;, 6),
+ (&#39;2051 EC&#39;, 6),
+ (&#39;1017 VN&#39;, 5),
+ (&#39;1017 BM&#39;, 5),
+ (&#39;1012 JS&#39;, 4),
+ (&#39;1017 CV&#39;, 4),
+ (&#39;1071 AA&#39;, 4),
+ (&#39;1017 DA&#39;, 4),
+ (&#39;2041 JA&#39;, 4),
+ (&#39;1976 GA&#39;, 4),
+ (&#39;1016 GB&#39;, 3),
+ (&#39;1072 CV&#39;, 3),
+ (&#39;1012 SJ&#39;, 3),
+ (&#39;1017 PX&#39;, 3),
+ (&#39;1017 NG&#39;, 3),
+ (&#39;1013 ES&#39;, 3),
+ (&#39;1012 CP&#39;, 3),
+ (&#39;1073 BM&#39;, 3),
+ (&#39;1092 BB&#39;, 3)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>For my little story, however, this data is too specific - the letters at the end of each zipcode make for too detailed a story.  There is a way to cut off the letters and just use the four numbers of each zipcode.  Again, here don’t worry about knowing all this code, but, worry about understanding the logic here, and thinking how (eventually) you might want to apply it to your own datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zipcodes_without_letters</span> <span class="o">=</span> <span class="p">[</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">zipcodes</span><span class="p">]</span>
+<span class="n">Counter</span><span class="p">(</span><span class="n">zipcodes_without_letters</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;1017&#39;, 87),
+ (&#39;1012&#39;, 84),
+ (&#39;1072&#39;, 54),
+ (&#39;1016&#39;, 37),
+ (&#39;1015&#39;, 34),
+ (&#39;1013&#39;, 31),
+ (&#39;1071&#39;, 25),
+ (&#39;1018&#39;, 21),
+ (&#39;1073&#39;, 19),
+ (&#39;1053&#39;, 19),
+ (&#39;1091&#39;, 17),
+ (&#39;1011&#39;, 17),
+ (&#39;1054&#39;, 16),
+ (&#39;1052&#39;, 15),
+ (&#39;2011&#39;, 11),
+ (&#39;1075&#39;, 11),
+ (&#39;1074&#39;, 11),
+ (&#39;2042&#39;, 11),
+ (&#39;1092&#39;, 9),
+ (&#39;1078&#39;, 8)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="apis">
+<h2>APIs<a class="headerlink" href="#apis" title="Permalink to this headline">¶</a></h2>
+<p>Lastly, we will check out working with a JSON-based API. Some APIs that are very frequently used (e.g., the Twitter API) have an own Python <em>wrapper</em>, which means that you can do something like <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">twitter</span></code> and have some user-friendly commands. Also, many APIs require authentication (i.e., sth like a username and a password).</p>
+<p>We do not want to require all of you to get such an account for the sole purpose of this meeting. We will therefore work with a public API provided by Statistics Netherlands (CBS): https://opendata.cbs.nl/.</p>
+<p>First, we go to https://opendata.cbs.nl/statline/portal.html?_la=en&amp;_catalog=CBS and select a dataset. This kind of website is a great place to explore some potential datasets for your projects.  If you explore a bit, you’ll see there are a ton of datasets and a ton of APIs, as well as raw JSON files for you to download and work with.  Take this illustration just as a way to use APIs if the raw data is not also available.</p>
+<p>If there is a specific URL we want to access (like this one we have chosen ahead of time), we can do so as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://opendata.cbs.nl/ODataApi/odata/37556eng/TypedDataSet&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s try some things out to make sense of this data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>odata.metadata</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://opendata.cbs.nl/ODataApi/OData/37556en...</td>
+      <td>{'ID': 0, 'Periods': '1899JJ00', 'TotalPopulat...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://opendata.cbs.nl/ODataApi/OData/37556en...</td>
+      <td>{'ID': 1, 'Periods': '1900JJ00', 'TotalPopulat...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://opendata.cbs.nl/ODataApi/OData/37556en...</td>
+      <td>{'ID': 2, 'Periods': '1901JJ00', 'TotalPopulat...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>https://opendata.cbs.nl/ODataApi/OData/37556en...</td>
+      <td>{'ID': 3, 'Periods': '1902JJ00', 'TotalPopulat...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>https://opendata.cbs.nl/ODataApi/OData/37556en...</td>
+      <td>{'ID': 4, 'Periods': '1903JJ00', 'TotalPopulat...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>https://opendata.cbs.nl/ODataApi/OData/37556en...</td>
+      <td>{'ID': 116, 'Periods': '2015JJ00', 'TotalPopul...</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>https://opendata.cbs.nl/ODataApi/OData/37556en...</td>
+      <td>{'ID': 117, 'Periods': '2016JJ00', 'TotalPopul...</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>https://opendata.cbs.nl/ODataApi/OData/37556en...</td>
+      <td>{'ID': 118, 'Periods': '2017JJ00', 'TotalPopul...</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>https://opendata.cbs.nl/ODataApi/OData/37556en...</td>
+      <td>{'ID': 119, 'Periods': '2018JJ00', 'TotalPopul...</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>https://opendata.cbs.nl/ODataApi/OData/37556en...</td>
+      <td>{'ID': 120, 'Periods': '2019JJ00', 'TotalPopul...</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>What that showed us is that there are 119 rows, with 2 columns.  The first column seems only to be about metadata and URLs, which isn’t very interesting.  The second column looks like a series of dicts that might be more interesting for us.  Let’s confirm what these two columns are:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;odata.metadata&#39;, &#39;value&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s focus only on the ‘value’ column, and make a new dataframe out of that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Periods</th>
+      <th>TotalPopulation_1</th>
+      <th>Males_2</th>
+      <th>Females_3</th>
+      <th>TotalPopulation_4</th>
+      <th>YoungerThan20Years_5</th>
+      <th>k_20To44Years_6</th>
+      <th>k_45To64Years_7</th>
+      <th>k_65To79Years_8</th>
+      <th>...</th>
+      <th>Divorces_179</th>
+      <th>DivorcesRelative_180</th>
+      <th>AverageAgeMales_181</th>
+      <th>AverageAgeFemales_182</th>
+      <th>AverageDurationOfTheMarriage_183</th>
+      <th>DueToDeathHusbandRelative_184</th>
+      <th>DueToDeathWifeRelative_185</th>
+      <th>BalanceOfChangesOfNationality_186</th>
+      <th>Naturalization_187</th>
+      <th>NaturalizationsRelative_188</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1899JJ00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1900JJ00</td>
+      <td>5104.0</td>
+      <td>2521.0</td>
+      <td>2583.0</td>
+      <td>5104.0</td>
+      <td>2264.0</td>
+      <td>1732.0</td>
+      <td>802.0</td>
+      <td>272.0</td>
+      <td>...</td>
+      <td>0.6</td>
+      <td>0.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>16.2</td>
+      <td>13.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1901JJ00</td>
+      <td>5163.0</td>
+      <td>2550.0</td>
+      <td>2613.0</td>
+      <td>5163.0</td>
+      <td>2286.0</td>
+      <td>1762.0</td>
+      <td>806.0</td>
+      <td>274.0</td>
+      <td>...</td>
+      <td>0.6</td>
+      <td>0.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.8</td>
+      <td>12.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>1902JJ00</td>
+      <td>5233.0</td>
+      <td>2584.0</td>
+      <td>2649.0</td>
+      <td>5233.0</td>
+      <td>2314.0</td>
+      <td>1791.0</td>
+      <td>812.0</td>
+      <td>278.0</td>
+      <td>...</td>
+      <td>0.6</td>
+      <td>0.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.6</td>
+      <td>11.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>1903JJ00</td>
+      <td>5307.0</td>
+      <td>2622.0</td>
+      <td>2685.0</td>
+      <td>5307.0</td>
+      <td>2344.0</td>
+      <td>1824.0</td>
+      <td>819.0</td>
+      <td>281.0</td>
+      <td>...</td>
+      <td>0.6</td>
+      <td>0.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.1</td>
+      <td>11.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>116</td>
+      <td>2015JJ00</td>
+      <td>16901.0</td>
+      <td>8373.0</td>
+      <td>8528.0</td>
+      <td>16901.0</td>
+      <td>3828.0</td>
+      <td>5311.0</td>
+      <td>4754.0</td>
+      <td>2273.0</td>
+      <td>...</td>
+      <td>34.2</td>
+      <td>10.1</td>
+      <td>46.9</td>
+      <td>43.7</td>
+      <td>14.8</td>
+      <td>11.6</td>
+      <td>5.7</td>
+      <td>28.0</td>
+      <td>22.0</td>
+      <td>25.3</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>117</td>
+      <td>2016JJ00</td>
+      <td>16979.0</td>
+      <td>8417.0</td>
+      <td>8562.0</td>
+      <td>16979.0</td>
+      <td>3818.0</td>
+      <td>5284.0</td>
+      <td>4792.0</td>
+      <td>2337.0</td>
+      <td>...</td>
+      <td>33.4</td>
+      <td>9.9</td>
+      <td>47.3</td>
+      <td>44.0</td>
+      <td>15.0</td>
+      <td>11.7</td>
+      <td>5.8</td>
+      <td>28.0</td>
+      <td>22.0</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>118</td>
+      <td>2017JJ00</td>
+      <td>17082.0</td>
+      <td>8475.0</td>
+      <td>8606.0</td>
+      <td>17082.0</td>
+      <td>3817.0</td>
+      <td>5281.0</td>
+      <td>4824.0</td>
+      <td>2395.0</td>
+      <td>...</td>
+      <td>32.8</td>
+      <td>9.7</td>
+      <td>47.4</td>
+      <td>44.2</td>
+      <td>15.1</td>
+      <td>11.7</td>
+      <td>5.9</td>
+      <td>28.0</td>
+      <td>20.0</td>
+      <td>19.5</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>119</td>
+      <td>2018JJ00</td>
+      <td>17181.0</td>
+      <td>8527.0</td>
+      <td>8654.0</td>
+      <td>17181.0</td>
+      <td>3811.0</td>
+      <td>5291.0</td>
+      <td>4840.0</td>
+      <td>2460.0</td>
+      <td>...</td>
+      <td>30.7</td>
+      <td>9.2</td>
+      <td>47.6</td>
+      <td>44.3</td>
+      <td>15.0</td>
+      <td>11.9</td>
+      <td>6.1</td>
+      <td>28.0</td>
+      <td>21.0</td>
+      <td>19.2</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>120</td>
+      <td>2019JJ00</td>
+      <td>17282.0</td>
+      <td>8581.0</td>
+      <td>8701.0</td>
+      <td>17282.0</td>
+      <td>3792.0</td>
+      <td>5335.0</td>
+      <td>4841.0</td>
+      <td>2515.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 190 columns</p>
+</div></div></div>
+</div>
+<p>We can actually see that this is a list that works as a ‘simple’ dataframe–there are rows and columns, and it doesn’t look like there is more nested info within here.</p>
+<p>But there are 199 columns!  How can we know what’s in this dataset then?  We can create a list using the ‘.columns’ property associated with a dataframe.  This allows us to transform the index into a list to see everything in it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ID&#39;,
+ &#39;Periods&#39;,
+ &#39;TotalPopulation_1&#39;,
+ &#39;Males_2&#39;,
+ &#39;Females_3&#39;,
+ &#39;TotalPopulation_4&#39;,
+ &#39;YoungerThan20Years_5&#39;,
+ &#39;k_20To44Years_6&#39;,
+ &#39;k_45To64Years_7&#39;,
+ &#39;k_65To79Years_8&#39;,
+ &#39;k_80YearsOrOlder_9&#39;,
+ &#39;GreenPressure_10&#39;,
+ &#39;GreyPressure_11&#39;,
+ &#39;TotalPopulation_12&#39;,
+ &#39;NeverMarried_13&#39;,
+ &#39;Married_14&#39;,
+ &#39;Widowed_15&#39;,
+ &#39;Divorced_16&#39;,
+ &#39;TotalPopulation_17&#39;,
+ &#39;NorthNetherlands_18&#39;,
+ &#39;EastNetherlands_19&#39;,
+ &#39;WestNetherlands_20&#39;,
+ &#39;SouthNetherlands_21&#39;,
+ &#39;TotalPopulation_22&#39;,
+ &#39;LessThan5000Inhabitants_23&#39;,
+ &#39;k_5000To19999Inhabitants_24&#39;,
+ &#39;k_20000To49999Inhabitants_25&#39;,
+ &#39;k_50000To99999Inhabitants_26&#39;,
+ &#39;k_100000InhabitantsOrMore_27&#39;,
+ &#39;TotalNumberOfMunicipalities_28&#39;,
+ &#39;LessThan5000Inhabitants_29&#39;,
+ &#39;k_5000To19999Inhabitants_30&#39;,
+ &#39;k_20000To49999Inhabitants_31&#39;,
+ &#39;k_50000To99999Inhabitants_32&#39;,
+ &#39;k_100000InhabitantsOrMore_33&#39;,
+ &#39;TotalForeignNationalities_34&#39;,
+ &#39;American_35&#39;,
+ &#39;Belgian_36&#39;,
+ &#39;British_37&#39;,
+ &#39;German_38&#39;,
+ &#39;Italian_39&#39;,
+ &#39;Moroccan_40&#39;,
+ &#39;Spanish_41&#39;,
+ &#39;Turkish_42&#39;,
+ &#39;FormerYugoslavian_43&#39;,
+ &#39;PersonsWithSurinameseBackground_44&#39;,
+ &#39;PersonsWithAntilleanBackground_45&#39;,
+ &#39;TotalPrivateHouseholds_46&#39;,
+ &#39;MalesAndFemales_47&#39;,
+ &#39;Males_48&#39;,
+ &#39;Females_49&#39;,
+ &#39;MultiPersonHouseholds_50&#39;,
+ &#39;AverageHouseholdsize_51&#39;,
+ &#39;TotalPersonsInPrivateHouseholds_52&#39;,
+ &#39;ChildrenInPrivateHouseholds_53&#39;,
+ &#39;LiveBornChildren_54&#39;,
+ &#39;Deaths_55&#39;,
+ &#39;NaturalIncrease_56&#39;,
+ &#39;Immigration_57&#39;,
+ &#39;EmigrationIncludingAdministrativeC_58&#39;,
+ &#39;NetMigration_59&#39;,
+ &#39;TotalGrowth_60&#39;,
+ &#39;TotalGrowthRelative_61&#39;,
+ &#39;LiveBornChildren_62&#39;,
+ &#39;LiveBornChildrenRelative_63&#39;,
+ &#39;SexRatio_64&#39;,
+ &#39;AverageNumberOfChildrenPerFemale_65&#39;,
+ &#39;TotalLiveBornChildren_66&#39;,
+ &#39;YoungerThan20Years_67&#39;,
+ &#39;k_20To24Years_68&#39;,
+ &#39;k_25To29Years_69&#39;,
+ &#39;k_30YearsOrOlder_70&#39;,
+ &#39;k_1stChild_71&#39;,
+ &#39;k_2ndChild_72&#39;,
+ &#39;k_3rdChild_73&#39;,
+ &#39;k_4thAndSubsequentChildren_74&#39;,
+ &#39;LiveBornChildrenMotherNotMarried_75&#39;,
+ &#39;Deaths_76&#39;,
+ &#39;DeathsRelative_77&#39;,
+ &#39;DeathsSexRatio_78&#39;,
+ &#39;LifeExpectancyAtBirthMale_79&#39;,
+ &#39;LifeExpectancyAtBirthFemale_80&#39;,
+ &#39;k_28WeeksOrMoreRelative_81&#39;,
+ &#39;k_24WeeksOrMoreRelative_82&#39;,
+ &#39;PerinatalMortality24_83&#39;,
+ &#39;PerinatalMortality24Relative_84&#39;,
+ &#39;PerinatalMortality28_85&#39;,
+ &#39;PerinatalMortality28Relative_86&#39;,
+ &#39;Deaths4WeeksAfterBirth_87&#39;,
+ &#39;Deaths4WeeksAfterBirthRelative_88&#39;,
+ &#39;Deaths1YearAfterBirth_89&#39;,
+ &#39;Deaths1YearAfterBirthRelative_90&#39;,
+ &#39;k_1To4Years_91&#39;,
+ &#39;k_5To14Years_92&#39;,
+ &#39;k_15To44Years_93&#39;,
+ &#39;k_45To64Years_94&#39;,
+ &#39;k_65To79Years_95&#39;,
+ &#39;k_80YearsOrOlder_96&#39;,
+ &#39;PersonsMovedWithinMunicipalities_97&#39;,
+ &#39;TotalPersons_98&#39;,
+ &#39;TotalPersonsRelative_99&#39;,
+ &#39;WithinTheSameProvinceRelative_100&#39;,
+ &#39;FamiliesUntil2010Relative_101&#39;,
+ &#39;TotalImmigration_102&#39;,
+ &#39;Dutch_103&#39;,
+ &#39;TotalNonDutch_104&#39;,
+ &#39;EuropeanUnionExcludingDutch_105&#39;,
+ &#39;Moroccan_106&#39;,
+ &#39;Turkish_107&#39;,
+ &#39;TotalEmigrationIncludingAdministra_108&#39;,
+ &#39;Dutch_109&#39;,
+ &#39;TotalNonDutch_110&#39;,
+ &#39;EuropeanUnionExcludingDutch_111&#39;,
+ &#39;Moroccan_112&#39;,
+ &#39;Turkish_113&#39;,
+ &#39;TotalEmigrationExcludingAdministra_114&#39;,
+ &#39;Dutch_115&#39;,
+ &#39;TotalNonDutch_116&#39;,
+ &#39;EuropeanUnionExcludingDutch_117&#39;,
+ &#39;Moroccan_118&#39;,
+ &#39;Turkish_119&#39;,
+ &#39;TotalImmigration_120&#39;,
+ &#39;TheNetherlands_121&#39;,
+ &#39;EuropeanUnionExcludingTheNetherl_122&#39;,
+ &#39;Indonesia_123&#39;,
+ &#39;SurinameAndTheNetherlandsAntilles_124&#39;,
+ &#39;Suriname_125&#39;,
+ &#39;TheFormerNetherlandsAntilles_126&#39;,
+ &#39;Morocco_127&#39;,
+ &#39;Turkey_128&#39;,
+ &#39;SpecificEmigrationCountries_129&#39;,
+ &#39;TotalEmigrationIncludingAdministra_130&#39;,
+ &#39;TheNetherlands_131&#39;,
+ &#39;EuropeanUnionExcludingTheNetherl_132&#39;,
+ &#39;Indonesia_133&#39;,
+ &#39;SurinameAndTheNetherlandsAntilles_134&#39;,
+ &#39;Suriname_135&#39;,
+ &#39;TheFormerNetherlandsAntilles_136&#39;,
+ &#39;Morocco_137&#39;,
+ &#39;Turkey_138&#39;,
+ &#39;SpecificEmigrationCountries_139&#39;,
+ &#39;TotalEmigrationExcludingAdministra_140&#39;,
+ &#39;TheNetherlands_141&#39;,
+ &#39;EuropeanUnionExcludingTheNetherl_142&#39;,
+ &#39;Indonesia_143&#39;,
+ &#39;SurinameAndTheNetherlandsAntilles_144&#39;,
+ &#39;Suriname_145&#39;,
+ &#39;TheFormerNetherlandsAntilles_146&#39;,
+ &#39;Morocco_147&#39;,
+ &#39;Turkey_148&#39;,
+ &#39;SpecificEmigrationCountries_149&#39;,
+ &#39;TotalImmigration_150&#39;,
+ &#39;EuropeanUnionExcludingTheNetherl_151&#39;,
+ &#39;IndonesiaSurinameTheNetherlan_152&#39;,
+ &#39;SurinameAndTheNetherlandsAntilles_153&#39;,
+ &#39;Indonesia_154&#39;,
+ &#39;Suriname_155&#39;,
+ &#39;TheFormerNetherlandsAntilles_156&#39;,
+ &#39;Morocco_157&#39;,
+ &#39;Turkey_158&#39;,
+ &#39;SpecificEmigrationCountries_159&#39;,
+ &#39;TotalEmigrationExcludingAdministra_160&#39;,
+ &#39;EuropeanUnionExcludingTheNetherl_161&#39;,
+ &#39;IndonesiaSurinameTheNetherlan_162&#39;,
+ &#39;SurinameAndTheNetherlandsAntilles_163&#39;,
+ &#39;Indonesia_164&#39;,
+ &#39;Suriname_165&#39;,
+ &#39;TheFormerNetherlandsAntilles_166&#39;,
+ &#39;Morocco_167&#39;,
+ &#39;Turkey_168&#39;,
+ &#39;SpecificEmigrationCountries_169&#39;,
+ &#39;Marriages_170&#39;,
+ &#39;MarriagesPer1000Inhabitants_171&#39;,
+ &#39;MarriagesPer1000UnmarriedMen_172&#39;,
+ &#39;k_1stMarriageForBothPartnersRelative_173&#39;,
+ &#39;AverageAgeMarryingMales_174&#39;,
+ &#39;AverageAgeMarryingFemales_175&#39;,
+ &#39;MarriageDissolutions_176&#39;,
+ &#39;MarriageDissolutionsPer1000Inhab_177&#39;,
+ &#39;MarriageDissolutionsPer1000Marri_178&#39;,
+ &#39;Divorces_179&#39;,
+ &#39;DivorcesRelative_180&#39;,
+ &#39;AverageAgeMales_181&#39;,
+ &#39;AverageAgeFemales_182&#39;,
+ &#39;AverageDurationOfTheMarriage_183&#39;,
+ &#39;DueToDeathHusbandRelative_184&#39;,
+ &#39;DueToDeathWifeRelative_185&#39;,
+ &#39;BalanceOfChangesOfNationality_186&#39;,
+ &#39;Naturalization_187&#39;,
+ &#39;NaturalizationsRelative_188&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#two other ways to tell us ABOUT the columns are this, but these abbreviate the list of columns so we can&#39;t read it.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;ID&#39;, &#39;Periods&#39;, &#39;TotalPopulation_1&#39;, &#39;Males_2&#39;, &#39;Females_3&#39;,
+       &#39;TotalPopulation_4&#39;, &#39;YoungerThan20Years_5&#39;, &#39;k_20To44Years_6&#39;,
+       &#39;k_45To64Years_7&#39;, &#39;k_65To79Years_8&#39;,
+       ...
+       &#39;Divorces_179&#39;, &#39;DivorcesRelative_180&#39;, &#39;AverageAgeMales_181&#39;,
+       &#39;AverageAgeFemales_182&#39;, &#39;AverageDurationOfTheMarriage_183&#39;,
+       &#39;DueToDeathHusbandRelative_184&#39;, &#39;DueToDeathWifeRelative_185&#39;,
+       &#39;BalanceOfChangesOfNationality_186&#39;, &#39;Naturalization_187&#39;,
+       &#39;NaturalizationsRelative_188&#39;],
+      dtype=&#39;object&#39;, length=190)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># So let&#39;s choose one column specifically - &#39;Periods&#39; and figure out more about it.</span>
+<span class="c1"># What do you think this represents?  What would we need to do to make sense of this/make it useful?</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Periods&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      1899JJ00
+1      1900JJ00
+2      1901JJ00
+3      1902JJ00
+4      1903JJ00
+         ...   
+116    2015JJ00
+117    2016JJ00
+118    2017JJ00
+119    2018JJ00
+120    2019JJ00
+Name: Periods, Length: 121, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># It would be really nice if our row numbers (&#39;index&#39;) wouldn&#39;t be a number between 0 and 118, would </span>
+<span class="c1"># correspond to this value of &#39;periods&#39;.  But we need to clean up &#39;periods&#39; to get just the first four characters</span>
+<span class="c1"># and to turn those from string (text) values into an integer (number). Here is the command - again, focus on </span>
+<span class="c1"># the logic, not the complexity of it.  &#39;.map&#39; is a command, and lamda is a function, and &#39;x&#39; is an arbitrary label.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Periods&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="mi">4</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now let&#39;s check our work:</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Periods</th>
+      <th>TotalPopulation_1</th>
+      <th>Males_2</th>
+      <th>Females_3</th>
+      <th>TotalPopulation_4</th>
+      <th>YoungerThan20Years_5</th>
+      <th>k_20To44Years_6</th>
+      <th>k_45To64Years_7</th>
+      <th>k_65To79Years_8</th>
+      <th>...</th>
+      <th>Divorces_179</th>
+      <th>DivorcesRelative_180</th>
+      <th>AverageAgeMales_181</th>
+      <th>AverageAgeFemales_182</th>
+      <th>AverageDurationOfTheMarriage_183</th>
+      <th>DueToDeathHusbandRelative_184</th>
+      <th>DueToDeathWifeRelative_185</th>
+      <th>BalanceOfChangesOfNationality_186</th>
+      <th>Naturalization_187</th>
+      <th>NaturalizationsRelative_188</th>
+    </tr>
+    <tr>
+      <th>Periods</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1899</th>
+      <td>0</td>
+      <td>1899JJ00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1900</th>
+      <td>1</td>
+      <td>1900JJ00</td>
+      <td>5104.0</td>
+      <td>2521.0</td>
+      <td>2583.0</td>
+      <td>5104.0</td>
+      <td>2264.0</td>
+      <td>1732.0</td>
+      <td>802.0</td>
+      <td>272.0</td>
+      <td>...</td>
+      <td>0.6</td>
+      <td>0.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>16.2</td>
+      <td>13.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1901</th>
+      <td>2</td>
+      <td>1901JJ00</td>
+      <td>5163.0</td>
+      <td>2550.0</td>
+      <td>2613.0</td>
+      <td>5163.0</td>
+      <td>2286.0</td>
+      <td>1762.0</td>
+      <td>806.0</td>
+      <td>274.0</td>
+      <td>...</td>
+      <td>0.6</td>
+      <td>0.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.8</td>
+      <td>12.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1902</th>
+      <td>3</td>
+      <td>1902JJ00</td>
+      <td>5233.0</td>
+      <td>2584.0</td>
+      <td>2649.0</td>
+      <td>5233.0</td>
+      <td>2314.0</td>
+      <td>1791.0</td>
+      <td>812.0</td>
+      <td>278.0</td>
+      <td>...</td>
+      <td>0.6</td>
+      <td>0.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.6</td>
+      <td>11.8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1903</th>
+      <td>4</td>
+      <td>1903JJ00</td>
+      <td>5307.0</td>
+      <td>2622.0</td>
+      <td>2685.0</td>
+      <td>5307.0</td>
+      <td>2344.0</td>
+      <td>1824.0</td>
+      <td>819.0</td>
+      <td>281.0</td>
+      <td>...</td>
+      <td>0.6</td>
+      <td>0.7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>14.1</td>
+      <td>11.4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>116</td>
+      <td>2015JJ00</td>
+      <td>16901.0</td>
+      <td>8373.0</td>
+      <td>8528.0</td>
+      <td>16901.0</td>
+      <td>3828.0</td>
+      <td>5311.0</td>
+      <td>4754.0</td>
+      <td>2273.0</td>
+      <td>...</td>
+      <td>34.2</td>
+      <td>10.1</td>
+      <td>46.9</td>
+      <td>43.7</td>
+      <td>14.8</td>
+      <td>11.6</td>
+      <td>5.7</td>
+      <td>28.0</td>
+      <td>22.0</td>
+      <td>25.3</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>117</td>
+      <td>2016JJ00</td>
+      <td>16979.0</td>
+      <td>8417.0</td>
+      <td>8562.0</td>
+      <td>16979.0</td>
+      <td>3818.0</td>
+      <td>5284.0</td>
+      <td>4792.0</td>
+      <td>2337.0</td>
+      <td>...</td>
+      <td>33.4</td>
+      <td>9.9</td>
+      <td>47.3</td>
+      <td>44.0</td>
+      <td>15.0</td>
+      <td>11.7</td>
+      <td>5.8</td>
+      <td>28.0</td>
+      <td>22.0</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>118</td>
+      <td>2017JJ00</td>
+      <td>17082.0</td>
+      <td>8475.0</td>
+      <td>8606.0</td>
+      <td>17082.0</td>
+      <td>3817.0</td>
+      <td>5281.0</td>
+      <td>4824.0</td>
+      <td>2395.0</td>
+      <td>...</td>
+      <td>32.8</td>
+      <td>9.7</td>
+      <td>47.4</td>
+      <td>44.2</td>
+      <td>15.1</td>
+      <td>11.7</td>
+      <td>5.9</td>
+      <td>28.0</td>
+      <td>20.0</td>
+      <td>19.5</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>119</td>
+      <td>2018JJ00</td>
+      <td>17181.0</td>
+      <td>8527.0</td>
+      <td>8654.0</td>
+      <td>17181.0</td>
+      <td>3811.0</td>
+      <td>5291.0</td>
+      <td>4840.0</td>
+      <td>2460.0</td>
+      <td>...</td>
+      <td>30.7</td>
+      <td>9.2</td>
+      <td>47.6</td>
+      <td>44.3</td>
+      <td>15.0</td>
+      <td>11.9</td>
+      <td>6.1</td>
+      <td>28.0</td>
+      <td>21.0</td>
+      <td>19.2</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>120</td>
+      <td>2019JJ00</td>
+      <td>17282.0</td>
+      <td>8581.0</td>
+      <td>8701.0</td>
+      <td>17282.0</td>
+      <td>3792.0</td>
+      <td>5335.0</td>
+      <td>4841.0</td>
+      <td>2515.0</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>121 rows × 190 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we can plot it, using that same command we used above - plotting a specific value (column) by the index.</span>
+<span class="c1"># In this case, the index is now the year, which provides a nice little visualization.</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Marriages_170&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Periods&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/02-accessing_data_75_1.png" src="../_images/02-accessing_data_75_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="play-around-and-some-non-graded-homework">
+<h2>Play around - and some (non-graded) homework<a class="headerlink" href="#play-around-and-some-non-graded-homework" title="Permalink to this headline">¶</a></h2>
+<p>The most important thing is that you start playing around. You don’t need to be able  to create beautiful plots or anything fancy, but try to get datasets into a usable format and get some insights!</p>
+<p>As an exercise after class, why don’t you try the following:</p>
+<ol class="simple">
+<li><p>Find a webpage that has a table on it.</p></li>
+<li><p>Use the read_html scraper tool we learned above, to scrape the tables and save these to a csv file.</p></li>
+<li><p>Read the csv file back into python, and try to find some basic descriptive statistics (max, min, mean, etc) and if you can, make a simple visualization out of it (histogram or plot).</p></li>
+<li><p>Save all of this to a new notebook–code, notes if you have questions or about what you’re doing, and output.</p></li>
+</ol>
+<p>If you can do all of these things, great! If you can’t bring your questions to next class.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="01-getting_started.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">On Jupyter Notebooks</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="python.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Python</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Frederic Hopp<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

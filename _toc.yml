@@ -2,18 +2,25 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: content/intro
 parts:
-  - caption: Notebooks
-    chapters:
-    - file: notebooks/01-getting_started.ipynb
-    - file: notebooks/02-accessing_data.ipynb
-    - file: notebooks/03-analyzing_numbers.ipynb
-    - file: notebooks/04-join_and_aggregate.ipynb
-    - file: notebooks/04x-join_and_aggregate_makedataset.ipynb
-    - file: notebooks/05-aggregate_wozwaarde.ipynb
-    - file: notebooks/06-analyzing_text.ipynb
-    - file: notebooks/07-visualizations.ipynb
-    - file: notebooks/08-datawrangling_recap.ipynb
-    - file: notebooks/09-interactive_visualizations.ipynb
-    
+- caption: Course Overview
+  chapters:
+  - file: content/instructors.md
+  - file: content/schedule.md
+- caption: Notebooks
+  chapters:
+  - file: content/01-getting_started.ipynb
+  - file: content/02-accessing_data.ipynb
+  #- file: content/03-analyzing_numbers.ipynb
+  #- file: content/04-join_and_aggregate.ipynb
+  #- file: content/04x-join_and_aggregate_makedataset.ipynb
+  #- file: content/05-aggregate_wozwaarde.ipynb
+  #- file: content/06-analyzing_text.ipynb
+  #- file: content/07-visualizations.ipynb
+  #- file: content/08-datawrangling_recap.ipynb
+  #- file: content/09-interactive_visualizations.ipynb
+- caption: Resources
+  chapters: 
+  - file: content/python.md   
+  - file: content/datasets.md
