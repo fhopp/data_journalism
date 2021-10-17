@@ -1,0 +1,878 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Statistics &amp; Analyzing Numbers &#8212; Data Journalism</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Journalism</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Course Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="instructors.html">
+   Instructors
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-getting_started.html">
+   Getting started with Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-accessing_data.html">
+   Accessing Data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/03-analyzing_numbers.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fhopp/data_journalism"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fhopp/data_journalism/issues/new?title=Issue%20on%20page%20%2Fcontent/03-analyzing_numbers.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fhopp/data_journalism/master?urlpath=tree/docs/content/03-analyzing_numbers.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-our-tools-modules-libraries">
+   Import our tools/modules/libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-data-into-a-dataframe">
+   Read data into a dataframe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#in-case-you-work-with-google-colab-see-also-first-notebook">
+   In case you work with google colab (see also first notebook):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explore-the-dataset">
+   Explore the dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#groupby">
+   Groupby
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pop-quiz">
+   POP QUIZ!
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plots-grouped-by-variables">
+     Plots grouped by variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-tests-and-subsetting-datasets">
+   Statistical tests and subsetting datasets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#t-tests">
+     T-tests
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#before-we-finish-let-s-play-around-with-some-more-graphics">
+     Before we finish, let’s play around with some more graphics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#so">
+   So…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-non-graded-homework">
+   More (non-graded) homework :)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix-multivariate-statistical-analysis">
+   Appendix: Multivariate statistical analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hexplots">
+   Hexplots
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="basic-statistics-analyzing-numbers">
+<h1>Basic Statistics &amp; Analyzing Numbers<a class="headerlink" href="#basic-statistics-analyzing-numbers" title="Permalink to this headline">¶</a></h1>
+<p><em>Damian Trilling and Penny Sheets</em></p>
+<p>This notebook is designed to show you some ways to use python for basic statistical analysis of numbers, and to explore some methods that go beyond <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> or <code class="docutils literal notranslate"><span class="pre">Counter()</span></code>, which we used last week. In particular, we are going to look into analyzing numerical data. Next week, we will focus on textual data.</p>
+<p>The dataset we use in this example is a subset of the data presented in Trilling, D. (2013). <em>Following the news. Patterns of online and offline news use</em>. PhD thesis, University of Amsterdam. http://hdl.handle.net/11245/1.394551</p>
+<div class="section" id="import-our-tools-modules-libraries">
+<h2>Import our tools/modules/libraries<a class="headerlink" href="#import-our-tools-modules-libraries" title="Permalink to this headline">¶</a></h2>
+<p>As always, we first import the tools we’ll need. Today, we’ll use pandas (usually imported as “pd”), and something called statsmodels, and something called numpy. We also use matplotlib for some visualizations. A lot of other stuff here we will need for some specific analyses later on; you don’t have to worry about all of it right now.</p>
+<p>If you want to learn more about these modules, you can look online for info.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">statsmodels</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.weightstats</span> <span class="kn">import</span> <span class="n">ttest_ind</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">kendalltau</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-data-into-a-dataframe">
+<h2>Read data into a dataframe<a class="headerlink" href="#read-data-into-a-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>We will read a dataset based on Trilling (2013). It contains some sociodemographic variables as well as the number of days the respondent uses a specific medium to access information about news and current affairs.</p>
+<p>You should download the dataset (with the ‘save page as’ method, making sure .txt isn’t appended to the file extension) into the same folder as this jupyter notebook: https://raw.githubusercontent.com/damian0604/bdaca/master/ipynb/mediause.csv</p>
+<p>Remember that the ‘df’ here is arbitrary; last week we used the names ‘iris’ and ‘stockdata’ and others; this week we’re going more basic and just saying ‘df’ for dataframe.</p>
+</div>
+<div class="section" id="in-case-you-work-with-google-colab-see-also-first-notebook">
+<h2>In case you work with google colab (see also first notebook):<a class="headerlink" href="#in-case-you-work-with-google-colab-see-also-first-notebook" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Upload the CSV file to your Google Drive in the folder <code class="docutils literal notranslate"><span class="pre">datajournalism</span></code></p></li>
+<li><p>Mount google drive (for your convenience, the command is shown in the cell below - just remove the hashtags that “comment it out”</p></li>
+<li><p>Everywhere where we say sth like <code class="docutils literal notranslate"><span class="pre">'mediause.csv'</span></code>, prefix it with <code class="docutils literal notranslate"><span class="pre">/mnt/My</span> <span class="pre">Drive/datajournalism</span></code> and write, for instance, <code class="docutils literal notranslate"><span class="pre">/mnt/My</span> <span class="pre">Drive/datajournalism/mediause.csv</span></code></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from google.colab import drive</span>
+<span class="c1">#drive.mount(&#39;/mnt&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;mediause.csv&#39;</span><span class="p">)</span>
+<span class="c1"># or, for google colab:</span>
+<span class="c1"># df = pd.read_csv(&#39;/mnt/My Drive/datajournalism/mediause.csv&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the .keys() method is way to find out what the columns are in your dataframe. Sometimes they have nice labels already, and sometimes they don’t.  In this case, we’re in luck.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember that for a dataframe or object in python, you can simply type its name in a code cell and python will display it as best it can. (In this case, it works well.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="explore-the-dataset">
+<h2>Explore the dataset<a class="headerlink" href="#explore-the-dataset" title="Permalink to this headline">¶</a></h2>
+<p>Let’s do some descriptive statistics, using the .describe() method we saw last week. This would be important if you wanted to describe the dataset to your audience, for example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want to find out how many possible values there are for a specific variable, you can use the <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code> method. In this case, you select the dataframe (which we’ve called <code class="docutils literal notranslate"><span class="pre">df</span></code>), select the column/variable you want to examine, and then apply the method.</p>
+<p>The output shows us that there are two values - 0 and 1 - for the ‘gender’ variable. It gives us how many instances (aka frequencies) of each of these values exist in the dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#as with any method, value_counts() has parameters we can adjust.</span>
+<span class="c1">#by default, the results are sorted by size of the count, but we can</span>
+<span class="c1">#also allow it to be random if we wanted. Compare the results.</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;education&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;education&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#if it is useful to sort by the index - i.e. days of the week here - then you can specify that as follows:</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;education&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#You can also use a help command to get python to print info about this method. But in this case, </span>
+<span class="c1">#you have to make an additional step, because the selected column isn&#39;t an object until</span>
+<span class="c1">#it is officially run in a &#39;real&#39; command. So you have to turn that into an object, and then ask for help.</span>
+
+<span class="n">test</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;education&#39;</span><span class="p">]</span>
+test.value_counts<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also display value counts for multiple variables at once, to get an overview of your data.  In this case, use a loop to replicate commands for each of the four media types. We’ll do this next, but we’ll also set a few specifications so that it prints out nicely.</p>
+<p>See if you can figure out what each of these print commands is doing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">medium</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;radio&#39;</span><span class="p">,</span><span class="s1">&#39;newspaper&#39;</span><span class="p">,</span><span class="s1">&#39;tv&#39;</span><span class="p">,</span><span class="s1">&#39;internet&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">medium</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">medium</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------------------</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>So that’s one way to start exploring a dataset generally.</p>
+</div>
+<div class="section" id="groupby">
+<h2>Groupby<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h2>
+<p>Let’s say you’d like to compare the media use of men and women in the dataset. Eventually we’ll move toward statistical comparison, but for now we can start by looking at their descriptive statistics - separately for men and women.</p>
+<p>In python, this is quite easy, using the <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> method.</p>
+<p>First, we group the dataframe by the ‘gender’ variable, and then apply a method to that grouped dataframe; this is called ‘chaining’ multiple methods together.  (We saw a bit of this chaining idea last week already.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes in this case, it’s more useful to transpose the dataset, making columns into rows and vice versa.  This display will then be much easier to look at.  In this case, we use a .T at the end, after the describe() method.  This doesn’t change the dataframe in any way, just displays it differently for you here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#try this again here, using a different variable as the grouping variable.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#you can use help again here, to figure out all the specifications.</span>
+
+df.groupby<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And, as we did last week, you can plot a simple histogram of the distribution of a variable across the dataset. So if you want to look at how ‘radio’ (as in, how many days per week a person uses radio) is distributed among your sample, e.g., you can use a histogram.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here, &#39;bins&#39; refers to how many bars we want, essentially. If you don&#39;t specify, python/pandas will guess based</span>
+<span class="c1">#on the dataset. This can be misleading. So if you know how many you want to display, you should specify.</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;radio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Try to plot a histogram of internet news use here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>One of the modules we imported above helps us to make prettier plots (but no, it’s not called “pretty plot” like “pretty print”). Here we can plot the value counts for internet news use in a bar chart, again sorted by the index.</p>
+<p>In particular, the histogram above is very good for continous variables, that we want to ‘bin’ into fewer bins (=bars). But if we only have a small number of discrete values (like here: the integers from 0 to 7), then the alignment of the labels above may be more confusing.</p>
+<p>Let’s try to use <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> to make a bar chart:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;internet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pop-quiz">
+<h2>POP QUIZ!<a class="headerlink" href="#pop-quiz" title="Permalink to this headline">¶</a></h2>
+<p>Can you integrate this plotting method in your for-loop (from above) to get a nice series of plots?  Fill in the missing line of code, below.  But keep the plt.show() command afterward, in order to display all plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">medium</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;radio&#39;</span><span class="p">,</span><span class="s1">&#39;newspaper&#39;</span><span class="p">,</span><span class="s1">&#39;tv&#39;</span><span class="p">,</span><span class="s1">&#39;internet&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">medium</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">medium</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------------------</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="c1">#YOUR CODE HERE</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And instead of (or in addition to) the plt.show(), you can also save these plots to your folder on your computer. These are very high quality images then, that could be used in a piece (if you provided appropriate axis titles, etc.), and you can specify the figure size and DPI.</p>
+<p>Note here we’ve added a ‘figsize’ specification to the end of the plot method in your missing line of code. You can play around with different figure sizes to see what happens, if you display them here using plt.show().</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">medium</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;radio&#39;</span><span class="p">,</span><span class="s1">&#39;newspaper&#39;</span><span class="p">,</span><span class="s1">&#39;tv&#39;</span><span class="p">,</span><span class="s1">&#39;internet&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">medium</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">medium</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------------------</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="c1">#YOUR CODE HERE ...(kind=&#39;bar&#39;, figsize=(6,4))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.png&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">medium</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1">#Now go check your folder and see if the image files have shown up.</span>
+<span class="c1">#Note that we have to use the curly brackets and .format(medium) to give </span>
+<span class="c1">#the relevant title to each figure. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="plots-grouped-by-variables">
+<h3>Plots grouped by variables<a class="headerlink" href="#plots-grouped-by-variables" title="Permalink to this headline">¶</a></h3>
+<p>You can also create comparison histograms, side-by-side, for different values of a variable. For example, let’s look at the histogram of internet news use for men and women in this dataset.</p>
+<p>Here, we’re using the “by=[‘ ‘]” command to specify which grouping variable we want, and again specifying the bins and the figure size, both of which you can play around with.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;internet&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="statistical-tests-and-subsetting-datasets">
+<h2>Statistical tests and subsetting datasets<a class="headerlink" href="#statistical-tests-and-subsetting-datasets" title="Permalink to this headline">¶</a></h2>
+<p>Now, if we want to move onto statistical comparisons, we can run our normal, basic statistics here in python as well.  There’s no need to import your datset to SPSS to do this, if you want to know whether a specific difference is significant, for example.</p>
+<div class="section" id="t-tests">
+<h3>T-tests<a class="headerlink" href="#t-tests" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start with a t-test, comparing the mean internet news use for men and women that we just examined in the histograms.</p>
+<p>In order to do this, we have to create two new little dataframes out of our first one - one for men, one for women.</p>
+<p>We are using the ability to filter a dataframe (e.g., <code class="docutils literal notranslate"><span class="pre">df[df['gender']==1]</span></code> to create a dataframe only for males; adding <code class="docutils literal notranslate"><span class="pre">['internet']</span></code> at the end selects only the column for internet). This can be handy to select only relevant data for your story out of a much larger dataset!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">males_internet</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;internet&#39;</span><span class="p">]</span>
+<span class="n">females_internet</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;internet&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each of these new dataframes can then be described and explored as we do with any pandas dataframe, and using <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>, remember, gives us the mean score (handy for our t-test!).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">males_internet</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">females_internet</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see the male mean is 3.02, and the female mean is 2.37.  But we don’t know if, based on the sample, this is a significant difference.  We don’t want to make misleading claims in our story!  So, run a t-test.  (Specifically, an independent samples t-test.)</p>
+<p>The results return the test statistic, p-value, and the degrees of freedom (in that order).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">males_internet</span><span class="p">,</span><span class="n">females_internet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that males use the internet significantly more often than females (that e-08 means the p-value is REALLY tiny).</p>
+<p>We could also do some pretty-printing if we wanted to, to display this more nicely for ourselves.</p>
+<p>The “._f” specification is how many decimal places; the integer before the colon is the position of the output from the default t-test command.</p>
+<p>And again, here we see the use of “.format()” as a method to input something from the ongoing calculation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">males_internet</span><span class="p">,</span><span class="n">females_internet</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t(</span><span class="si">{2:.0f}</span><span class="s1">) = </span><span class="si">{0:.3f}</span><span class="s1">, p = </span><span class="si">{1:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">results</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s look into some continous variables. First of all, let us create one: We make a subset of our dataframe that contains only the media variables, apply the <code class="docutils literal notranslate"><span class="pre">.mean()</span></code> method to it (<code class="docutils literal notranslate"><span class="pre">axis</span> <span class="pre">=</span> <span class="pre">1</span></code> means that we want to apply it row-wise), and then we assign the result of this to a new colum in the original dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;meanmedia&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;radio&#39;</span><span class="p">,</span><span class="s1">&#39;internet&#39;</span><span class="p">,</span><span class="s1">&#39;newspaper&#39;</span><span class="p">,</span><span class="s1">&#39;tv&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#We can then plot this mean media usage (for news) by age, using a scatterplot, e.g.</span>
+<span class="c1">#Feel free to play around with the color parameters, and remember to use help commands to </span>
+<span class="c1">#find out more about formatting these plots.</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;meanmedia&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are obviously many more possibilities here, including running a correlation between age and mean media use, for example, or using ANOVAs if you had more than 2 groups to compare, etc.  We don’t have time to show all of this to you in class, but remember there is a ton of resources online, so you should just search away to find what you need.  If you have problems understanding specific modules or commands you find online, you can approach us during our open lab sessions with questions as to how to apply these techniques to your own data story.</p>
+</div>
+<div class="section" id="before-we-finish-let-s-play-around-with-some-more-graphics">
+<h3>Before we finish, let’s play around with some more graphics<a class="headerlink" href="#before-we-finish-let-s-play-around-with-some-more-graphics" title="Permalink to this headline">¶</a></h3>
+<p>The seaborn library (which we imported at the beginning) offers a lot of cool stuff.</p>
+<p>First, we’ll make a simple correlation matrix of the four media in this datset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corrmatrix</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;internet&#39;</span><span class="p">,</span><span class="s1">&#39;tv&#39;</span><span class="p">,</span><span class="s1">&#39;radio&#39;</span><span class="p">,</span><span class="s1">&#39;newspaper&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corrmatrix</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>But think of ways that are more useful to display this to audiences, who may not want to deal with a correlation matrix.  Heatmaps are one way to do this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corrmatrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This looks okay, but is a bit redundant, so it would be great if we could sort of ‘white out’ the unnecessary (replicated) top triangle of the chart, and use colors that are more intuitive - usually darker means a stronger relationship in a heat map, right?</p>
+<p>Here, note that even Damian (EVEN DAMIAN!) can’t reproduce all of this out of his head.  But if you look around online, or use what we show you here and adapt it, you can do a lot of amazing graphics stuff.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">corrmatrix</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
+<span class="n">mask</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">triu_indices_from</span><span class="p">(</span><span class="n">mask</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">light_palette</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corrmatrix</span><span class="p">,</span><span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="so">
+<h2>So…<a class="headerlink" href="#so" title="Permalink to this headline">¶</a></h2>
+<p>there are lots of possibilities here. Remember: google is your friend here!</p>
+</div>
+<div class="section" id="more-non-graded-homework">
+<h2>More (non-graded) homework :)<a class="headerlink" href="#more-non-graded-homework" title="Permalink to this headline">¶</a></h2>
+<p>Using the Iris dataset from last Wednesday, try the following:</p>
+<ol class="simple">
+<li><p>Describe the dataset</p></li>
+<li><p>Find the value counts of the ‘species’ column</p></li>
+<li><p>Describe the dataset for each of the species separately.</p></li>
+<li><p>Transpose the output for this previous command.</p></li>
+<li><p>Create side-by-side histograms of petal length for each species.</p></li>
+</ol>
+<p>Regardless whether you were able to do that, here’s a really cool graphic to show you. In this case, we’re plotting petal width by petal length, with a different color for each species.  This also uses the seaborn library (indicated by sns).  Because of the nature of this dataset and the values within it, it works quite well.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;species&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;petal_length&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;petal_width&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">iris</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="appendix-multivariate-statistical-analysis">
+<h2>Appendix: Multivariate statistical analysis<a class="headerlink" href="#appendix-multivariate-statistical-analysis" title="Permalink to this headline">¶</a></h2>
+<p>For those who are interested, here’s a brief bit on multivariate analyses.  Here, we’re focusing on the same comparison of internet news use between men and women, but first, let’s see whether that holds when we control for political interest.</p>
+<p>Before we can do that, we have to bring in another datset, however, and join it.  You can access this dataset and save it from the following URL: https://raw.githubusercontent.com/damian0604/bdaca/master/ipynb/intpol.csv</p>
+<p>We’ll talk more about aggregating/merging datasets in a later session, so for now just go with it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intpol</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;intpol.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">combined</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">intpol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">combined</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s do an OLS regression. In order to do so, we need to define a model and then run it. When defining the model, you create the equation in the following manner:</p>
+<ul class="simple">
+<li><p>First you include your dependent variable, followed by the ~ sign</p></li>
+<li><p>Then you include the independent variables (separated by the + sign)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m1</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;internet ~ age + gender + education&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">combined</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m1</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m2</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;internet ~ age + gender + education + intpol&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">combined</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">m2</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also do a test to see whether M2 is better than M1 (it is, in this case:)
+(see also http://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLSResults.compare_lr_test.html?highlight=compare_lr_test )</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m2</span><span class="o">.</span><span class="n">compare_lr_test</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="hexplots">
+<h2>Hexplots<a class="headerlink" href="#hexplots" title="Permalink to this headline">¶</a></h2>
+<p>We have seen scatterplots at work above. Scatterplots are a cool way to show the relationship between two variables, but they mainly work well if both variables have a lot of different values (say, the money people earn in Euros’ (and not in categories!), or the time people spent on Facebook in exact minutes). However, if we have only few possible values (such as the integers from 0 to 7, as in our examples above), the dots in the scatterplot will overlap, and an observation that only occurs one single time looks exactly like an observation that occurs 1000 times.</p>
+<p>A hexplot is very much like a scatterplot, but <em>the more observations overlap at the same (hexagon-shaped) place in the graph, the darker it gets.</em></p>
+<p>To make it even more informative, we add histograms of the two variables in the margin, so that you can immediately get an idea of the distributions. This, again, helps us to understand whether there are just a few (very old, very young) people that behave in some way (no media at all, media every day), or whether it’s a general pattern.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">combined</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">],</span> <span class="n">combined</span><span class="p">[</span><span class="s1">&#39;meanmedia&#39;</span><span class="p">]</span> <span class="p">,</span> 
+              <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hex&quot;</span><span class="p">,</span> <span class="n">stat_func</span><span class="o">=</span><span class="n">kendalltau</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4CB391&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Above, we also displayed a correlation coefficient, Kendall’s tau, in the plot, but we could also use a different one like Pearson’s R or Mann-Whitney’s U.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">mannwhitneyu</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">combined</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">],</span> <span class="n">combined</span><span class="p">[</span><span class="s1">&#39;meanmedia&#39;</span><span class="p">]</span> <span class="p">,</span> 
+              <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hex&quot;</span><span class="p">,</span> <span class="n">stat_func</span><span class="o">=</span><span class="n">pearsonr</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4CB391&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Frederic Hopp<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

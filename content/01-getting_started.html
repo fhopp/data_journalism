@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On Jupyter Notebooks &#8212; Data Journalism</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Accessing Data" href="02-accessing_data.html" />
+    <link rel="prev" title="Schedule" href="schedule.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Journalism</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Course Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="instructors.html">
+   Instructors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Schedule
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   On Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-accessing_data.html">
+   Accessing Data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/content/01-getting_started.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fhopp/data_journalism"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fhopp/data_journalism/issues/new?title=Issue%20on%20page%20%2Fcontent/01-getting_started.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fhopp/data_journalism/master?urlpath=tree/docs/content/01-getting_started.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   On Jupyter Notebooks
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#downloading-this-notebook">
+     Downloading this notebook
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cell-types">
+     Cell types
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-create-a-new-cell-in-anaconda">
+     To create a new cell in Anaconda
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note-that-there-are-various-ways-to-format-things-using-hashtags-allows-for-bigger-bolder-fonts">
+   Note that there are various ways to format things; using hashtags allows for bigger, bolder fonts.
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-hashtags-smaller-fonts-but-still-bigger-and-bolder-than-no-hashtags">
+     More hashtags, smaller fonts, but still bigger and bolder than no-hashtags.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-python-code-in-jupyter">
+     Running Python code in Jupyter
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-modules">
+     Importing Modules
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#methods">
+       Methods
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#functions">
+       Functions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#you-see">
+   You see…
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="on-jupyter-notebooks">
+<h1>On Jupyter Notebooks<a class="headerlink" href="#on-jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
+<p><em>Written by Damian Trilling, Penny Sheets, Frederic Hopp</em></p>
+<p>This notebook is meant to show you what you can do with a Jupyter Notebook. Feel free to play around!</p>
+<div class="section" id="downloading-this-notebook">
+<h2>Downloading this notebook<a class="headerlink" href="#downloading-this-notebook" title="Permalink to this headline">¶</a></h2>
+<p>You can download any notebook from this site simply by navigating to the download button on the top-right corner and then right-clicking on the .ipynb button and selecting “save link as”. This allows you to directly save this notebook to a location on your computer. Alternatively, you can find all of these notebooks on the corresponding <a class="reference external" href="https://github.com/fhopp/data_journalism">Github</a> page. Github is a very popular platform to share code and it has a central role in open-source software development and in open science. People who want to make their data analyses transparent usually share their code here.</p>
+<p>To execute this notebook on your local machine, make sure to open FROM WITHIN a Jupyter Notebook session on your computer.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="cell-types">
+<h2>Cell types<a class="headerlink" href="#cell-types" title="Permalink to this headline">¶</a></h2>
+<p>There are different types of cells: Code cells and Markdown (or “Text” in Colab) cells (there are two more, but they are not necessary for our purposes). Markdown/Text cells contain text, and code cells contain, well, code. You can edit a cell by double-clicking on it.</p>
+<p>To ‘run’ a cell in Anaconda (in the case of markdown/text, to format it), press CTRL-Enter. (You can also hit ‘run’ up in the menu buttons.)</p>
+<p><strong>Note:</strong> Depending on your keyboard layout and configuration, cells might also be exectuable by hitting SHIFT+Enter.</p>
+<p>Try it out now!  Double click on this cell, and then hit CTRL-Enter to format it in Anaconda.</p>
+<p>(<strong>Tip</strong>  If you press CTRL-Enter and nothing happens, then it most likely means you’re not in a Markdown/Text cell, but some other kind of cell.)</p>
+<p>If you want to know more about formatting with markdown, have a look at
+https://guides.github.com/features/mastering-markdown/</p>
+<p>This is a markdown cell.  Write whatever you want in it.</p>
+</div>
+<div class="section" id="to-create-a-new-cell-in-anaconda">
+<h2>To create a new cell in Anaconda<a class="headerlink" href="#to-create-a-new-cell-in-anaconda" title="Permalink to this headline">¶</a></h2>
+<p>…You hit the ‘plus sign’ button up on the top left of jupyter notebook, at the toolbar.  By default, this is a code cell.  But you can change it to a markdown cell at the dropdown menu to the right of that same toolbar.  Try creating a new markdown cell below this.  Don’t forget control+enter to format it.  (You can also move cells around, using the up and down arrows up in the menus above.)</p>
+</div>
+</div>
+<div class="section" id="note-that-there-are-various-ways-to-format-things-using-hashtags-allows-for-bigger-bolder-fonts">
+<h1>Note that there are various ways to format things; using hashtags allows for bigger, bolder fonts.<a class="headerlink" href="#note-that-there-are-various-ways-to-format-things-using-hashtags-allows-for-bigger-bolder-fonts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="more-hashtags-smaller-fonts-but-still-bigger-and-bolder-than-no-hashtags">
+<h2>More hashtags, smaller fonts, but still bigger and bolder than no-hashtags.<a class="headerlink" href="#more-hashtags-smaller-fonts-but-still-bigger-and-bolder-than-no-hashtags" title="Permalink to this headline">¶</a></h2>
+<p>Try creating your new markdown/text cell below here.</p>
+</div>
+<div class="section" id="running-python-code-in-jupyter">
+<h2>Running Python code in Jupyter<a class="headerlink" href="#running-python-code-in-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>Now we can start with some actual python commands, actual code, instead of markdown/text.</p>
+<p>Let’s try to print something… don’t forget to hit control+enter to run the command (or run it through a button).</p>
+<p>Once a line of code has been run, a number appears next to it (in sequential order).  This can be very useful for knowing whether you’ve run code already or not - relevant to when we install certain packages, e.g., or you search for or name specific datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now create your own print command in the next cell.  Print whatever you want.  The key is to make sure you format the command correctly - you need parentheses and quotation marks, and to be sure all are closed out afterward. Python helps you with this quite a bit (for example, look at how the colors change if you format something (in-)correctly), but, you have to practice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Note, in a code cell, you can also preface a line of text with a hashtag, and python will ignore it as code.</span>
+<span class="c1">#This can be useful for very short notes within particular code cells, rather than creating separate markdown/text cells.</span>
+<span class="c1">#But watch the lenghth of your cells!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python also allows us to do very simple calculations.  Just tell it the values and make it do the work:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<p>Many commands have output, but some won’t (just loading a package of tools, or a dataset, e.g.).  But remember to check the number next to the cell to see if you’ve actually run those cells or not.  Often, you have to start back at the begining because you missed a simple but important step.</p>
+<p><strong>Good to know:</strong> you can always clear what you’ve done and re-run various (or all) cells, by using the “cell” menu in Anaconda.</p>
+<p><strong>Note</strong> If you clear everything, then all imported data and modules (see next point) are also cleared.  So you can’t just start running your commands in the middle of the notebook; you’ll often have to go back to the earlier cells to start from scratch.  (Since the code is already written, this takes literally only seconds sometimes to get back to where you were.)</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="importing-modules">
+<h2>Importing Modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">¶</a></h2>
+<p>Because we want to do a lot more than printing words and running simple calculations, we can import modules that help us do fancier things – and in particular, help us to read data easily.  Our main module in this course is called “pandas”.  Whenever you import anything into Python, it needs to have a name.  You can either leave the original name - pandas - (by just typing <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span></code>) or shorten that name so you don’t have to type it again and again and again.  So one shorthand that is commonly used is <code class="docutils literal notranslate"><span class="pre">pd</span></code> for pandas.  Try importing it now with the following command.  You’ll see that no output appears, but you should - if you’ve run it correctly - end up with a number next to the command line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll explain a bit more about pandas in class, but, pandas basically allows us to work with data more easily.  So anytime you see a command that follows here that has ‘pd’ in the line of code, it means pandas is at work.</p>
+<p>Here, pandas can help us read in a dataset from the web, just a random dataset that is often used to illustrate things like statistical programming. The command is simply <code class="docutils literal notranslate"><span class="pre">pd.read_</span></code> and then the type of the file, and its url.  In this case, it is a csv file, but python can also read many other types of files–we’ll address more of those in a minute.</p>
+<p>In this case, the dataset comes from the url listed here, and, because the dataset is originally called ‘iris’, we will also tell python to call the dataset <code class="docutils literal notranslate"><span class="pre">iris</span></code>.  But we could call it anything else we want.</p>
+<p>As for the second line of code here, if we just type the name of the dataset after having read it into jupyter, it also displays a bunch of the dataset for us to see.  This is handy, as long as you don’t have insanely huge datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv&#39;</span><span class="p">)</span>
+<span class="n">iris</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<p>In Python, basically everything is an “object”. That’s also why we assign names to them: It makes the objects re-usable. In the cell above, we created an object (more specifically, a pandas dataframe) that we called <code class="docutils literal notranslate"><span class="pre">iris</span></code>.</p>
+<p>Objects can have “methods” that are associated with them. Pandas dataframes, for example, have some methods that allow you to directly run some simple analyses on them. One of them is <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>.</p>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">()</span></code> at the end. If you want to “call” (= execute, run) a method, you need to end with these parentheses. They also allow you to give some additional “arguments” (parameters, options). Compare the following two method calls:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.843333</td>
+      <td>3.057333</td>
+      <td>3.758000</td>
+      <td>1.199333</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.828066</td>
+      <td>0.435866</td>
+      <td>1.765298</td>
+      <td>0.762238</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>4.300000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.100000</td>
+      <td>2.800000</td>
+      <td>1.600000</td>
+      <td>0.300000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.800000</td>
+      <td>3.000000</td>
+      <td>4.350000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.400000</td>
+      <td>3.300000</td>
+      <td>5.100000</td>
+      <td>1.800000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>7.900000</td>
+      <td>4.400000</td>
+      <td>6.900000</td>
+      <td>2.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">percentiles</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.843333</td>
+      <td>3.057333</td>
+      <td>3.758000</td>
+      <td>1.199333</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.828066</td>
+      <td>0.435866</td>
+      <td>1.765298</td>
+      <td>0.762238</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>4.300000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>10%</th>
+      <td>4.800000</td>
+      <td>2.500000</td>
+      <td>1.400000</td>
+      <td>0.200000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.800000</td>
+      <td>3.000000</td>
+      <td>4.350000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>90%</th>
+      <td>6.900000</td>
+      <td>3.610000</td>
+      <td>5.800000</td>
+      <td>2.200000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>7.900000</td>
+      <td>4.400000</td>
+      <td>6.900000</td>
+      <td>2.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>One more note: as with SPSS and syntax help, python is happy to help you.  You can type a command and then put a question mark after it, and it’ll explain that command to you.  Try it here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>iris.describe<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
+iris<span class=" -Color -Color-Blue">.</span>describe<span class=" -Color -Color-Blue">(</span>
+    percentiles<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    include<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    exclude<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    datetime_is_numeric<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+<span class=" -Color -Color-Blue">)</span> <span class=" -Color -Color-Blue">-&gt;</span> <span class=" -Color -Color-Blue">&#39;FrameOrSeries&#39;</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Generate descriptive statistics.
+
+Descriptive statistics include those that summarize the central
+tendency, dispersion and shape of a
+dataset&#39;s distribution, excluding ``NaN`` values.
+
+Analyzes both numeric and object series, as well
+as ``DataFrame`` column sets of mixed data types. The output
+will vary depending on what is provided. Refer to the notes
+below for more detail.
+
+Parameters
+----------
+percentiles : list-like of numbers, optional
+    The percentiles to include in the output. All should
+    fall between 0 and 1. The default is
+    ``[.25, .5, .75]``, which returns the 25th, 50th, and
+    75th percentiles.
+include : &#39;all&#39;, list-like of dtypes or None (default), optional
+    A white list of data types to include in the result. Ignored
+    for ``Series``. Here are the options:
+
+    - &#39;all&#39; : All columns of the input will be included in the output.
+    - A list-like of dtypes : Limits the results to the
+      provided data types.
+      To limit the result to numeric types submit
+      ``numpy.number``. To limit it instead to object columns submit
+      the ``numpy.object`` data type. Strings
+      can also be used in the style of
+      ``select_dtypes`` (e.g. ``df.describe(include=[&#39;O&#39;])``). To
+      select pandas categorical columns, use ``&#39;category&#39;``
+    - None (default) : The result will include all numeric columns.
+exclude : list-like of dtypes or None (default), optional,
+    A black list of data types to omit from the result. Ignored
+    for ``Series``. Here are the options:
+
+    - A list-like of dtypes : Excludes the provided data types
+      from the result. To exclude numeric types submit
+      ``numpy.number``. To exclude object columns submit the data
+      type ``numpy.object``. Strings can also be used in the style of
+      ``select_dtypes`` (e.g. ``df.describe(include=[&#39;O&#39;])``). To
+      exclude pandas categorical columns, use ``&#39;category&#39;``
+    - None (default) : The result will exclude nothing.
+datetime_is_numeric : bool, default False
+    Whether to treat datetime dtypes as numeric. This affects statistics
+    calculated for the column. For DataFrame input, this also
+    controls whether datetime columns are included by default.
+
+    .. versionadded:: 1.1.0
+
+Returns
+-------
+Series or DataFrame
+    Summary statistics of the Series or Dataframe provided.
+
+See Also
+--------
+DataFrame.count: Count number of non-NA/null observations.
+DataFrame.max: Maximum of the values in the object.
+DataFrame.min: Minimum of the values in the object.
+DataFrame.mean: Mean of the values.
+DataFrame.std: Standard deviation of the observations.
+DataFrame.select_dtypes: Subset of a DataFrame including/excluding
+    columns based on their dtype.
+
+Notes
+-----
+For numeric data, the result&#39;s index will include ``count``,
+``mean``, ``std``, ``min``, ``max`` as well as lower, ``50`` and
+upper percentiles. By default the lower percentile is ``25`` and the
+upper percentile is ``75``. The ``50`` percentile is the
+same as the median.
+
+For object data (e.g. strings or timestamps), the result&#39;s index
+will include ``count``, ``unique``, ``top``, and ``freq``. The ``top``
+is the most common value. The ``freq`` is the most common value&#39;s
+frequency. Timestamps also include the ``first`` and ``last`` items.
+
+If multiple object values have the highest count, then the
+``count`` and ``top`` results will be arbitrarily chosen from
+among those with the highest count.
+
+For mixed data types provided via a ``DataFrame``, the default is to
+return only an analysis of numeric columns. If the dataframe consists
+only of object and categorical data without any numeric columns, the
+default is to return an analysis of both the object and categorical
+columns. If ``include=&#39;all&#39;`` is provided as an option, the result
+will include a union of attributes of each type.
+
+The `include` and `exclude` parameters can be used to limit
+which columns in a ``DataFrame`` are analyzed for the output.
+The parameters are ignored when analyzing a ``Series``.
+
+Examples
+--------
+Describing a numeric ``Series``.
+
+&gt;&gt;&gt; s = pd.Series([1, 2, 3])
+&gt;&gt;&gt; s.describe()
+count    3.0
+mean     2.0
+std      1.0
+min      1.0
+25%      1.5
+50%      2.0
+75%      2.5
+max      3.0
+dtype: float64
+
+Describing a categorical ``Series``.
+
+&gt;&gt;&gt; s = pd.Series([&#39;a&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;])
+&gt;&gt;&gt; s.describe()
+count     4
+unique    3
+top       a
+freq      2
+dtype: object
+
+Describing a timestamp ``Series``.
+
+&gt;&gt;&gt; s = pd.Series([
+...   np.datetime64(&quot;2000-01-01&quot;),
+...   np.datetime64(&quot;2010-01-01&quot;),
+...   np.datetime64(&quot;2010-01-01&quot;)
+... ])
+&gt;&gt;&gt; s.describe(datetime_is_numeric=True)
+count                      3
+mean     2006-09-01 08:00:00
+min      2000-01-01 00:00:00
+25%      2004-12-31 12:00:00
+50%      2010-01-01 00:00:00
+75%      2010-01-01 00:00:00
+max      2010-01-01 00:00:00
+dtype: object
+
+Describing a ``DataFrame``. By default only numeric fields
+are returned.
+
+&gt;&gt;&gt; df = pd.DataFrame({&#39;categorical&#39;: pd.Categorical([&#39;d&#39;,&#39;e&#39;,&#39;f&#39;]),
+...                    &#39;numeric&#39;: [1, 2, 3],
+...                    &#39;object&#39;: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+...                   })
+&gt;&gt;&gt; df.describe()
+       numeric
+count      3.0
+mean       2.0
+std        1.0
+min        1.0
+25%        1.5
+50%        2.0
+75%        2.5
+max        3.0
+
+Describing all columns of a ``DataFrame`` regardless of data type.
+
+&gt;&gt;&gt; df.describe(include=&#39;all&#39;)  # doctest: +SKIP
+       categorical  numeric object
+count            3      3.0      3
+unique           3      NaN      3
+top              f      NaN      a
+freq             1      NaN      1
+mean           NaN      2.0    NaN
+std            NaN      1.0    NaN
+min            NaN      1.0    NaN
+25%            NaN      1.5    NaN
+50%            NaN      2.0    NaN
+75%            NaN      2.5    NaN
+max            NaN      3.0    NaN
+
+Describing a column from a ``DataFrame`` by accessing it as
+an attribute.
+
+&gt;&gt;&gt; df.numeric.describe()
+count    3.0
+mean     2.0
+std      1.0
+min      1.0
+25%      1.5
+50%      2.0
+75%      2.5
+max      3.0
+Name: numeric, dtype: float64
+
+Including only numeric columns in a ``DataFrame`` description.
+
+&gt;&gt;&gt; df.describe(include=[np.number])
+       numeric
+count      3.0
+mean       2.0
+std        1.0
+min        1.0
+25%        1.5
+50%        2.0
+75%        2.5
+max        3.0
+
+Including only string columns in a ``DataFrame`` description.
+
+&gt;&gt;&gt; df.describe(include=[object])  # doctest: +SKIP
+       object
+count       3
+unique      3
+top         a
+freq        1
+
+Including only categorical columns from a ``DataFrame`` description.
+
+&gt;&gt;&gt; df.describe(include=[&#39;category&#39;])
+       categorical
+count            3
+unique           3
+top              d
+freq             1
+
+Excluding numeric columns from a ``DataFrame`` description.
+
+&gt;&gt;&gt; df.describe(exclude=[np.number])  # doctest: +SKIP
+       categorical object
+count            3      3
+unique           3      3
+top              f      a
+freq             1      1
+
+Excluding object columns from a ``DataFrame`` description.
+
+&gt;&gt;&gt; df.describe(exclude=[object])  # doctest: +SKIP
+       categorical  numeric
+count            3      3.0
+unique           3      NaN
+top              f      NaN
+freq             1      NaN
+mean           NaN      2.0
+std            NaN      1.0
+min            NaN      1.0
+25%            NaN      1.5
+50%            NaN      2.0
+75%            NaN      2.5
+max            NaN      3.0
+<span class=" -Color -Color-Red">File:</span>      ~/opt/anaconda3/envs/dj21/lib/python3.7/site-packages/pandas/core/generic.py
+<span class=" -Color -Color-Red">Type:</span>      method
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<p>Next to methods, there are also functions. Just like methods, functions take one or more “arguments” (i.e., some input) between <code class="docutils literal notranslate"><span class="pre">()</span></code>. They then return some output. But unlike methods, they are not directly associated with an object.</p>
+<p>You already know one function: <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
+<p>Let’s try out some functions.  First, create two objects to play with:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mystring</span> <span class="o">=</span> <span class="s2">&quot;Hello world&quot;</span>
+<span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, try out the following functions and try to explain what they do to those objects.  What are these functions trying to do?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">mystring</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s combine these techniques.
+Each string has the method <code class="docutils literal notranslate"><span class="pre">.split()</span></code> that splits it into words. With this knowledge, can you calculate the number of words in <code class="docutils literal notranslate"><span class="pre">mystring</span></code> by using the output of this method as input for the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function?</p>
+</div>
+</div>
+</div>
+<div class="section" id="you-see">
+<h1>You see…<a class="headerlink" href="#you-see" title="Permalink to this headline">¶</a></h1>
+<p>It’s actually not that difficult. It can seem overwhelming to not know the codes for things, but, that’s what we’re going to teach you.  And there are tons of resources online to help, as well (check the resources tab on the left!).</p>
+<p>What’s wonderful about jupyter notebook is that we have code, results, and explanation/notes in one single file.  You will also format your assignments this way, using markdown cells to provide notes.  The ‘output’ or results don’t matter that much in the file itself, because we can always re-run the code each time we open your files.  But the markdown and code cells are essential.</p>
+<p>We are looking forward to exploring the possibilities of Jupyter Notebook, Python, and Pandas with you in the next weeks!</p>
+<hr class="docutils" />
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="schedule.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Schedule</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="02-accessing_data.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Accessing Data</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Frederic Hopp<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
