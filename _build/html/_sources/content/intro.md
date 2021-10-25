@@ -12,11 +12,11 @@ This course combines theoretical discussion of these developments and practical 
 
 ## Goals
 
-Upon completion of this course, students should be able to...
-
-- find an interesting and compelling story in a dataset
-- apply the techniques learned in this course to process, analyze, and visualize the data;
-- translate these findings into a journalistic piece of 750-1000 words.
+Upon completion of this course, students should be able to demonstrate that they…
+- are able to find an interesting and compelling story in a dataset;
+- are able to apply basic python programming techniques learned in this course to process, analyze, and visualize the data;
+- are able to translate these skills and techniques into an original piece of data journalism of 750-1000 words;
+- are able, in groups, to identify an online tool relevant to data journalism and to teach their classmates how to use that tool in a short presentation and handout.
 
 
 ## Course structure
@@ -47,6 +47,8 @@ In particular, always include:
 Keep in mind that we do not offer any help regarded to specifics of Microsoft Windows or MacOS (such as file locations etc.) 
 
 __The easier you make it for us to see/reproduce your error, the more likely you are to get quick help.__
+
+### Asking Questions via Hypothesis.io
 
 A very effective way to ask questions related to code or statistical analysis is via the hypothesis.io annotation tool. This allows you to simply highlight a portion of code (or text) in our notebooks and attach a public comment or question. Simply create an account at https://web.hypothes.is/ and start highlighting in our online book. 
 Hint: This is also a great way to track personal annotations that only you can see. 

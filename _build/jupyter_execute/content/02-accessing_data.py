@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Accessing Data
+# # 2. Accessing Data
 # 
 # *Damian Trilling and Penny Sheets*
 # 
@@ -84,8 +84,6 @@ get_ipython().run_line_magic('pinfo', 'iris.sepal_length.hist')
 
 # stockdata = pd.read_csv('stock.csv') # if you downloaded and saved it locally
 stockdata = pd.read_csv('https://raw.githubusercontent.com/damian0604/bdaca/master/ipynb/stock.csv') # when reading directly from source (online)
-# or, for google colab:
-# stockdata = pd.read_csv('/mnt/My Drive/datajournalism/stock.csv')
 
 
 # Let's have a look...

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # On Jupyter Notebooks
+# # 1. On Jupyter Notebooks
 # 
 # *Written by Damian Trilling, Penny Sheets, Frederic Hopp*
 # 
@@ -17,7 +17,7 @@
 
 # ## Cell types
 # 
-# There are different types of cells: Code cells and Markdown (or "Text" in Colab) cells (there are two more, but they are not necessary for our purposes). Markdown/Text cells contain text, and code cells contain, well, code. You can edit a cell by double-clicking on it. 
+# There are different types of cells: Code cells and Markdown cells (there are two more, but they are not necessary for our purposes). Markdown/Text cells contain text, and code cells contain, well, code. You can edit a cell by double-clicking on it. 
 # 
 # 
 # To 'run' a cell in Anaconda (in the case of markdown/text, to format it), press CTRL-Enter. (You can also hit 'run' up in the menu buttons.)
