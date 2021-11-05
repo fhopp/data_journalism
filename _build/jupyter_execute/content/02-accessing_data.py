@@ -12,7 +12,7 @@
 # ### Importing Modules
 # It is a good custom to import all modules that you need at the beginning of your notebook. We'll explain in the lesson (or in subsequent weeks) what these modules do.
 
-# In[1]:
+# In[ ]:
 
 
 import pandas as pd
@@ -31,14 +31,14 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 # Remember what we did in the first part of class today, working with that Iris dataset? We used pandas to read a CSV file directly from the web and gave its descriptive statistics.
 
-# In[2]:
+# In[ ]:
 
 
 iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
 iris
 
 
-# In[3]:
+# In[ ]:
 
 
 iris.describe()
@@ -46,7 +46,7 @@ iris.describe()
 
 # If we want to, we could also plot a histogram:
 
-# In[4]:
+# In[ ]:
 
 
 iris.sepal_length.hist()
@@ -54,7 +54,7 @@ iris.sepal_length.hist()
 
 # Let's say you want to configure that histogram differently, or get axis lables, etc.  Use the help menu to see how to do that:
 
-# In[5]:
+# In[ ]:
 
 
 get_ipython().run_line_magic('pinfo', 'iris.sepal_length.hist')
@@ -79,7 +79,7 @@ get_ipython().run_line_magic('pinfo', 'iris.sepal_length.hist')
 # 
 # We can then open it in the same way as we did before by providing its filename:
 
-# In[6]:
+# In[ ]:
 
 
 # stockdata = pd.read_csv('stock.csv') # if you downloaded and saved it locally
@@ -88,7 +88,7 @@ stockdata = pd.read_csv('https://raw.githubusercontent.com/damian0604/bdaca/mast
 
 # Let's have a look...
 
-# In[7]:
+# In[ ]:
 
 
 stockdata
@@ -100,7 +100,7 @@ stockdata
 # 
 # We are using a method here called 'plot', provided by pandas.
 
-# In[8]:
+# In[ ]:
 
 
 stockdata['Low'].plot()
@@ -109,7 +109,7 @@ stockdata['Low'].plot()
 # ## Trouble with your CSV files?
 # For more info on how to format your 'read_csv' commands, or if you're running into problems related to the comma-versus-tab-versus-semicolon issue, look at the help function:
 
-# In[9]:
+# In[ ]:
 
 
 get_ipython().run_line_magic('pinfo', 'pd.read_csv')
@@ -121,7 +121,7 @@ get_ipython().run_line_magic('pinfo', 'pd.read_csv')
 #  
 #  First, load the URL into your browswer in another tab to look at the original page.
 
-# In[10]:
+# In[ ]:
 
 
 alltables = pd.read_html('https://en.wikipedia.org/wiki/Eredivisie')
@@ -129,7 +129,7 @@ alltables = pd.read_html('https://en.wikipedia.org/wiki/Eredivisie')
 
 # Look at the following code carefully to see what we're doing here. We're introducing a new method ("format") which works for any string; this fills in a value between curly brackets. We also are using function we already know from the first part of today's lesson: "len". 
 
-# In[11]:
+# In[ ]:
 
 
 print('We have downloaded {} tables'.format(len(alltables)))
@@ -139,7 +139,7 @@ print('We have downloaded {} tables'.format(len(alltables)))
 # 
 # **The point here is that there are multiple ways to do many things in python; we just want you to master one way and know why it's useful to you.**
 
-# In[12]:
+# In[ ]:
 
 
 print('We have downloaded', len(alltables), 'tables.')
@@ -147,7 +147,7 @@ print('We have downloaded', len(alltables), 'tables.')
 
 # Let's look at, say, the third table in this set.
 
-# In[13]:
+# In[ ]:
 
 
 alltables[2]
@@ -159,7 +159,7 @@ alltables[2]
 
 # Now we can save this table to a csv file, which we will call 'test':
 
-# In[14]:
+# In[ ]:
 
 
 alltables[2].to_csv('test.csv')
@@ -199,13 +199,13 @@ alltables[2].to_csv('test.csv')
 # 
 # **Where am I?** If you are unsure where your notebook is running from, simply use the following cell magic to get the path to your current notebook:
 
-# In[40]:
+# In[ ]:
 
 
 get_ipython().system('pwd')
 
 
-# In[15]:
+# In[ ]:
 
 
 pd.read_json('../datasets/EtenDrinken.json')
@@ -216,7 +216,7 @@ pd.read_json('../datasets/EtenDrinken.json')
 # 
 # So, let's read the JSON file into a list of dictionaries instead, since most of these columns seem to include dictionaries. We're going to call it "eat", this new list of dictionaries, because we know from the site this has something to do with eating and drinking.
 
-# In[16]:
+# In[ ]:
 
 
 eat = json.load(open('../datasets/EtenDrinken.json'))
@@ -230,13 +230,13 @@ eat = json.load(open('../datasets/EtenDrinken.json'))
 
 # Let's check what `eat` is and what is in there
 
-# In[17]:
+# In[ ]:
 
 
 type(eat)
 
 
-# In[18]:
+# In[ ]:
 
 
 len(eat)
@@ -244,7 +244,7 @@ len(eat)
 
 # Maybe let's just look at the *first* restaurant
 
-# In[19]:
+# In[ ]:
 
 
 pprint(eat[0])
@@ -252,7 +252,7 @@ pprint(eat[0])
 #but nicer than if you do just a plain old print (try it out!)
 
 
-# In[20]:
+# In[ ]:
 
 
 #do your normal print command here to see the value of pprint.
@@ -260,13 +260,13 @@ pprint(eat[0])
 
 # We can now directly access the elements we are intereted in:
 
-# In[21]:
+# In[ ]:
 
 
 eat[0]['details']['en']['title']
 
 
-# In[22]:
+# In[ ]:
 
 
 eat[0]['location']
@@ -274,7 +274,7 @@ eat[0]['location']
 
 # We see that location is itself a dict with a number of key:value pairs. One of these is the zipcode.  So if we want specifically the zipcode for the first restaurant, we have to enter both levels, essentially telling python to call up the first dict, and then look within that one for the second.
 
-# In[23]:
+# In[ ]:
 
 
 eat[0]['location']['zipcode']
@@ -284,7 +284,7 @@ eat[0]['location']['zipcode']
 # 
 # Once we know what we want, we can replace our specific restaurant `eat[0]` by a generic `restaurant` within a *loop*.
 
-# In[24]:
+# In[ ]:
 
 
 # let's get all zipcodes
@@ -296,7 +296,7 @@ for restaurant in eat:
     zipcodes.append(restaurant['location']['zipcode'])
 
 
-# In[25]:
+# In[ ]:
 
 
 len(zipcodes)
@@ -307,7 +307,7 @@ len(zipcodes)
 # 
 # Next, let's use a counter tool (something we imported above) to count the 20 most frequent zipcodes in this database. You could do 20, or 5, or 10, or 100 - whatever you want.
 
-# In[26]:
+# In[ ]:
 
 
 Counter(zipcodes).most_common(20)
@@ -315,7 +315,7 @@ Counter(zipcodes).most_common(20)
 
 # For my little story, however, this data is too specific - the letters at the end of each zipcode make for too detailed a story.  There is a way to cut off the letters and just use the four numbers of each zipcode.  Again, here don't worry about knowing all this code, but, worry about understanding the logic here, and thinking how (eventually) you might want to apply it to your own datasets.
 
-# In[27]:
+# In[ ]:
 
 
 zipcodes_without_letters = [z[0:4] for z in zipcodes]
@@ -332,7 +332,7 @@ Counter(zipcodes_without_letters).most_common(20)
 # 
 # If there is a specific URL we want to access (like this one we have chosen ahead of time), we can do so as follows:
 
-# In[28]:
+# In[ ]:
 
 
 data = requests.get('https://opendata.cbs.nl/ODataApi/odata/37556eng/TypedDataSet').json()
@@ -340,7 +340,7 @@ data = requests.get('https://opendata.cbs.nl/ODataApi/odata/37556eng/TypedDataSe
 
 # Let's try some things out to make sense of this data:
 
-# In[29]:
+# In[ ]:
 
 
 pd.DataFrame(data)
@@ -348,7 +348,7 @@ pd.DataFrame(data)
 
 # What that showed us is that there are 119 rows, with 2 columns.  The first column seems only to be about metadata and URLs, which isn't very interesting.  The second column looks like a series of dicts that might be more interesting for us.  Let's confirm what these two columns are:
 
-# In[30]:
+# In[ ]:
 
 
 data.keys()
@@ -356,13 +356,13 @@ data.keys()
 
 # Now let's focus only on the 'value' column, and make a new dataframe out of that.
 
-# In[31]:
+# In[ ]:
 
 
 df = pd.DataFrame(data['value'])
 
 
-# In[32]:
+# In[ ]:
 
 
 df
@@ -372,13 +372,13 @@ df
 # 
 # But there are 199 columns!  How can we know what's in this dataset then?  We can create a list using the '.columns' property associated with a dataframe.  This allows us to transform the index into a list to see everything in it:
 
-# In[33]:
+# In[ ]:
 
 
 list(df.columns)    
 
 
-# In[34]:
+# In[ ]:
 
 
 #two other ways to tell us ABOUT the columns are this, but these abbreviate the list of columns so we can't read it.
@@ -386,7 +386,7 @@ df.columns
 df.keys()
 
 
-# In[35]:
+# In[ ]:
 
 
 # So let's choose one column specifically - 'Periods' and figure out more about it.
@@ -394,7 +394,7 @@ df.keys()
 df['Periods']
 
 
-# In[36]:
+# In[ ]:
 
 
 # It would be really nice if our row numbers ('index') wouldn't be a number between 0 and 118, would 
@@ -404,14 +404,14 @@ df['Periods']
 df.index = df['Periods'].map(lambda x: int(x[:4]))
 
 
-# In[37]:
+# In[ ]:
 
 
 #Now let's check our work:
 df
 
 
-# In[38]:
+# In[ ]:
 
 
 # Now we can plot it, using that same command we used above - plotting a specific value (column) by the index.

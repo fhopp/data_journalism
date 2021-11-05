@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Statistics &amp; Analyzing Numbers &#8212; Data Journalism</title>
+    <title>3. Basic Statistics &#8212; Data Journalism</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,6 +52,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 1" href="slides/week1.html" />
+    <link rel="prev" title="2. Accessing Data" href="02-accessing_data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -107,15 +109,32 @@
   Notebooks
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-getting_started.html">
-   On Jupyter Notebooks
+   1. On Jupyter Notebooks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02-accessing_data.html">
-   Accessing Data
+   2. Accessing Data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Basic Statistics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Slides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="slides/week1.html">
+   Week 1
   </a>
  </li>
 </ul>
@@ -250,11 +269,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#in-case-you-work-with-google-colab-see-also-first-notebook">
-   In case you work with google colab (see also first notebook):
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#explore-the-dataset">
    Explore the dataset
   </a>
@@ -324,8 +338,8 @@
         
               <div>
                 
-  <div class="section" id="basic-statistics-analyzing-numbers">
-<h1>Basic Statistics &amp; Analyzing Numbers<a class="headerlink" href="#basic-statistics-analyzing-numbers" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="basic-statistics">
+<h1>3. Basic Statistics<a class="headerlink" href="#basic-statistics" title="Permalink to this headline">¶</a></h1>
 <p><em>Damian Trilling and Penny Sheets</em></p>
 <p>This notebook is designed to show you some ways to use python for basic statistical analysis of numbers, and to explore some methods that go beyond <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> or <code class="docutils literal notranslate"><span class="pre">Counter()</span></code>, which we used last week. In particular, we are going to look into analyzing numerical data. Next week, we will focus on textual data.</p>
 <p>The dataset we use in this example is a subset of the data presented in Trilling, D. (2013). <em>Following the news. Patterns of online and offline news use</em>. PhD thesis, University of Amsterdam. http://hdl.handle.net/11245/1.394551</p>
@@ -354,27 +368,10 @@
 <p>We will read a dataset based on Trilling (2013). It contains some sociodemographic variables as well as the number of days the respondent uses a specific medium to access information about news and current affairs.</p>
 <p>You should download the dataset (with the ‘save page as’ method, making sure .txt isn’t appended to the file extension) into the same folder as this jupyter notebook: https://raw.githubusercontent.com/damian0604/bdaca/master/ipynb/mediause.csv</p>
 <p>Remember that the ‘df’ here is arbitrary; last week we used the names ‘iris’ and ‘stockdata’ and others; this week we’re going more basic and just saying ‘df’ for dataframe.</p>
-</div>
-<div class="section" id="in-case-you-work-with-google-colab-see-also-first-notebook">
-<h2>In case you work with google colab (see also first notebook):<a class="headerlink" href="#in-case-you-work-with-google-colab-see-also-first-notebook" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Upload the CSV file to your Google Drive in the folder <code class="docutils literal notranslate"><span class="pre">datajournalism</span></code></p></li>
-<li><p>Mount google drive (for your convenience, the command is shown in the cell below - just remove the hashtags that “comment it out”</p></li>
-<li><p>Everywhere where we say sth like <code class="docutils literal notranslate"><span class="pre">'mediause.csv'</span></code>, prefix it with <code class="docutils literal notranslate"><span class="pre">/mnt/My</span> <span class="pre">Drive/datajournalism</span></code> and write, for instance, <code class="docutils literal notranslate"><span class="pre">/mnt/My</span> <span class="pre">Drive/datajournalism/mediause.csv</span></code></p></li>
-</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from google.colab import drive</span>
-<span class="c1">#drive.mount(&#39;/mnt&#39;)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;mediause.csv&#39;</span><span class="p">)</span>
-<span class="c1"># or, for google colab:</span>
-<span class="c1"># df = pd.read_csv(&#39;/mnt/My Drive/datajournalism/mediause.csv&#39;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df = pd.read_csv(&#39;mediause.csv&#39;) # if you downloaded and stored the file locally </span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/damian0604/bdaca/master/ipynb/mediause.csv&#39;</span><span class="p">)</span> <span class="c1"># if directly reading it from source </span>
 </pre></div>
 </div>
 </div>
@@ -711,6 +708,13 @@ df.groupby<span class="o">?</span>
 <p>Regardless whether you were able to do that, here’s a really cool graphic to show you. In this case, we’re plotting petal width by petal length, with a different color for each species.  This also uses the seaborn library (indicated by sns).  Because of the nature of this dataset and the values within it, it works quite well.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;species&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
@@ -738,7 +742,8 @@ df.groupby<span class="o">?</span>
 <p>We’ll talk more about aggregating/merging datasets in a later session, so for now just go with it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intpol</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;intpol.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># intpol=pd.read_csv(&#39;intpol.csv&#39;) # if you stored it locally </span>
+<span class="n">intpol</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/damian0604/bdaca/master/ipynb/intpol.csv&#39;</span><span class="p">)</span> <span class="c1"># if reading it directly from the website</span>
 </pre></div>
 </div>
 </div>
@@ -802,23 +807,7 @@ df.groupby<span class="o">?</span>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">combined</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">],</span> <span class="n">combined</span><span class="p">[</span><span class="s1">&#39;meanmedia&#39;</span><span class="p">]</span> <span class="p">,</span> 
-              <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hex&quot;</span><span class="p">,</span> <span class="n">stat_func</span><span class="o">=</span><span class="n">kendalltau</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4CB391&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Above, we also displayed a correlation coefficient, Kendall’s tau, in the plot, but we could also use a different one like Pearson’s R or Mann-Whitney’s U.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span><span class="p">,</span> <span class="n">mannwhitneyu</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">combined</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">],</span> <span class="n">combined</span><span class="p">[</span><span class="s1">&#39;meanmedia&#39;</span><span class="p">]</span> <span class="p">,</span> 
-              <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hex&quot;</span><span class="p">,</span> <span class="n">stat_func</span><span class="o">=</span><span class="n">pearsonr</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4CB391&quot;</span><span class="p">)</span>
+              <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hex&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#4CB391&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -855,6 +844,24 @@ df.groupby<span class="o">?</span>
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="02-accessing_data.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">2. Accessing Data</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="slides/week1.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Week 1</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

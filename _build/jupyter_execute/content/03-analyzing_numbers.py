@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Basic Statistics & Analyzing Numbers
+# # 3. Basic Statistics
 # 
 # *Damian Trilling and Penny Sheets*
 # 
@@ -37,24 +37,11 @@ import numpy as np
 # 
 # Remember that the 'df' here is arbitrary; last week we used the names 'iris' and 'stockdata' and others; this week we're going more basic and just saying 'df' for dataframe.
 
-# ### In case you work with google colab (see also first notebook):
-# 1. Upload the CSV file to your Google Drive in the folder `datajournalism`
-# 2. Mount google drive (for your convenience, the command is shown in the cell below - just remove the hashtags that "comment it out"
-# 3. Everywhere where we say sth like `'mediause.csv'`, prefix it with `/mnt/My Drive/datajournalism` and write, for instance, `/mnt/My Drive/datajournalism/mediause.csv`
-
 # In[ ]:
 
 
-#from google.colab import drive
-#drive.mount('/mnt')
-
-
-# In[ ]:
-
-
-df = pd.read_csv('mediause.csv')
-# or, for google colab:
-# df = pd.read_csv('/mnt/My Drive/datajournalism/mediause.csv')
+# df = pd.read_csv('mediause.csv') # if you downloaded and stored the file locally 
+df = pd.read_csv('https://raw.githubusercontent.com/damian0604/bdaca/master/ipynb/mediause.csv') # if directly reading it from source 
 
 
 # Using the .keys() method is way to find out what the columns are in your dataframe. Sometimes they have nice labels already, and sometimes they don't.  In this case, we're in luck.
@@ -391,37 +378,13 @@ sns.heatmap(corrmatrix,mask=mask,cmap=cmap,vmin=0,vmax=.2)
 # 5. Create side-by-side histograms of petal length for each species.
 # 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
 # Regardless whether you were able to do that, here's a really cool graphic to show you. In this case, we're plotting petal width by petal length, with a different color for each species.  This also uses the seaborn library (indicated by sns).  Because of the nature of this dataset and the values within it, it works quite well.)
+
+# In[ ]:
+
+
+iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
+
 
 # In[ ]:
 
@@ -456,7 +419,8 @@ sns.scatterplot(x="petal_width", y="petal_length", hue="species", data=iris)
 # In[ ]:
 
 
-intpol=pd.read_csv('intpol.csv')
+# intpol=pd.read_csv('intpol.csv') # if you stored it locally 
+intpol=pd.read_csv('https://raw.githubusercontent.com/damian0604/bdaca/master/ipynb/intpol.csv') # if reading it directly from the website
 
 
 # In[ ]:
@@ -516,20 +480,5 @@ m2.compare_lr_test(m1)
 
 
 sns.jointplot(combined['age'], combined['meanmedia'] , 
-              kind="hex", stat_func=kendalltau, color="#4CB391")
-
-
-# Above, we also displayed a correlation coefficient, Kendall's tau, in the plot, but we could also use a different one like Pearson's R or Mann-Whitney's U.
-
-# In[ ]:
-
-
-from scipy.stats import pearsonr, mannwhitneyu
-
-
-# In[ ]:
-
-
-sns.jointplot(combined['age'], combined['meanmedia'] , 
-              kind="hex", stat_func=pearsonr, color="#4CB391")
+              kind="hex", color="#4CB391")
 
