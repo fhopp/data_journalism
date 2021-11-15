@@ -10,7 +10,7 @@
 
 # As always, we first import some modules we need and load our data file.
 
-# In[1]:
+# In[ ]:
 
 
 import pandas as pd
@@ -18,10 +18,10 @@ import numpy as np
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[2]:
+# In[ ]:
 
 
-df = pd.read_csv('wozwaarde.csv', delimiter=';')
+df = pd.read_csv('https://raw.githubusercontent.com/fhopp/data_journalism/master/content/wozwaarde.csv', delimiter=';')
 
 
 # ## Cleaning up and recoding
@@ -30,13 +30,13 @@ df = pd.read_csv('wozwaarde.csv', delimiter=';')
 # The lambda function says: Take each cell, call the value `x`, split `x` into a list of words (we did that in the week on analyzing text), and then return the 0st element. We then put the result into a new column called `code`.
 # 
 
-# In[3]:
+# In[ ]:
 
 
 df.head()
 
 
-# In[4]:
+# In[ ]:
 
 
 df['code'] = df['wijk'].map(lambda x: x.split()[0])
@@ -52,13 +52,13 @@ df['code'] = df['wijk'].map(lambda x: x.split()[0])
 # 
 # We can do so by just checking the length of the value in the `code` column that we created.
 
-# In[5]:
+# In[ ]:
 
 
 df
 
 
-# In[6]:
+# In[ ]:
 
 
 # select only the "stadsdelen" and put them into a new dataframe
@@ -68,7 +68,7 @@ stadsdelen['wijk'] = stadsdelen['wijk'].map(lambda x: x[2:])
 
 # Let's read the information which letter is associated with which "stadsdeel" into a dictionary, that we can later use for recoding.
 
-# In[7]:
+# In[ ]:
 
 
 stadsdeelcodes = {}
@@ -76,13 +76,13 @@ for k, v in stadsdelen[['wijk','code']].to_dict(orient='index').items():
     stadsdeelcodes.update({v['code']: v['wijk']})
 
 
-# In[8]:
+# In[ ]:
 
 
 stadsdeelcodes
 
 
-# In[9]:
+# In[ ]:
 
 
 # put all "wijken" (which have a code that is longer than 1) into a new dataframe, 
@@ -91,7 +91,7 @@ wijken = df[df['code'].map(lambda x: len(x)>1)]
 wijken['wijk'] = wijken['wijk'].map(lambda x: x[4:])
 
 
-# In[10]:
+# In[ ]:
 
 
 wijken
@@ -99,19 +99,19 @@ wijken
 
 # We can now use the dictionry that we made above to automatically code in which stadsdeel a wijk is located (by looking up the first character (i.e., the letter) of their code in the dictionary `stadsdeelcodes` and putting the corresponding value in a new column, `stadsdeel`.
 
-# In[11]:
+# In[ ]:
 
 
 wijken['stadsdeel'] = wijken['code'].map(lambda x: stadsdeelcodes[x[:1]])
 
 
-# In[12]:
+# In[ ]:
 
 
 wijken.columns
 
 
-# In[13]:
+# In[ ]:
 
 
 wijken
@@ -127,7 +127,7 @@ wijken
 # 
 # We will therefore transform it into a more tidy format, a *long* format. The `.melt()` method allows us to do so. We need to specify which variables stay the same and identify the cases (`id_vars`), which columns contain the values (`value_vars`), and how the two new variables to store the old column names and the cell entries in (`var_name` and `value_name`).
 
-# In[14]:
+# In[ ]:
 
 
 wijken_long = wijken.melt(id_vars=['wijk','stadsdeel'], 
@@ -136,7 +136,7 @@ wijken_long = wijken.melt(id_vars=['wijk','stadsdeel'],
                           var_name = 'year')
 
 
-# In[15]:
+# In[ ]:
 
 
 wijken_long
@@ -144,7 +144,7 @@ wijken_long
 
 # Let's save it for future usage (and for some other notebooks in the next weeks.
 
-# In[16]:
+# In[ ]:
 
 
 wijken_long.to_csv('wijken_long.csv')
@@ -154,25 +154,25 @@ wijken_long.to_csv('wijken_long.csv')
 # 
 # Have a look at the slides for more info on `.groupby()` and `.agg()`.
 
-# In[17]:
+# In[ ]:
 
 
 #wijken_long.index = pd.DatetimeIndex(wijken_long.year.map(lambda x: "1-1-{}".format(x)))
 
 
-# In[18]:
+# In[ ]:
 
 
 wijken_long.head()
 
 
-# In[19]:
+# In[ ]:
 
 
 wijken_long.groupby('year').agg(np.mean).plot(xticks=[0,1,2,3,4])
 
 
-# In[20]:
+# In[ ]:
 
 
 wijken_long.groupby(['year','stadsdeel']).agg(np.mean).unstack().plot(
@@ -181,50 +181,50 @@ wijken_long.groupby(['year','stadsdeel']).agg(np.mean).unstack().plot(
 
 # As also explained on the slides, the `.unstack()` part is needed to flatten the hierarchical index that grouping by *two* variables creates. If we want to read the table, we don't need to unstack it, but we cannot directly plot the stacked table. Try it with and without! 
 
-# In[21]:
+# In[ ]:
 
 
 wijken_long.groupby(['year','stadsdeel']).agg(np.mean).unstack()
 
 
-# In[22]:
+# In[ ]:
 
 
 oost = wijken_long[wijken_long['stadsdeel']=='Oost']
 
 
-# In[23]:
+# In[ ]:
 
 
 oost.groupby(['year','wijk']).agg(np.mean).unstack().plot(figsize=[20,15])
 
 
-# In[24]:
+# In[ ]:
 
 
 oost[oost.wijk=='Dapperbuurt']
 
 
-# In[25]:
+# In[ ]:
 
 
 oost[oost.wijk.str.startswith('Indisch')]
 
 
-# In[26]:
+# In[ ]:
 
 
 wijken_long.groupby(['year','stadsdeel'])['woz-waarde'].agg([min,max])
 
 
-# In[27]:
+# In[ ]:
 
 
 print('Difference between most expensive and least expensive buurt within stadsdeel')
 wijken_long.groupby(['year','stadsdeel'])['woz-waarde'].agg(lambda x: max(x)-min(x)).unstack().plot()
 
 
-# In[28]:
+# In[ ]:
 
 
 print('Difference between most expensive and least expensive buurt within stadsdeel')

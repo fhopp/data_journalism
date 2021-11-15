@@ -344,7 +344,7 @@ We use data on housing prices from https://data.amsterdam.nl/ .</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;wozwaarde.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/fhopp/data_journalism/master/content/wozwaarde.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -359,82 +359,6 @@ We use data on housing prices from https://data.amsterdam.nl/ .</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>wijk</th>
-      <th>2014</th>
-      <th>2015</th>
-      <th>2016</th>
-      <th>2017</th>
-      <th>2018</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>A00 Burgwallen-Oude Zijde</td>
-      <td>263417.0</td>
-      <td>273525.0</td>
-      <td>289984.0</td>
-      <td>339548.0</td>
-      <td>400010.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>A01 Burgwallen-Nieuwe Zijde</td>
-      <td>267895.0</td>
-      <td>281193.0</td>
-      <td>296762.0</td>
-      <td>351214.0</td>
-      <td>391011.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>A02 Grachtengordel-West</td>
-      <td>490251.0</td>
-      <td>502230.0</td>
-      <td>560841.0</td>
-      <td>674610.0</td>
-      <td>755091.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>A03 Grachtengordel-Zuid</td>
-      <td>469946.0</td>
-      <td>478371.0</td>
-      <td>531225.0</td>
-      <td>627625.0</td>
-      <td>697576.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>A04 Nieuwmarkt/Lastage</td>
-      <td>295239.0</td>
-      <td>303500.0</td>
-      <td>340364.0</td>
-      <td>386716.0</td>
-      <td>438942.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -454,165 +378,12 @@ We use data on housing prices from https://data.amsterdam.nl/ .</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>wijk</th>
-      <th>2014</th>
-      <th>2015</th>
-      <th>2016</th>
-      <th>2017</th>
-      <th>2018</th>
-      <th>code</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>A00 Burgwallen-Oude Zijde</td>
-      <td>263417.0</td>
-      <td>273525.0</td>
-      <td>289984.0</td>
-      <td>339548.0</td>
-      <td>400010.0</td>
-      <td>A00</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>A01 Burgwallen-Nieuwe Zijde</td>
-      <td>267895.0</td>
-      <td>281193.0</td>
-      <td>296762.0</td>
-      <td>351214.0</td>
-      <td>391011.0</td>
-      <td>A01</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>A02 Grachtengordel-West</td>
-      <td>490251.0</td>
-      <td>502230.0</td>
-      <td>560841.0</td>
-      <td>674610.0</td>
-      <td>755091.0</td>
-      <td>A02</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>A03 Grachtengordel-Zuid</td>
-      <td>469946.0</td>
-      <td>478371.0</td>
-      <td>531225.0</td>
-      <td>627625.0</td>
-      <td>697576.0</td>
-      <td>A03</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>A04 Nieuwmarkt/Lastage</td>
-      <td>295239.0</td>
-      <td>303500.0</td>
-      <td>340364.0</td>
-      <td>386716.0</td>
-      <td>438942.0</td>
-      <td>A04</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>101</th>
-      <td>T95 Nellestein</td>
-      <td>139614.0</td>
-      <td>137902.0</td>
-      <td>134903.0</td>
-      <td>140373.0</td>
-      <td>170441.0</td>
-      <td>T95</td>
-    </tr>
-    <tr>
-      <th>102</th>
-      <td>T96 Holendrecht/Reigersbos</td>
-      <td>146686.0</td>
-      <td>143554.0</td>
-      <td>147751.0</td>
-      <td>153254.0</td>
-      <td>181189.0</td>
-      <td>T96</td>
-    </tr>
-    <tr>
-      <th>103</th>
-      <td>T97 Gein</td>
-      <td>163287.0</td>
-      <td>161513.0</td>
-      <td>165247.0</td>
-      <td>176573.0</td>
-      <td>199542.0</td>
-      <td>T97</td>
-    </tr>
-    <tr>
-      <th>104</th>
-      <td>T98 Driemond</td>
-      <td>227969.0</td>
-      <td>224884.0</td>
-      <td>234149.0</td>
-      <td>251670.0</td>
-      <td>267328.0</td>
-      <td>T98</td>
-    </tr>
-    <tr>
-      <th>105</th>
-      <td>T Zuidoost</td>
-      <td>144742.0</td>
-      <td>141548.0</td>
-      <td>142974.0</td>
-      <td>152461.0</td>
-      <td>175408.0</td>
-      <td>T</td>
-    </tr>
-  </tbody>
-</table>
-<p>106 rows × 7 columns</p>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select only the &quot;stadsdelen&quot; and put them into a new dataframe</span>
 <span class="n">stadsdelen</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">)]</span>
 <span class="n">stadsdelen</span><span class="p">[</span><span class="s1">&#39;wijk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stadsdelen</span><span class="p">[</span><span class="s1">&#39;wijk&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/fhopp/opt/anaconda3/envs/dj21/lib/python3.7/site-packages/ipykernel_launcher.py:3: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  This is separate from the ipykernel package so we can avoid doing imports until
 </pre></div>
 </div>
 </div>
@@ -633,18 +404,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: &#39;Centrum&#39;,
- &#39;B&#39;: &#39;Westpoort&#39;,
- &#39;E&#39;: &#39;West&#39;,
- &#39;F&#39;: &#39;Nieuw-West&#39;,
- &#39;K&#39;: &#39;Zuid&#39;,
- &#39;M&#39;: &#39;Oost&#39;,
- &#39;N&#39;: &#39;Noord&#39;,
- &#39;T&#39;: &#39;Zuidoost&#39;}
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -655,16 +414,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/fhopp/opt/anaconda3/envs/dj21/lib/python3.7/site-packages/ipykernel_launcher.py:4: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  after removing the cwd from sys.path.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -672,164 +421,11 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>wijk</th>
-      <th>2014</th>
-      <th>2015</th>
-      <th>2016</th>
-      <th>2017</th>
-      <th>2018</th>
-      <th>code</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Burgwallen-Oude Zijde</td>
-      <td>263417.0</td>
-      <td>273525.0</td>
-      <td>289984.0</td>
-      <td>339548.0</td>
-      <td>400010.0</td>
-      <td>A00</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Burgwallen-Nieuwe Zijde</td>
-      <td>267895.0</td>
-      <td>281193.0</td>
-      <td>296762.0</td>
-      <td>351214.0</td>
-      <td>391011.0</td>
-      <td>A01</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Grachtengordel-West</td>
-      <td>490251.0</td>
-      <td>502230.0</td>
-      <td>560841.0</td>
-      <td>674610.0</td>
-      <td>755091.0</td>
-      <td>A02</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Grachtengordel-Zuid</td>
-      <td>469946.0</td>
-      <td>478371.0</td>
-      <td>531225.0</td>
-      <td>627625.0</td>
-      <td>697576.0</td>
-      <td>A03</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Nieuwmarkt/Lastage</td>
-      <td>295239.0</td>
-      <td>303500.0</td>
-      <td>340364.0</td>
-      <td>386716.0</td>
-      <td>438942.0</td>
-      <td>A04</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>100</th>
-      <td>Bijlmer-Oost (E,G,K)</td>
-      <td>148048.0</td>
-      <td>143943.0</td>
-      <td>148343.0</td>
-      <td>156291.0</td>
-      <td>182291.0</td>
-      <td>T94</td>
-    </tr>
-    <tr>
-      <th>101</th>
-      <td>Nellestein</td>
-      <td>139614.0</td>
-      <td>137902.0</td>
-      <td>134903.0</td>
-      <td>140373.0</td>
-      <td>170441.0</td>
-      <td>T95</td>
-    </tr>
-    <tr>
-      <th>102</th>
-      <td>Holendrecht/Reigersbos</td>
-      <td>146686.0</td>
-      <td>143554.0</td>
-      <td>147751.0</td>
-      <td>153254.0</td>
-      <td>181189.0</td>
-      <td>T96</td>
-    </tr>
-    <tr>
-      <th>103</th>
-      <td>Gein</td>
-      <td>163287.0</td>
-      <td>161513.0</td>
-      <td>165247.0</td>
-      <td>176573.0</td>
-      <td>199542.0</td>
-      <td>T97</td>
-    </tr>
-    <tr>
-      <th>104</th>
-      <td>Driemond</td>
-      <td>227969.0</td>
-      <td>224884.0</td>
-      <td>234149.0</td>
-      <td>251670.0</td>
-      <td>267328.0</td>
-      <td>T98</td>
-    </tr>
-  </tbody>
-</table>
-<p>98 rows × 7 columns</p>
-</div></div></div>
 </div>
 <p>We can now use the dictionry that we made above to automatically code in which stadsdeel a wijk is located (by looking up the first character (i.e., the letter) of their code in the dictionary <code class="docutils literal notranslate"><span class="pre">stadsdeelcodes</span></code> and putting the corresponding value in a new column, <code class="docutils literal notranslate"><span class="pre">stadsdeel</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wijken</span><span class="p">[</span><span class="s1">&#39;stadsdeel&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wijken</span><span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">stadsdeelcodes</span><span class="p">[</span><span class="n">x</span><span class="p">[:</span><span class="mi">1</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/fhopp/opt/anaconda3/envs/dj21/lib/python3.7/site-packages/ipykernel_launcher.py:1: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  &quot;&quot;&quot;Entry point for launching an IPython kernel.
 </pre></div>
 </div>
 </div>
@@ -840,11 +436,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;wijk&#39;, &#39;2014&#39;, &#39;2015&#39;, &#39;2016&#39;, &#39;2017&#39;, &#39;2018&#39;, &#39;code&#39;, &#39;stadsdeel&#39;], dtype=&#39;object&#39;)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -852,161 +443,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>wijk</th>
-      <th>2014</th>
-      <th>2015</th>
-      <th>2016</th>
-      <th>2017</th>
-      <th>2018</th>
-      <th>code</th>
-      <th>stadsdeel</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Burgwallen-Oude Zijde</td>
-      <td>263417.0</td>
-      <td>273525.0</td>
-      <td>289984.0</td>
-      <td>339548.0</td>
-      <td>400010.0</td>
-      <td>A00</td>
-      <td>Centrum</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Burgwallen-Nieuwe Zijde</td>
-      <td>267895.0</td>
-      <td>281193.0</td>
-      <td>296762.0</td>
-      <td>351214.0</td>
-      <td>391011.0</td>
-      <td>A01</td>
-      <td>Centrum</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Grachtengordel-West</td>
-      <td>490251.0</td>
-      <td>502230.0</td>
-      <td>560841.0</td>
-      <td>674610.0</td>
-      <td>755091.0</td>
-      <td>A02</td>
-      <td>Centrum</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Grachtengordel-Zuid</td>
-      <td>469946.0</td>
-      <td>478371.0</td>
-      <td>531225.0</td>
-      <td>627625.0</td>
-      <td>697576.0</td>
-      <td>A03</td>
-      <td>Centrum</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Nieuwmarkt/Lastage</td>
-      <td>295239.0</td>
-      <td>303500.0</td>
-      <td>340364.0</td>
-      <td>386716.0</td>
-      <td>438942.0</td>
-      <td>A04</td>
-      <td>Centrum</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>100</th>
-      <td>Bijlmer-Oost (E,G,K)</td>
-      <td>148048.0</td>
-      <td>143943.0</td>
-      <td>148343.0</td>
-      <td>156291.0</td>
-      <td>182291.0</td>
-      <td>T94</td>
-      <td>Zuidoost</td>
-    </tr>
-    <tr>
-      <th>101</th>
-      <td>Nellestein</td>
-      <td>139614.0</td>
-      <td>137902.0</td>
-      <td>134903.0</td>
-      <td>140373.0</td>
-      <td>170441.0</td>
-      <td>T95</td>
-      <td>Zuidoost</td>
-    </tr>
-    <tr>
-      <th>102</th>
-      <td>Holendrecht/Reigersbos</td>
-      <td>146686.0</td>
-      <td>143554.0</td>
-      <td>147751.0</td>
-      <td>153254.0</td>
-      <td>181189.0</td>
-      <td>T96</td>
-      <td>Zuidoost</td>
-    </tr>
-    <tr>
-      <th>103</th>
-      <td>Gein</td>
-      <td>163287.0</td>
-      <td>161513.0</td>
-      <td>165247.0</td>
-      <td>176573.0</td>
-      <td>199542.0</td>
-      <td>T97</td>
-      <td>Zuidoost</td>
-    </tr>
-    <tr>
-      <th>104</th>
-      <td>Driemond</td>
-      <td>227969.0</td>
-      <td>224884.0</td>
-      <td>234149.0</td>
-      <td>251670.0</td>
-      <td>267328.0</td>
-      <td>T98</td>
-      <td>Zuidoost</td>
-    </tr>
-  </tbody>
-</table>
-<p>98 rows × 8 columns</p>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="from-wide-to-long">
@@ -1032,113 +468,6 @@ That means that you have multiple measurements of the same thing (the house vlau
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>wijk</th>
-      <th>stadsdeel</th>
-      <th>year</th>
-      <th>woz-waarde</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Burgwallen-Oude Zijde</td>
-      <td>Centrum</td>
-      <td>2014</td>
-      <td>263417.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Burgwallen-Nieuwe Zijde</td>
-      <td>Centrum</td>
-      <td>2014</td>
-      <td>267895.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Grachtengordel-West</td>
-      <td>Centrum</td>
-      <td>2014</td>
-      <td>490251.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Grachtengordel-Zuid</td>
-      <td>Centrum</td>
-      <td>2014</td>
-      <td>469946.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Nieuwmarkt/Lastage</td>
-      <td>Centrum</td>
-      <td>2014</td>
-      <td>295239.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>485</th>
-      <td>Bijlmer-Oost (E,G,K)</td>
-      <td>Zuidoost</td>
-      <td>2018</td>
-      <td>182291.0</td>
-    </tr>
-    <tr>
-      <th>486</th>
-      <td>Nellestein</td>
-      <td>Zuidoost</td>
-      <td>2018</td>
-      <td>170441.0</td>
-    </tr>
-    <tr>
-      <th>487</th>
-      <td>Holendrecht/Reigersbos</td>
-      <td>Zuidoost</td>
-      <td>2018</td>
-      <td>181189.0</td>
-    </tr>
-    <tr>
-      <th>488</th>
-      <td>Gein</td>
-      <td>Zuidoost</td>
-      <td>2018</td>
-      <td>199542.0</td>
-    </tr>
-    <tr>
-      <th>489</th>
-      <td>Driemond</td>
-      <td>Zuidoost</td>
-      <td>2018</td>
-      <td>267328.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>490 rows × 4 columns</p>
-</div></div></div>
 </div>
 <p>Let’s save it for future usage (and for some other notebooks in the next weeks.</p>
 <div class="cell docutils container">
@@ -1165,82 +494,12 @@ That means that you have multiple measurements of the same thing (the house vlau
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>wijk</th>
-      <th>stadsdeel</th>
-      <th>year</th>
-      <th>woz-waarde</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Burgwallen-Oude Zijde</td>
-      <td>Centrum</td>
-      <td>2014</td>
-      <td>263417.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Burgwallen-Nieuwe Zijde</td>
-      <td>Centrum</td>
-      <td>2014</td>
-      <td>267895.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Grachtengordel-West</td>
-      <td>Centrum</td>
-      <td>2014</td>
-      <td>490251.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Grachtengordel-Zuid</td>
-      <td>Centrum</td>
-      <td>2014</td>
-      <td>469946.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Nieuwmarkt/Lastage</td>
-      <td>Centrum</td>
-      <td>2014</td>
-      <td>295239.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wijken_long</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xticks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;year&#39;&gt;
-</pre></div>
-</div>
-<img alt="../_images/05-aggregate_wozwaarde_27_1.png" src="../_images/05-aggregate_wozwaarde_27_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1250,12 +509,6 @@ That means that you have multiple measurements of the same thing (the house vlau
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;year&#39;&gt;
-</pre></div>
-</div>
-<img alt="../_images/05-aggregate_wozwaarde_28_1.png" src="../_images/05-aggregate_wozwaarde_28_1.png" />
-</div>
 </div>
 <p>As also explained on the slides, the <code class="docutils literal notranslate"><span class="pre">.unstack()</span></code> part is needed to flatten the hierarchical index that grouping by <em>two</em> variables creates. If we want to read the table, we don’t need to unstack it, but we cannot directly plot the stacked table. Try it with and without!</p>
 <div class="cell docutils container">
@@ -1264,113 +517,6 @@ That means that you have multiple measurements of the same thing (the house vlau
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="8" halign="left">woz-waarde</th>
-    </tr>
-    <tr>
-      <th>stadsdeel</th>
-      <th>Centrum</th>
-      <th>Nieuw-West</th>
-      <th>Noord</th>
-      <th>Oost</th>
-      <th>West</th>
-      <th>Westpoort</th>
-      <th>Zuid</th>
-      <th>Zuidoost</th>
-    </tr>
-    <tr>
-      <th>year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2014</th>
-      <td>326814.1</td>
-      <td>200453.500000</td>
-      <td>215879.500000</td>
-      <td>221828.142857</td>
-      <td>235801.0</td>
-      <td>NaN</td>
-      <td>338256.8000</td>
-      <td>158662.833333</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>337425.5</td>
-      <td>200028.000000</td>
-      <td>222417.200000</td>
-      <td>228636.000000</td>
-      <td>238568.8</td>
-      <td>189402.0</td>
-      <td>346524.6250</td>
-      <td>155835.000000</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>370176.0</td>
-      <td>208002.428571</td>
-      <td>229650.466667</td>
-      <td>244608.428571</td>
-      <td>260979.4</td>
-      <td>224491.0</td>
-      <td>355919.6250</td>
-      <td>158611.000000</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>431837.9</td>
-      <td>225116.571429</td>
-      <td>247279.400000</td>
-      <td>288196.357143</td>
-      <td>313645.2</td>
-      <td>NaN</td>
-      <td>426073.5000</td>
-      <td>156034.571429</td>
-    </tr>
-    <tr>
-      <th>2018</th>
-      <td>491394.7</td>
-      <td>246089.000000</td>
-      <td>291062.866667</td>
-      <td>336683.500000</td>
-      <td>377618.1</td>
-      <td>NaN</td>
-      <td>500404.5625</td>
-      <td>176345.571429</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1385,12 +531,6 @@ That means that you have multiple measurements of the same thing (the house vlau
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;year&#39;&gt;
-</pre></div>
-</div>
-<img alt="../_images/05-aggregate_wozwaarde_32_1.png" src="../_images/05-aggregate_wozwaarde_32_1.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1398,70 +538,6 @@ That means that you have multiple measurements of the same thing (the house vlau
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>wijk</th>
-      <th>stadsdeel</th>
-      <th>year</th>
-      <th>woz-waarde</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>64</th>
-      <td>Dapperbuurt</td>
-      <td>Oost</td>
-      <td>2014</td>
-      <td>209223.0</td>
-    </tr>
-    <tr>
-      <th>162</th>
-      <td>Dapperbuurt</td>
-      <td>Oost</td>
-      <td>2015</td>
-      <td>216466.0</td>
-    </tr>
-    <tr>
-      <th>260</th>
-      <td>Dapperbuurt</td>
-      <td>Oost</td>
-      <td>2016</td>
-      <td>244155.0</td>
-    </tr>
-    <tr>
-      <th>358</th>
-      <td>Dapperbuurt</td>
-      <td>Oost</td>
-      <td>2017</td>
-      <td>289299.0</td>
-    </tr>
-    <tr>
-      <th>456</th>
-      <td>Dapperbuurt</td>
-      <td>Oost</td>
-      <td>2018</td>
-      <td>343221.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1469,105 +545,6 @@ That means that you have multiple measurements of the same thing (the house vlau
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>wijk</th>
-      <th>stadsdeel</th>
-      <th>year</th>
-      <th>woz-waarde</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>66</th>
-      <td>Indische Buurt-West</td>
-      <td>Oost</td>
-      <td>2014</td>
-      <td>186301.0</td>
-    </tr>
-    <tr>
-      <th>67</th>
-      <td>Indische Buurt-Oost</td>
-      <td>Oost</td>
-      <td>2014</td>
-      <td>192071.0</td>
-    </tr>
-    <tr>
-      <th>164</th>
-      <td>Indische Buurt-West</td>
-      <td>Oost</td>
-      <td>2015</td>
-      <td>188495.0</td>
-    </tr>
-    <tr>
-      <th>165</th>
-      <td>Indische Buurt-Oost</td>
-      <td>Oost</td>
-      <td>2015</td>
-      <td>192657.0</td>
-    </tr>
-    <tr>
-      <th>262</th>
-      <td>Indische Buurt-West</td>
-      <td>Oost</td>
-      <td>2016</td>
-      <td>200048.0</td>
-    </tr>
-    <tr>
-      <th>263</th>
-      <td>Indische Buurt-Oost</td>
-      <td>Oost</td>
-      <td>2016</td>
-      <td>213074.0</td>
-    </tr>
-    <tr>
-      <th>360</th>
-      <td>Indische Buurt-West</td>
-      <td>Oost</td>
-      <td>2017</td>
-      <td>253664.0</td>
-    </tr>
-    <tr>
-      <th>361</th>
-      <td>Indische Buurt-Oost</td>
-      <td>Oost</td>
-      <td>2017</td>
-      <td>251413.0</td>
-    </tr>
-    <tr>
-      <th>458</th>
-      <td>Indische Buurt-West</td>
-      <td>Oost</td>
-      <td>2018</td>
-      <td>306433.0</td>
-    </tr>
-    <tr>
-      <th>459</th>
-      <td>Indische Buurt-Oost</td>
-      <td>Oost</td>
-      <td>2018</td>
-      <td>312058.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1575,245 +552,6 @@ That means that you have multiple measurements of the same thing (the house vlau
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>min</th>
-      <th>max</th>
-    </tr>
-    <tr>
-      <th>year</th>
-      <th>stadsdeel</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="8" valign="top">2014</th>
-      <th>Centrum</th>
-      <td>253990.0</td>
-      <td>490251.0</td>
-    </tr>
-    <tr>
-      <th>Nieuw-West</th>
-      <td>141387.0</td>
-      <td>374106.0</td>
-    </tr>
-    <tr>
-      <th>Noord</th>
-      <td>150516.0</td>
-      <td>428832.0</td>
-    </tr>
-    <tr>
-      <th>Oost</th>
-      <td>104568.0</td>
-      <td>310839.0</td>
-    </tr>
-    <tr>
-      <th>West</th>
-      <td>164263.0</td>
-      <td>564043.0</td>
-    </tr>
-    <tr>
-      <th>Westpoort</th>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>Zuid</th>
-      <td>225636.0</td>
-      <td>664230.0</td>
-    </tr>
-    <tr>
-      <th>Zuidoost</th>
-      <td>126373.0</td>
-      <td>227969.0</td>
-    </tr>
-    <tr>
-      <th rowspan="8" valign="top">2015</th>
-      <th>Centrum</th>
-      <td>256421.0</td>
-      <td>502230.0</td>
-    </tr>
-    <tr>
-      <th>Nieuw-West</th>
-      <td>139528.0</td>
-      <td>368054.0</td>
-    </tr>
-    <tr>
-      <th>Noord</th>
-      <td>150413.0</td>
-      <td>437326.0</td>
-    </tr>
-    <tr>
-      <th>Oost</th>
-      <td>123993.0</td>
-      <td>319688.0</td>
-    </tr>
-    <tr>
-      <th>West</th>
-      <td>167242.0</td>
-      <td>595181.0</td>
-    </tr>
-    <tr>
-      <th>Westpoort</th>
-      <td>189402.0</td>
-      <td>189402.0</td>
-    </tr>
-    <tr>
-      <th>Zuid</th>
-      <td>228441.0</td>
-      <td>664514.0</td>
-    </tr>
-    <tr>
-      <th>Zuidoost</th>
-      <td>123214.0</td>
-      <td>224884.0</td>
-    </tr>
-    <tr>
-      <th rowspan="8" valign="top">2016</th>
-      <th>Centrum</th>
-      <td>276481.0</td>
-      <td>560841.0</td>
-    </tr>
-    <tr>
-      <th>Nieuw-West</th>
-      <td>139872.0</td>
-      <td>388082.0</td>
-    </tr>
-    <tr>
-      <th>Noord</th>
-      <td>154881.0</td>
-      <td>442483.0</td>
-    </tr>
-    <tr>
-      <th>Oost</th>
-      <td>145825.0</td>
-      <td>341516.0</td>
-    </tr>
-    <tr>
-      <th>West</th>
-      <td>182309.0</td>
-      <td>630566.0</td>
-    </tr>
-    <tr>
-      <th>Westpoort</th>
-      <td>224491.0</td>
-      <td>224491.0</td>
-    </tr>
-    <tr>
-      <th>Zuid</th>
-      <td>241511.0</td>
-      <td>677933.0</td>
-    </tr>
-    <tr>
-      <th>Zuidoost</th>
-      <td>121273.0</td>
-      <td>234149.0</td>
-    </tr>
-    <tr>
-      <th rowspan="8" valign="top">2017</th>
-      <th>Centrum</th>
-      <td>316261.0</td>
-      <td>674610.0</td>
-    </tr>
-    <tr>
-      <th>Nieuw-West</th>
-      <td>157018.0</td>
-      <td>430190.0</td>
-    </tr>
-    <tr>
-      <th>Noord</th>
-      <td>168528.0</td>
-      <td>480514.0</td>
-    </tr>
-    <tr>
-      <th>Oost</th>
-      <td>150175.0</td>
-      <td>377085.0</td>
-    </tr>
-    <tr>
-      <th>West</th>
-      <td>219773.0</td>
-      <td>754544.0</td>
-    </tr>
-    <tr>
-      <th>Westpoort</th>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>Zuid</th>
-      <td>266394.0</td>
-      <td>839342.0</td>
-    </tr>
-    <tr>
-      <th>Zuidoost</th>
-      <td>78137.0</td>
-      <td>251670.0</td>
-    </tr>
-    <tr>
-      <th rowspan="8" valign="top">2018</th>
-      <th>Centrum</th>
-      <td>381774.0</td>
-      <td>755091.0</td>
-    </tr>
-    <tr>
-      <th>Nieuw-West</th>
-      <td>93104.0</td>
-      <td>483447.0</td>
-    </tr>
-    <tr>
-      <th>Noord</th>
-      <td>196081.0</td>
-      <td>565361.0</td>
-    </tr>
-    <tr>
-      <th>Oost</th>
-      <td>177096.0</td>
-      <td>441577.0</td>
-    </tr>
-    <tr>
-      <th>West</th>
-      <td>269738.0</td>
-      <td>844347.0</td>
-    </tr>
-    <tr>
-      <th>Westpoort</th>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>Zuid</th>
-      <td>330366.0</td>
-      <td>1003743.0</td>
-    </tr>
-    <tr>
-      <th>Zuidoost</th>
-      <td>81201.0</td>
-      <td>267328.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1821,15 +559,6 @@ That means that you have multiple measurements of the same thing (the house vlau
 <span class="n">wijken_long</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;stadsdeel&#39;</span><span class="p">])[</span><span class="s1">&#39;woz-waarde&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Difference between most expensive and least expensive buurt within stadsdeel
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;year&#39;&gt;
-</pre></div>
-</div>
-<img alt="../_images/05-aggregate_wozwaarde_36_2.png" src="../_images/05-aggregate_wozwaarde_36_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1839,15 +568,6 @@ That means that you have multiple measurements of the same thing (the house vlau
     <span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;stadsdeel&#39;</span><span class="p">])[</span><span class="s1">&#39;woz-waarde&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Difference between most expensive and least expensive buurt within stadsdeel
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;year&#39;&gt;
-</pre></div>
-</div>
-<img alt="../_images/05-aggregate_wozwaarde_37_2.png" src="../_images/05-aggregate_wozwaarde_37_2.png" />
 </div>
 </div>
 <p>We see that differences within stadsdeel rise.</p>
