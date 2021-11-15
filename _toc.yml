@@ -13,9 +13,13 @@ parts:
   - file: content/01-getting_started.ipynb
   - file: content/02-accessing_data.ipynb
   - file: content/03-analyzing_numbers.ipynb
+  - file: content/04-join_and_aggregate.ipynb
+  - file: content/04x-join_and_aggregate_makedataset.ipynb
+  - file: content/05-aggregate_wozwaarde.ipynb
 - caption: Slides
   chapters:
   - file: content/slides/week1.md
+  - file: content/slides/week2.md
 - caption: Resources
   chapters: 
   - file: content/python.md   

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Python Data Wrangling (2)
+# # 5. Python Data Wrangling II
 # 
-# *Damian Trilling and Penny Sheets*
+# *Frederic Hopp and Penny Sheets*
 # 
 # This notebook outlines the retrieval and preprocessing steps we did to construct the files for our examples.
 # Thus, this notebook contains the steps
@@ -24,13 +24,13 @@
 # https://opendata.cbs.nl/statline/portal.html?_la=en&_catalog=CBS&tableId=37259eng&_theme=1066
 # 
 # Select the following options:
-# - Topics: Net migration *and* live born children (2/25)
+# - Topics: Net migration *and* live born children (2/20)
 # - Sex: only total (1/3)
-# - Regions: all provinces (12/1225)
+# - Regions: all provinces (12/1237)
 # 
-# This should give you 1392 rows and result in the file
+# This should give you 732 rows and result in the file
 # 
-# `37259eng_UntypedDataSet_20112018_132903.csv`
+# `37259eng_UntypedDataSet_15112021_100104.csv`
 # 
 # Also download the metadata for later reference.
 # 
@@ -46,7 +46,7 @@
 # 
 # This should give you 264 rows and result in the file
 # 
-# `82800ENG_UntypedDataSet_20112018_133529.csv`
+# `82800ENG_UntypedDataSet_15112021_101225.csv`
 # 
 # Also download the metadata for later reference.
 # 
@@ -54,20 +54,20 @@
 # ## Preprocessing the data
 # ### Population data
 
-# In[2]:
+# In[ ]:
 
 
 import pandas as pd
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[3]:
+# In[ ]:
 
 
-population = pd.read_csv('37259eng_UntypedDataSet_20112018_132903.csv', delimiter=';')
+population = pd.read_csv('37259eng_UntypedDataSet_15112021_100104.csv', delimiter=';')
 
 
-# In[5]:
+# In[ ]:
 
 
 population.head()
@@ -75,19 +75,19 @@ population.head()
 
 # We first remove all columns that are not necessary.
 
-# In[7]:
+# In[ ]:
 
 
 population['Sex'].value_counts()
 
 
-# In[8]:
+# In[ ]:
 
 
 population.drop(['Sex','ID'], axis = 1, inplace = True)
 
 
-# In[9]:
+# In[ ]:
 
 
 population
@@ -95,7 +95,7 @@ population
 
 # The values of the column Regions contain weird spaces at the end:
 
-# In[10]:
+# In[ ]:
 
 
 population.iloc[0,0]
@@ -103,7 +103,7 @@ population.iloc[0,0]
 
 # We are going to remove them:
 
-# In[18]:
+# In[ ]:
 
 
 population['Regions'] = population['Regions'].map(lambda x: x.strip())
@@ -111,7 +111,7 @@ population['Regions'] = population['Regions'].map(lambda x: x.strip())
 
 # By having a look at the metadata (using CTRL-F for looking for PV20), we can find out what the province codes actually mean. Let's recode that by using a dict to map the keys to more meaningful values.
 
-# In[17]:
+# In[ ]:
 
 
 provinces = {"PV20":"Groningen",
@@ -128,13 +128,13 @@ provinces = {"PV20":"Groningen",
 "PV31":"Limburg"}
 
 
-# In[19]:
+# In[ ]:
 
 
 population['Regions'] = population['Regions'].map(provinces)
 
 
-# In[25]:
+# In[ ]:
 
 
 population.head()
@@ -142,13 +142,13 @@ population.head()
 
 # Let's also represent the Period in a better way. It's a string now, and only the first four digits are meaningful. Let's convert these to an integer. Alternatively, we could opt to convert it to a date (a so-called datetime object).
 
-# In[22]:
+# In[ ]:
 
 
 population['Periods'] = population['Periods'].map(lambda x: int(x[:4]))
 
 
-# In[24]:
+# In[ ]:
 
 
 population.head()
@@ -156,7 +156,7 @@ population.head()
 
 # Let's save this:
 
-# In[27]:
+# In[ ]:
 
 
 population.to_csv('population.csv')
@@ -167,51 +167,51 @@ population.to_json('population.json')
 # 
 # We just do exactly the same for our economic dataset
 
-# In[36]:
+# In[ ]:
 
 
-economy = pd.read_csv('82800ENG_UntypedDataSet_20112018_133529.csv', delimiter=';')
+economy = pd.read_csv('82800ENG_UntypedDataSet_15112021_101225.csv', delimiter=';')
 
 
-# In[32]:
+# In[ ]:
 
 
 economy
 
 
-# In[38]:
+# In[ ]:
 
 
 # We only downloaded the total, so we can safely delete:
 economy['EconomicSectorsSIC2008'].value_counts()
 
 
-# In[39]:
+# In[ ]:
 
 
 economy.drop(['EconomicSectorsSIC2008','ID'], axis = 1, inplace = True)
 
 
-# In[40]:
+# In[ ]:
 
 
 economy['Regions'] = economy['Regions'].map(lambda x: x.strip())
 economy['Regions'] = economy['Regions'].map(provinces)
 
 
-# In[43]:
+# In[ ]:
 
 
 economy['Periods'] = economy['Periods'].map(lambda x: int(x[:4]))
 
 
-# In[45]:
+# In[ ]:
 
 
 economy.head()
 
 
-# In[46]:
+# In[ ]:
 
 
 economy.to_csv('economy.csv')

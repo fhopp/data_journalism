@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Example "WOZ-waarde"
+# # 6. Data Aggregation
 # 
-# *Damian Trilling and Penny Sheets*
+# *Frederic Hopp and Penny Sheets*
 # 
 # This week, we will particularly look at techniques for aggregating data and for joining datasets.
 # We use data on housing prices from https://data.amsterdam.nl/ .
 
 # As always, we first import some modules we need and load our data file.
 
-# In[ ]:
+# In[1]:
 
 
 import pandas as pd
@@ -18,7 +18,7 @@ import numpy as np
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[ ]:
+# In[2]:
 
 
 df = pd.read_csv('wozwaarde.csv', delimiter=';')
@@ -30,13 +30,13 @@ df = pd.read_csv('wozwaarde.csv', delimiter=';')
 # The lambda function says: Take each cell, call the value `x`, split `x` into a list of words (we did that in the week on analyzing text), and then return the 0st element. We then put the result into a new column called `code`.
 # 
 
-# In[ ]:
+# In[3]:
 
 
 df.head()
 
 
-# In[ ]:
+# In[4]:
 
 
 df['code'] = df['wijk'].map(lambda x: x.split()[0])
@@ -52,13 +52,13 @@ df['code'] = df['wijk'].map(lambda x: x.split()[0])
 # 
 # We can do so by just checking the length of the value in the `code` column that we created.
 
-# In[ ]:
+# In[5]:
 
 
 df
 
 
-# In[ ]:
+# In[6]:
 
 
 # select only the "stadsdelen" and put them into a new dataframe
@@ -68,7 +68,7 @@ stadsdelen['wijk'] = stadsdelen['wijk'].map(lambda x: x[2:])
 
 # Let's read the information which letter is associated with which "stadsdeel" into a dictionary, that we can later use for recoding.
 
-# In[ ]:
+# In[7]:
 
 
 stadsdeelcodes = {}
@@ -76,13 +76,13 @@ for k, v in stadsdelen[['wijk','code']].to_dict(orient='index').items():
     stadsdeelcodes.update({v['code']: v['wijk']})
 
 
-# In[ ]:
+# In[8]:
 
 
 stadsdeelcodes
 
 
-# In[ ]:
+# In[9]:
 
 
 # put all "wijken" (which have a code that is longer than 1) into a new dataframe, 
@@ -91,7 +91,7 @@ wijken = df[df['code'].map(lambda x: len(x)>1)]
 wijken['wijk'] = wijken['wijk'].map(lambda x: x[4:])
 
 
-# In[ ]:
+# In[10]:
 
 
 wijken
@@ -99,19 +99,19 @@ wijken
 
 # We can now use the dictionry that we made above to automatically code in which stadsdeel a wijk is located (by looking up the first character (i.e., the letter) of their code in the dictionary `stadsdeelcodes` and putting the corresponding value in a new column, `stadsdeel`.
 
-# In[ ]:
+# In[11]:
 
 
 wijken['stadsdeel'] = wijken['code'].map(lambda x: stadsdeelcodes[x[:1]])
 
 
-# In[ ]:
+# In[12]:
 
 
 wijken.columns
 
 
-# In[ ]:
+# In[13]:
 
 
 wijken
@@ -127,7 +127,7 @@ wijken
 # 
 # We will therefore transform it into a more tidy format, a *long* format. The `.melt()` method allows us to do so. We need to specify which variables stay the same and identify the cases (`id_vars`), which columns contain the values (`value_vars`), and how the two new variables to store the old column names and the cell entries in (`var_name` and `value_name`).
 
-# In[ ]:
+# In[14]:
 
 
 wijken_long = wijken.melt(id_vars=['wijk','stadsdeel'], 
@@ -136,7 +136,7 @@ wijken_long = wijken.melt(id_vars=['wijk','stadsdeel'],
                           var_name = 'year')
 
 
-# In[ ]:
+# In[15]:
 
 
 wijken_long
@@ -144,7 +144,7 @@ wijken_long
 
 # Let's save it for future usage (and for some other notebooks in the next weeks.
 
-# In[ ]:
+# In[16]:
 
 
 wijken_long.to_csv('wijken_long.csv')
@@ -154,25 +154,25 @@ wijken_long.to_csv('wijken_long.csv')
 # 
 # Have a look at the slides for more info on `.groupby()` and `.agg()`.
 
-# In[ ]:
+# In[17]:
 
 
 #wijken_long.index = pd.DatetimeIndex(wijken_long.year.map(lambda x: "1-1-{}".format(x)))
 
 
-# In[ ]:
+# In[18]:
 
 
 wijken_long.head()
 
 
-# In[ ]:
+# In[19]:
 
 
 wijken_long.groupby('year').agg(np.mean).plot(xticks=[0,1,2,3,4])
 
 
-# In[ ]:
+# In[20]:
 
 
 wijken_long.groupby(['year','stadsdeel']).agg(np.mean).unstack().plot(
@@ -181,50 +181,50 @@ wijken_long.groupby(['year','stadsdeel']).agg(np.mean).unstack().plot(
 
 # As also explained on the slides, the `.unstack()` part is needed to flatten the hierarchical index that grouping by *two* variables creates. If we want to read the table, we don't need to unstack it, but we cannot directly plot the stacked table. Try it with and without! 
 
-# In[ ]:
+# In[21]:
 
 
 wijken_long.groupby(['year','stadsdeel']).agg(np.mean).unstack()
 
 
-# In[ ]:
+# In[22]:
 
 
 oost = wijken_long[wijken_long['stadsdeel']=='Oost']
 
 
-# In[ ]:
+# In[23]:
 
 
 oost.groupby(['year','wijk']).agg(np.mean).unstack().plot(figsize=[20,15])
 
 
-# In[ ]:
+# In[24]:
 
 
 oost[oost.wijk=='Dapperbuurt']
 
 
-# In[ ]:
+# In[25]:
 
 
 oost[oost.wijk.str.startswith('Indisch')]
 
 
-# In[ ]:
+# In[26]:
 
 
 wijken_long.groupby(['year','stadsdeel'])['woz-waarde'].agg([min,max])
 
 
-# In[ ]:
+# In[27]:
 
 
 print('Difference between most expensive and least expensive buurt within stadsdeel')
 wijken_long.groupby(['year','stadsdeel'])['woz-waarde'].agg(lambda x: max(x)-min(x)).unstack().plot()
 
 
-# In[ ]:
+# In[28]:
 
 
 print('Difference between most expensive and least expensive buurt within stadsdeel')
