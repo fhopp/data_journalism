@@ -20,6 +20,7 @@ parts:
   chapters:
   - file: content/slides/week1.md
   - file: content/slides/week2.md
+  - file: content/slides/week3.md
 - caption: Resources
   chapters: 
   - file: content/python.md   
