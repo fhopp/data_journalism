@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Analyzing Text
+# # 7. Analyzing Text
 # 
-# *Damian Trilling and Penny Sheets*
+# *Frederic Hopp and Penny Sheets*
 # 
 # This notebook is meant to show you some more ways of analyzing data that go beyond methods like `df.describe()` or `Counter()` etc., which we used last week already. In particular, we are going to look into analyzing textual data.
 # 
@@ -22,24 +22,14 @@
 # 
 # In the .tar.gz file, you find a .zip file.
 # 
-# See below a screenshot of how this looks like in Lubuntu (double-click on "speeches_csv.zip" in the left window, then the right window will open. Click on "Extract"). On some systems, you need to actually to three steps of uncompressing: double-click on the tar.gz file to make it a .gz file, and double-click on that one to get the zip file, and then the same thing again for the zip file.
-# 
-# **On Windows, you may need to install a unzip program like [7zip](https://www.7-zip.org/) first **
+# **On Windows, you may need to install a unzip program like [7zip](https://www.7-zip.org/) first**
 # 
 # 
-# **Within that archive, you find a file `Speeches_UK_Cleaned.csv`. That's the one we need -- save it inthe directory in which you save your Jupyter Notebooks!**
+# **Within that archive, you find a file `Speeches_UK_Cleaned.csv`. That's the one we need -- save it in the directory in which you save your Jupyter Notebooks!**
 # 
-# 
-
-# In[ ]:
-
-
-from IPython.display import Image
-Image("https://github.com/damian0604/bdaca/raw/master/ipynb/euspeech_download.png")
-
 
 # ## Getting started
-# It is a good custom to import all modules that you need at the beginning of your notebook. I'll explain in the leson what these models do
+# It is a good custom to import all modules that you need at the beginning of your notebook. 
 
 # In[ ]:
 
@@ -263,7 +253,7 @@ df.groupby('who')['terrorrefs'].describe()
 df.groupby('who')['terrorrefs'].sum()
 
 
-# Instead of counting the number of all references to terror, let's count the number of speeches that have at leas tone reference:
+# Instead of counting the number of all references to terror, let's count the number of speeches that have at least one reference:
 
 # In[ ]:
 
