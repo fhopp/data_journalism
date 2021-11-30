@@ -14,14 +14,16 @@ parts:
   - file: content/02-accessing_data.ipynb
   - file: content/03-analyzing_numbers.ipynb
   - file: content/04-join_and_aggregate.ipynb
-  - file: content/04x-join_and_aggregate_makedataset.ipynb
-  - file: content/05-aggregate_wozwaarde.ipynb
-  - file: content/06-analyzing_text.ipynb
+  - file: content/05-join_and_aggregate_makedataset.ipynb
+  - file: content/06-aggregate_wozwaarde.ipynb
+  - file: content/07-analyzing_text.ipynb
+  - file: content/08-visualizations.ipynb
 - caption: Slides
   chapters:
   - file: content/slides/week1.md
   - file: content/slides/week2.md
   - file: content/slides/week3.md
+  - file: content/slides/week4.md
 - caption: Resources
   chapters: 
   - file: content/python.md   
