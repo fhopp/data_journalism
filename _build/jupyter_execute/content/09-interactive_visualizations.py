@@ -1,55 +1,36 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Interactive Data Visualization
+# # 9. Interactive Data Visualization
 # 
-# *Damian Trilling and Penny Sheets*
+# *Frederic Hopp and Penny Sheets*
 # 
 # This notebook gives some examples for how to create interactive visualizations for the web.
 # 
-# We will use the following three visualization packages:
+# We will use the following two visualization packages:
 # - `bokeh`
 # - `pygal`
-# - `plotly`
 # 
 # 
 # `bokeh` allows you to create interactive visualizations in which users can hover over elements, zoom in, etc.
-# `pygal` allows you to create standard charts with hover-effects. `plotly` is a very extensive package that is related to a whole ecosystem to build interactive apps, but since short time, you can make use of some of its functionality directly via `pandas`!
+# `pygal` allows you to create standard charts with hover-effects.
 # 
 # 
 # ## Download the sample data
 # The first time you run this notebook, you will need to download some example data.
 # You only need to do this once, and should "comment out" (put hashtags in front of) the following two lines again after running them once.
 
-# In[2]:
+# In[ ]:
 
 
-# import bokeh
-# bokeh.sampledata.download()
+import bokeh
+bokeh.sampledata.download()
 
 
-# In[3]:
+# In[ ]:
 
 
-#pip install cairosvg
-
-
-# In[4]:
-
-
-# pip install bokeh
-
-
-# In[5]:
-
-
-# pip install pygal
-
-
-# In[6]:
-
-
-# pip install plotly
+pip install cairosvg
 
 
 # # Interactivity 
@@ -70,7 +51,7 @@
 # 
 # It will make your bar charts etc. just a bit more attractive by allowing things like displaying values when hovering over columns with the mouse.
 
-# In[7]:
+# In[ ]:
 
 
 import pygal
@@ -79,80 +60,68 @@ import pandas as pd
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[8]:
+# In[ ]:
 
 
 # First we create a bar graph object (this is sort of like how we did in Seaborn, creating a blank canvas 
 # before telling it what to put on that canvas.)
 
-mylittle_bar_chart = pygal.Bar()                                            
+mylittlebar_chart = pygal.Bar()                                            
 
 # Next we add some values to it; in this case, we're adding the Fibonacci number sequence, and labeling it accordingly.
-mylittle_bar_chart.add('Fibonacci', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
-mylittle_bar_chart.add('whatever', [3,5,6,7,8])
+mylittlebar_chart.add('Fibonacci', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+mylittlebar_chart.add('Pinocchio', [1, 2, 3, 4, 8, 9, 12, 10, 8, 5, 2])
 
 
 # In[ ]:
 
 
-
-
-
-# In[9]:
-
-
-print("Penny INC went up tremenously", 
-      mylittle_bar_chart.render_sparktext(),
-      "and you should invest in it.")
-
-
-# In[10]:
-
-
-mylittle_bar_chart.render_sparkline()
-
-
-# In[11]:
-
-
 # With pygal, you can render this into an .svg visualization for display in your web browser.
 
-mylittle_bar_chart.render_in_browser()
+mylittlebar_chart.render_in_browser()
 
 # or you can save to a file for later embedding/placement wherever you want it:
 # bar_chart.render_to_file('bar_chart.svg') 
 
 
-# In[12]:
+# In[ ]:
 
 
-mylittle_bar_chart.render_to_file('mytest.svg')
+mylittlebar_chart.render_sparktext()
+
+
+# In[ ]:
+
+
+#this thing is often used for economic publications.  also note that with the html code,
+#if you open in a notebook, all the goodies are there in the svg file, you don't have to
+#also upload your data anywhere.  (i think)
 
 
 # Let's do this with our own data that we used in an earlier notebook.
 # We first do it the old-fashioned way that we already know, then we use pygal instead.
 
-# In[13]:
+# In[ ]:
 
 
-mediause = pd.read_csv('https://raw.githubusercontent.com/uvacw/datajournalism/master/mediause.csv')
+mediause = pd.read_csv('https://raw.githubusercontent.com/damian0604/bdaca/master/ipynb/mediause.csv') # if directly reading it from source 
 mediause
 
 
-# In[14]:
+# In[ ]:
 
 
 frequency_of_internet_use = mediause['internet'].value_counts().sort_index()
 frequency_of_internet_use
 
 
-# In[15]:
+# In[ ]:
 
 
 frequency_of_internet_use.plot(kind='bar')
 
 
-# In[16]:
+# In[ ]:
 
 
 bar_chart = pygal.Bar()                                            
@@ -161,31 +130,26 @@ frequency_of_internet_use = mediause['internet'].value_counts().sort_index()
 frequency_of_tv_use = mediause['tv'].value_counts().sort_index()
 frequency_of_newspaper_use = mediause['newspaper'].value_counts().sort_index()
 
-# let's add labels to the x axis
-# we could do:
-# bar_chart.x_labels = range(8) to generate the numbers 0...8
-# or supply a list manually,
-# or we re-use the index of our data:
+#bar_chart.x_labels = range(8)
+#or, for getting x-axis labels.
 bar_chart.x_labels = frequency_of_internet_use.index
-
-
 # Next we add some values to it; in this case, we're adding the Fibonacci number sequence, and labeling it accordingly.
 bar_chart.add('internet', frequency_of_internet_use)
 bar_chart.add('tv', frequency_of_tv_use)
 bar_chart.add('newspaper', frequency_of_newspaper_use)
 
 
-# In[17]:
+# In[ ]:
 
 
-bar_chart.render_to_file
+bar_chart.render_in_browser()
 
 
 # ### An example with bokeh
 # 
 # This one is taken from an existing demo online (on the website of bokeh), to show bokeh's capacities.  But all documentation and further info can be found at the link here, for more info & examples: https://bokeh.org/
 
-# In[18]:
+# In[ ]:
 
 
 from bokeh.io import show, output_file
@@ -197,23 +161,18 @@ from bokeh.sampledata.us_counties import data as counties
 from bokeh.sampledata.unemployment import data as unemployment
 
 
-# In[19]:
+# In[ ]:
 
 
-len(unemployment)
+type(counties)
+#if you look through both these, you see there are identifiers per county
 
 
-# In[20]:
-
-
-unemployment
-
-
-# In[21]:
+# In[ ]:
 
 
 counties = {
-    code: county for code, county in counties.items() if county["state"] == "tx"
+    code: county for code, county in counties.items() if county["state"] == "ca"
 }
 
 county_xs = [county["lons"] for county in counties.values()]
@@ -233,7 +192,7 @@ data=dict(
 TOOLS = "pan,wheel_zoom,reset,hover,save"
 
 p = figure(
-    title="Texas Unemployment, 2009", tools=TOOLS,
+    title="California Unemployment, 2009", tools=TOOLS,
     x_axis_location=None, y_axis_location=None,
     tooltips=[
         ("Name", "@name"), ("Unemployment rate)", "@rate%"), ("(Long, Lat)", "($x, $y)")
@@ -257,60 +216,56 @@ show(p)
 # In[ ]:
 
 
+from bokeh.io import show, output_file
+from bokeh.models import LogColorMapper
+from bokeh.palettes import Viridis6 as palette
+from bokeh.plotting import figure
+
+from bokeh.sampledata.us_counties import data as counties
+from bokeh.sampledata.unemployment import data as unemployment
+
+counties = {
+    code: county for code, county in counties.items() if county["state"] == "mn"
+}
+
+county_xs = [county["lons"] for county in counties.values()]
+county_ys = [county["lats"] for county in counties.values()]
+
+county_names = [county['name'] for county in counties.values()]
+county_rates = [unemployment[county_id] for county_id in counties]
+color_mapper = LogColorMapper(palette=palette)
+
+data=dict(
+    x=county_xs,
+    y=county_ys,
+    name=county_names,
+    rate=county_rates,
+)
+
+TOOLS = "pan,wheel_zoom,reset,hover,save"
+
+p = figure(
+    title="Minnesota Unemployment, 2009", tools=TOOLS,
+    x_axis_location=None, y_axis_location=None,
+    tooltips=[
+        ("Name", "@name"), ("Unemployment rate)", "@rate%"), ("(Long, Lat)", "($x, $y)")
+    ])
+p.grid.grid_line_color = None
+p.hover.point_policy = "follow_mouse"
+
+p.patches('x', 'y', source=data,
+          fill_color={'field': 'rate', 'transform': color_mapper},
+          fill_alpha=0.7, line_color="white", line_width=0.5)
 
 
 
-# In[ ]:
+# save to file
+# underlying data, again, already in this html code; don't need to worry about publishing it.
+# code/data are fetched automatically through bokeh servers.
+output_file('bokeh-example.html')
 
-
-
-
-
-# ## An example with plotly
-# 
-# plotly is an extensive visualization library that is part of a larger ecosystem to build dashboards and apps. But what's nice is that since pandas 0.25, you can even use it as a drop-in replacement for matplotlib as backend. It's just one line: `pd.options.plotting.backend = "plotly"`
-# 
-# Read more here:
-# https://plotly.com/python/pandas-backend/
-
-# In[22]:
-
-
-pd.options.plotting.backend = "plotly"
-
-mediause['average'] = mediause[['radio','tv','newspaper','internet']].mean(axis=1)
-# we sample 50 points here just to make the graph clearer, of course that doesn't make much sense conceptually here
-fig = mediause.sample(50).plot(x='age', y='average', kind='scatter')
-fig.show()
-fig.write_html("plotly-example.html")
-
-
-# In[34]:
-
-
-# let's add some more data to the hover-over box
-# look at https://towardsdatascience.com/visualization-with-plotly-express-comprehensive-guide-eb5ee4b50b57 for more info
-# e.g., we can also specify color = 'varname', size = 'varname' etc. - very much like in seaborn
-fig = mediause.sample(50).plot(x='age', y='average', hover_data={"gender":True},kind='scatter')
-fig.show()
-
-
-# In[23]:
-
-
-mediause.internet.hist()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
+# and/or show in browser
+show(p)
 
 
 # # Publishing interactivity
@@ -353,7 +308,7 @@ mediause.internet.hist()
 # 
 # **Try to understand the code (in broad lines) and modify it to explore what happens. Construct a different visualization, or use other (own?) data.**
 
-# In[24]:
+# In[ ]:
 
 
 # import modules and prepare example dataset
@@ -367,13 +322,13 @@ df.cyl = df.cyl.astype(str)
 df.yr = df.yr.astype(str)
 
 
-# In[25]:
+# In[ ]:
 
 
 df
 
 
-# In[26]:
+# In[ ]:
 
 
 group = df.groupby(by=['cyl', 'mfr'])
@@ -400,7 +355,7 @@ show(p)
 
 # To give you a little help, I made one with our mediause dataset:
 
-# In[27]:
+# In[ ]:
 
 
 group = mediause.groupby('education')
@@ -415,18 +370,19 @@ p.add_tools(HoverTool(tooltips=[("internet use", "@internet_mean"), ("education"
 show(p)
 
 
-# In[28]:
+# In[ ]:
 
 
-group['internet'].describe()
 
 
-# In[29]:
+
+# In[ ]:
 
 
 mediause_nice = mediause.copy()
-mediause_nice['education'].replace({1: '1 basis', 2:'2 vmbo', 3: '3 vmbo-t', 4: '4 mbo', 5: '5 hbo', 6:'6 wo-bachelor',
-                               7:'7 wo-master'}, inplace=True)
+mediause_nice['education'].replace({1: 'basis', 2:'vmbo', 3: 'vmbo-t', 4: 'mbo', 5: 'hbo', 6:'wo-bachelor',
+                               7:'wo-master'}, inplace=True)
+
 
 group = mediause_nice.groupby('education')
 source = ColumnDataSource(group)
@@ -443,5 +399,5 @@ show(p)
 # In[ ]:
 
 
-
+group.describe()
 

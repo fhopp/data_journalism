@@ -18,12 +18,14 @@ parts:
   - file: content/06-aggregate_wozwaarde.ipynb
   - file: content/07-analyzing_text.ipynb
   - file: content/08-visualizations.ipynb
+  - file: content/09-interactive_visualizations.ipynb
 - caption: Slides
   chapters:
   - file: content/slides/week1.md
   - file: content/slides/week2.md
   - file: content/slides/week3.md
   - file: content/slides/week4.md
+  - file: content/slides/week5.md
 - caption: Resources
   chapters: 
   - file: content/python.md   
