@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7. Analyzing Text &#8212; Data Journalism</title>
+    <title>Analyzing Text &#8212; Data Journalism</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,8 +52,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Week 1" href="slides/week1.html" />
-    <link rel="prev" title="6. Data Aggregation" href="05-aggregate_wozwaarde.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -109,7 +107,7 @@
   Notebooks
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01-getting_started.html">
    1. On Jupyter Notebooks
@@ -136,35 +134,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="05-aggregate_wozwaarde.html">
-   6. Data Aggregation
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   7. Analyzing Text
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Slides
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="slides/week1.html">
-   Week 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="slides/week2.html">
-   Week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="slides/week3.html">
-   Week 3
+  <a class="reference internal" href="09-interactive_visualizations.html">
+   Interactive Data Visualization
   </a>
  </li>
 </ul>
@@ -290,7 +261,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   7. Analyzing Text
+   Analyzing Text
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -356,8 +327,8 @@
               <div>
                 
   <div class="section" id="analyzing-text">
-<h1>7. Analyzing Text<a class="headerlink" href="#analyzing-text" title="Permalink to this headline">¶</a></h1>
-<p><em>Frederic Hopp and Penny Sheets</em></p>
+<h1>Analyzing Text<a class="headerlink" href="#analyzing-text" title="Permalink to this headline">¶</a></h1>
+<p><em>Damian Trilling and Penny Sheets</em></p>
 <p>This notebook is meant to show you some more ways of analyzing data that go beyond methods like <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> or <code class="docutils literal notranslate"><span class="pre">Counter()</span></code> etc., which we used last week already. In particular, we are going to look into analyzing textual data.</p>
 <p>We will both look at <em>bottom up</em> and <em>top down</em> approaches.</p>
 <div class="section" id="download-the-data">
@@ -372,12 +343,21 @@
 </pre></div>
 </div>
 <p>In the .tar.gz file, you find a .zip file.</p>
-<p><strong>On Windows, you may need to install a unzip program like <a class="reference external" href="https://www.7-zip.org/">7zip</a> first</strong></p>
-<p><strong>Within that archive, you find a file <code class="docutils literal notranslate"><span class="pre">Speeches_UK_Cleaned.csv</span></code>. That’s the one we need – save it in the directory in which you save your Jupyter Notebooks!</strong></p>
+<p>See below a screenshot of how this looks like in Lubuntu (double-click on “speeches_csv.zip” in the left window, then the right window will open. Click on “Extract”). On some systems, you need to actually to three steps of uncompressing: double-click on the tar.gz file to make it a .gz file, and double-click on that one to get the zip file, and then the same thing again for the zip file.</p>
+<p>**On Windows, you may need to install a unzip program like <a class="reference external" href="https://www.7-zip.org/">7zip</a> first **</p>
+<p><strong>Within that archive, you find a file <code class="docutils literal notranslate"><span class="pre">Speeches_UK_Cleaned.csv</span></code>. That’s the one we need – save it inthe directory in which you save your Jupyter Notebooks!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="s2">&quot;https://github.com/damian0604/bdaca/raw/master/ipynb/euspeech_download.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="getting-started">
 <h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>It is a good custom to import all modules that you need at the beginning of your notebook.</p>
+<p>It is a good custom to import all modules that you need at the beginning of your notebook. I’ll explain in the leson what these models do</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -605,7 +585,7 @@
 </div>
 </div>
 </div>
-<p>Instead of counting the number of all references to terror, let’s count the number of speeches that have at least one reference:</p>
+<p>Instead of counting the number of all references to terror, let’s count the number of speeches that have at leas tone reference:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;terrorrefsdummy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;terrorrefs&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span>
@@ -774,24 +754,6 @@
 
 <div class='prev-next-bottom'>
     
-    <div id="prev">
-        <a class="left-prev" href="05-aggregate_wozwaarde.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">6. Data Aggregation</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="slides/week1.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Week 1</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         
