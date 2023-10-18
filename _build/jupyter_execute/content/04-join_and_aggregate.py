@@ -29,8 +29,8 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # Obtain both datasets by either working through Notebook 5. or by downloading both files from here:
-# - [population.json]
-# - [economy.json]
+# - [population.json](https://github.com/fhopp/data_journalism/blob/master/datasets/population.json)
+# - [economy.json](https://github.com/fhopp/data_journalism/blob/master/datasets/economy.json)
 
 # In[2]:
 

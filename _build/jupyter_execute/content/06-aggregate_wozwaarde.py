@@ -21,7 +21,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # Download the datafile here:
-# - [wozwaarde.csv]()
+# - [wozwaarde.csv](https://github.com/fhopp/data_journalism/blob/master/datasets/wozwaarde.csv)
 
 # In[ ]:
 
