@@ -3,7 +3,7 @@
 
 # # 8. Data Visualization
 # 
-# *Frederic Hopp and Penny Sheets*
+# *Damian Trilling and Penny Sheets*
 # 
 # This notebook illustrates what you should consider when making visualizations.
 # 
@@ -81,7 +81,7 @@ tips.describe()
 
 
 # we also want the 'wijken_long.csv' file we created last week.
-# We created it in 05-aggregate_wozwaarde.ipynb, under the section "From Wide to Long".
+# We created it in 06-aggregate_wozwaarde.ipynb, under the section "From Wide to Long".
 # In case you don't have it, you need to download wozwaarde.csv
 # from github and then run the code in 05-aggregate_wozwaarde.ipynb, which will create wijken_long.csv and save it
 # to your computer.  If you're running colab, you have to ensure this file is in your google drive so you can
@@ -89,12 +89,6 @@ tips.describe()
 
 woz = pd.read_csv('wijken_long.csv')
 woz.head()
-
-#for google colab people:
-
-#from google.colab import drive
-#drive.mount('/mnt')
-#woz = pd.read_csv('/mnt/My Drive/datajournalism/wijken_long.csv')
 
 
 # It turns out that the first column of our csv file contained the index (= row number), but we don't want that (after all, we have an index anyway and it doesn't mean anything to us). We can delete (`drop`) this column (which is, as we see above, called "Unnamed: 0"): `axis=1` specifies that we want to delete a row, not a column, and `inplace` specifies whether we want to directly modify the existing dataframe (i.e., override it), or whether we want to return another, new, dataframe instead.

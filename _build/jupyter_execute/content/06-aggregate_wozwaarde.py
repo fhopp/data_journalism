@@ -3,7 +3,9 @@
 
 # # 6. Data Aggregation
 # 
-# *Frederic Hopp and Penny Sheets*
+# ## Example "WOZ-waarde"
+# 
+# *Damian Trilling and Penny Sheets*
 # 
 # This week, we will particularly look at techniques for aggregating data and for joining datasets.
 # We use data on housing prices from https://data.amsterdam.nl/ .
@@ -18,10 +20,13 @@ import numpy as np
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
+# Download the datafile here:
+# - [wozwaarde.csv]()
+
 # In[ ]:
 
 
-df = pd.read_csv('https://raw.githubusercontent.com/fhopp/data_journalism/master/content/wozwaarde.csv', delimiter=';')
+df = pd.read_csv('wozwaarde.csv', delimiter=';')
 
 
 # ## Cleaning up and recoding

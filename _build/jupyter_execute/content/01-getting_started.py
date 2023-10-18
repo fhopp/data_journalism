@@ -50,7 +50,7 @@
 # 
 # Once a line of code has been run, a number appears next to it (in sequential order).  This can be very useful for knowing whether you've run code already or not - relevant to when we install certain packages, e.g., or you search for or name specific datasets.  
 
-# In[ ]:
+# In[1]:
 
 
 print('Hello world')
@@ -64,7 +64,7 @@ print('Hello world')
 
 
 
-# In[ ]:
+# In[2]:
 
 
 #Note, in a code cell, you can also preface a line of text with a hashtag, and python will ignore it as code.
@@ -74,7 +74,7 @@ print('Hello world')
 
 # Python also allows us to do very simple calculations.  Just tell it the values and make it do the work:
 
-# In[ ]:
+# In[3]:
 
 
 a = 5
@@ -96,7 +96,7 @@ print(c)
 # 
 # Because we want to do a lot more than printing words and running simple calculations, we can import modules that help us do fancier things -- and in particular, help us to read data easily.  Our main module in this course is called "pandas".  Whenever you import anything into Python, it needs to have a name.  You can either leave the original name - pandas - (by just typing `import pandas`) or shorten that name so you don't have to type it again and again and again.  So one shorthand that is commonly used is `pd` for pandas.  Try importing it now with the following command.  You'll see that no output appears, but you should - if you've run it correctly - end up with a number next to the command line.
 
-# In[ ]:
+# In[5]:
 
 
 import pandas as pd
@@ -110,7 +110,7 @@ import pandas as pd
 # 
 # As for the second line of code here, if we just type the name of the dataset after having read it into jupyter, it also displays a bunch of the dataset for us to see.  This is handy, as long as you don't have insanely huge datasets.
 
-# In[ ]:
+# In[6]:
 
 
 iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
@@ -124,13 +124,13 @@ iris
 # 
 # Note the `()` at the end. If you want to "call" (= execute, run) a method, you need to end with these parentheses. They also allow you to give some additional "arguments" (parameters, options). Compare the following two method calls:
 
-# In[ ]:
+# In[7]:
 
 
 iris.describe()
 
 
-# In[ ]:
+# In[8]:
 
 
 iris.describe(percentiles=[0.1, 0.9])
@@ -138,7 +138,7 @@ iris.describe(percentiles=[0.1, 0.9])
 
 # One more note: as with SPSS and syntax help, python is happy to help you.  You can type a command and then put a question mark after it, and it'll explain that command to you.  Try it here:
 
-# In[ ]:
+# In[9]:
 
 
 get_ipython().run_line_magic('pinfo', 'iris.describe')
@@ -152,7 +152,7 @@ get_ipython().run_line_magic('pinfo', 'iris.describe')
 # 
 # Let's try out some functions.  First, create two objects to play with:
 
-# In[ ]:
+# In[10]:
 
 
 mystring = "Hello world"
@@ -161,19 +161,19 @@ mylist = [22, 3, 4]
 
 # Now, try out the following functions and try to explain what they do to those objects.  What are these functions trying to do?
 
-# In[ ]:
+# In[11]:
 
 
 len(mystring)
 
 
-# In[ ]:
+# In[12]:
 
 
 len(mylist)
 
 
-# In[ ]:
+# In[13]:
 
 
 sum(mylist)

@@ -16,7 +16,7 @@
 # 
 # If you want to learn more about these modules, you can look online for info.
 
-# In[ ]:
+# In[1]:
 
 
 import pandas as pd
@@ -37,7 +37,7 @@ import numpy as np
 # 
 # Remember that the 'df' here is arbitrary; last week we used the names 'iris' and 'stockdata' and others; this week we're going more basic and just saying 'df' for dataframe.
 
-# In[ ]:
+# In[2]:
 
 
 # df = pd.read_csv('mediause.csv') # if you downloaded and stored the file locally 
@@ -46,7 +46,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/damian0604/bdaca/master/ipyn
 
 # Using the .keys() method is way to find out what the columns are in your dataframe. Sometimes they have nice labels already, and sometimes they don't.  In this case, we're in luck.
 
-# In[ ]:
+# In[3]:
 
 
 df.keys()
@@ -54,7 +54,7 @@ df.keys()
 
 # Remember that for a dataframe or object in python, you can simply type its name in a code cell and python will display it as best it can. (In this case, it works well.) 
 
-# In[ ]:
+# In[4]:
 
 
 df
@@ -63,7 +63,7 @@ df
 # ### Explore the dataset
 # Let's do some descriptive statistics, using the .describe() method we saw last week. This would be important if you wanted to describe the dataset to your audience, for example.
 
-# In[ ]:
+# In[5]:
 
 
 df.describe()
@@ -73,13 +73,13 @@ df.describe()
 # 
 # The output shows us that there are two values - 0 and 1 - for the 'gender' variable. It gives us how many instances (aka frequencies) of each of these values exist in the dataset.
 
-# In[ ]:
+# In[6]:
 
 
 df['gender'].value_counts()
 
 
-# In[ ]:
+# In[7]:
 
 
 #as with any method, value_counts() has parameters we can adjust.
@@ -89,20 +89,20 @@ df['gender'].value_counts()
 df['education'].value_counts(sort=False)
 
 
-# In[ ]:
+# In[8]:
 
 
 df['education'].value_counts(sort=True)
 
 
-# In[ ]:
+# In[9]:
 
 
 #if it is useful to sort by the index - i.e. days of the week here - then you can specify that as follows:
 df['education'].value_counts().sort_index()
 
 
-# In[ ]:
+# In[10]:
 
 
 #You can also use a help command to get python to print info about this method. But in this case, 
@@ -117,7 +117,7 @@ get_ipython().run_line_magic('pinfo', 'test.value_counts')
 # 
 # See if you can figure out what each of these print commands is doing.
 
-# In[ ]:
+# In[11]:
 
 
 for medium in ['radio','newspaper','tv','internet']:
@@ -138,7 +138,7 @@ for medium in ['radio','newspaper','tv','internet']:
 # First, we group the dataframe by the 'gender' variable, and then apply a method to that grouped dataframe; this is called 'chaining' multiple methods together.  (We saw a bit of this chaining idea last week already.)
 # 
 
-# In[ ]:
+# In[12]:
 
 
 df.groupby('gender').describe()
@@ -146,19 +146,19 @@ df.groupby('gender').describe()
 
 # Sometimes in this case, it's more useful to transpose the dataset, making columns into rows and vice versa.  This display will then be much easier to look at.  In this case, we use a .T at the end, after the describe() method.  This doesn't change the dataframe in any way, just displays it differently for you here.
 
-# In[ ]:
+# In[13]:
 
 
 df.groupby('gender').describe().T
 
 
-# In[ ]:
+# In[14]:
 
 
 #try this again here, using a different variable as the grouping variable.
 
 
-# In[ ]:
+# In[15]:
 
 
 #you can use help again here, to figure out all the specifications.
@@ -168,7 +168,7 @@ get_ipython().run_line_magic('pinfo', 'df.groupby')
 
 # And, as we did last week, you can plot a simple histogram of the distribution of a variable across the dataset. So if you want to look at how 'radio' (as in, how many days per week a person uses radio) is distributed among your sample, e.g., you can use a histogram.
 
-# In[ ]:
+# In[16]:
 
 
 #Here, 'bins' refers to how many bars we want, essentially. If you don't specify, python/pandas will guess based
@@ -177,7 +177,7 @@ get_ipython().run_line_magic('pinfo', 'df.groupby')
 df['radio'].hist(bins=7)
 
 
-# In[ ]:
+# In[17]:
 
 
 #Try to plot a histogram of internet news use here:
@@ -189,7 +189,7 @@ df['radio'].hist(bins=7)
 # 
 # Let's try to use `.plot()` to make a bar chart:
 
-# In[ ]:
+# In[18]:
 
 
 df['internet'].value_counts().sort_index().plot(kind='bar')
@@ -200,7 +200,7 @@ df['internet'].value_counts().sort_index().plot(kind='bar')
 # Can you integrate this plotting method in your for-loop (from above) to get a nice series of plots?  Fill in the missing line of code, below.  But keep the plt.show() command afterward, in order to display all plots.
 # 
 
-# In[ ]:
+# In[19]:
 
 
 for medium in ['radio','newspaper','tv','internet']:
@@ -215,7 +215,7 @@ for medium in ['radio','newspaper','tv','internet']:
 # 
 # Note here we've added a 'figsize' specification to the end of the plot method in your missing line of code. You can play around with different figure sizes to see what happens, if you display them here using plt.show().
 
-# In[ ]:
+# In[20]:
 
 
 for medium in ['radio','newspaper','tv','internet']:
@@ -237,7 +237,7 @@ for medium in ['radio','newspaper','tv','internet']:
 # 
 # Here, we're using the "by=[' ']" command to specify which grouping variable we want, and again specifying the bins and the figure size, both of which you can play around with.
 
-# In[ ]:
+# In[21]:
 
 
 df.hist(column='internet', by=['gender'], bins=7, figsize=(10,5))
@@ -255,7 +255,7 @@ df.hist(column='internet', by=['gender'], bins=7, figsize=(10,5))
 # 
 # We are using the ability to filter a dataframe (e.g., `df[df['gender']==1]` to create a dataframe only for males; adding `['internet']` at the end selects only the column for internet). This can be handy to select only relevant data for your story out of a much larger dataset!
 
-# In[ ]:
+# In[22]:
 
 
 males_internet = df[df['gender']==1]['internet']
@@ -264,13 +264,13 @@ females_internet = df[df['gender']==0]['internet']
 
 # Each of these new dataframes can then be described and explored as we do with any pandas dataframe, and using `.describe()`, remember, gives us the mean score (handy for our t-test!).
 
-# In[ ]:
+# In[23]:
 
 
 males_internet.describe()
 
 
-# In[ ]:
+# In[24]:
 
 
 females_internet.describe()
@@ -280,7 +280,7 @@ females_internet.describe()
 # 
 # The results return the test statistic, p-value, and the degrees of freedom (in that order). 
 
-# In[ ]:
+# In[25]:
 
 
 ttest_ind(males_internet,females_internet)
@@ -294,7 +294,7 @@ ttest_ind(males_internet,females_internet)
 # 
 # And again, here we see the use of ".format()" as a method to input something from the ongoing calculation.
 
-# In[ ]:
+# In[26]:
 
 
 results = ttest_ind(males_internet,females_internet)
@@ -305,13 +305,13 @@ print('t({2:.0f}) = {0:.3f}, p = {1:.3f}'.format(*results))
 # 
 # 
 
-# In[ ]:
+# In[27]:
 
 
 df['meanmedia'] = df[['radio','internet','newspaper','tv']].mean(axis=1)
 
 
-# In[ ]:
+# In[28]:
 
 
 #We can then plot this mean media usage (for news) by age, using a scatterplot, e.g.
@@ -329,13 +329,13 @@ df.plot.scatter(x='age', y='meanmedia', c='blue')
 
 # First, we'll make a simple correlation matrix of the four media in this datset.
 
-# In[ ]:
+# In[29]:
 
 
 corrmatrix = df[['internet','tv','radio','newspaper']].corr()
 
 
-# In[ ]:
+# In[30]:
 
 
 corrmatrix
@@ -343,7 +343,7 @@ corrmatrix
 
 # But think of ways that are more useful to display this to audiences, who may not want to deal with a correlation matrix.  Heatmaps are one way to do this:
 
-# In[ ]:
+# In[31]:
 
 
 sns.heatmap(corrmatrix)
@@ -353,7 +353,7 @@ sns.heatmap(corrmatrix)
 # 
 # Here, note that even Damian (EVEN DAMIAN!) can't reproduce all of this out of his head.  But if you look around online, or use what we show you here and adapt it, you can do a lot of amazing graphics stuff.
 
-# In[ ]:
+# In[32]:
 
 
 sns.set(style="white")
@@ -380,25 +380,25 @@ sns.heatmap(corrmatrix,mask=mask,cmap=cmap,vmin=0,vmax=.2)
 
 # Regardless whether you were able to do that, here's a really cool graphic to show you. In this case, we're plotting petal width by petal length, with a different color for each species.  This also uses the seaborn library (indicated by sns).  Because of the nature of this dataset and the values within it, it works quite well.)
 
-# In[ ]:
+# In[33]:
 
 
 iris = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
 
 
-# In[ ]:
+# In[34]:
 
 
 iris.groupby('species').describe().T
 
 
-# In[ ]:
+# In[35]:
 
 
 iris.hist(column='petal_length', by=['species'], figsize=(10,5))
 
 
-# In[ ]:
+# In[36]:
 
 
 sns.scatterplot(x="petal_width", y="petal_length", hue="species", data=iris)
@@ -416,20 +416,20 @@ sns.scatterplot(x="petal_width", y="petal_length", hue="species", data=iris)
 # 
 # We'll talk more about aggregating/merging datasets in a later session, so for now just go with it.
 
-# In[ ]:
+# In[37]:
 
 
 # intpol=pd.read_csv('intpol.csv') # if you stored it locally 
 intpol=pd.read_csv('https://raw.githubusercontent.com/damian0604/bdaca/master/ipynb/intpol.csv') # if reading it directly from the website
 
 
-# In[ ]:
+# In[38]:
 
 
 combined = df.join(intpol)
 
 
-# In[ ]:
+# In[39]:
 
 
 combined
@@ -439,19 +439,19 @@ combined
 # * First you include your dependent variable, followed by the ~ sign
 # * Then you include the independent variables (separated by the + sign)
 
-# In[ ]:
+# In[40]:
 
 
 m1 = smf.ols(formula='internet ~ age + gender + education', data=combined).fit()
 
 
-# In[ ]:
+# In[41]:
 
 
 m1.summary()
 
 
-# In[ ]:
+# In[42]:
 
 
 m2 = smf.ols(formula='internet ~ age + gender + education + intpol', data=combined).fit()
@@ -462,7 +462,7 @@ m2.summary()
 # (see also http://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLSResults.compare_lr_test.html?highlight=compare_lr_test )
 # 
 
-# In[ ]:
+# In[43]:
 
 
 m2.compare_lr_test(m1)
@@ -476,7 +476,7 @@ m2.compare_lr_test(m1)
 # 
 # To make it even more informative, we add histograms of the two variables in the margin, so that you can immediately get an idea of the distributions. This, again, helps us to understand whether there are just a few (very old, very young) people that behave in some way (no media at all, media every day), or whether it's a general pattern.
 
-# In[ ]:
+# In[44]:
 
 
 sns.jointplot(combined['age'], combined['meanmedia'] , 

@@ -158,38 +158,6 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Slides
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="slides/week1.html">
-   Week 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="slides/week2.html">
-   Week 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="slides/week3.html">
-   Week 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="slides/week4.html">
-   Week 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="slides/week5.html">
-   Week 5
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
   Resources
  </span>
 </p>
@@ -423,6 +391,11 @@ https://guides.github.com/features/mastering-markdown/</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now create your own print command in the next cell.  Print whatever you want.  The key is to make sure you format the command correctly - you need parentheses and quotation marks, and to be sure all are closed out afterward. Python helps you with this quite a bit (for example, look at how the colors change if you format something (in-)correctly), but, you have to practice.</p>
 <div class="cell docutils container">
@@ -441,6 +414,11 @@ https://guides.github.com/features/mastering-markdown/</p>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
 </pre></div>
 </div>
 </div>
@@ -471,6 +449,125 @@ https://guides.github.com/features/mastering-markdown/</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
 </div>
 <div class="section" id="methods">
 <h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
@@ -483,6 +580,91 @@ https://guides.github.com/features/mastering-markdown/</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.843333</td>
+      <td>3.057333</td>
+      <td>3.758000</td>
+      <td>1.199333</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.828066</td>
+      <td>0.435866</td>
+      <td>1.765298</td>
+      <td>0.762238</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>4.300000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.100000</td>
+      <td>2.800000</td>
+      <td>1.600000</td>
+      <td>0.300000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.800000</td>
+      <td>3.000000</td>
+      <td>4.350000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.400000</td>
+      <td>3.300000</td>
+      <td>5.100000</td>
+      <td>1.800000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>7.900000</td>
+      <td>4.400000</td>
+      <td>6.900000</td>
+      <td>2.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -490,11 +672,349 @@ https://guides.github.com/features/mastering-markdown/</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>5.843333</td>
+      <td>3.057333</td>
+      <td>3.758000</td>
+      <td>1.199333</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.828066</td>
+      <td>0.435866</td>
+      <td>1.765298</td>
+      <td>0.762238</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>4.300000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>10%</th>
+      <td>4.800000</td>
+      <td>2.500000</td>
+      <td>1.400000</td>
+      <td>0.200000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>5.800000</td>
+      <td>3.000000</td>
+      <td>4.350000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>90%</th>
+      <td>6.900000</td>
+      <td>3.610000</td>
+      <td>5.800000</td>
+      <td>2.200000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>7.900000</td>
+      <td>4.400000</td>
+      <td>6.900000</td>
+      <td>2.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>One more note: as with SPSS and syntax help, python is happy to help you.  You can type a command and then put a question mark after it, and it’ll explain that command to you.  Try it here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>iris.describe<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
+iris<span class=" -Color -Color-Blue">.</span>describe<span class=" -Color -Color-Blue">(</span>
+    percentiles<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    include<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    exclude<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    datetime_is_numeric<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+<span class=" -Color -Color-Blue">)</span> <span class=" -Color -Color-Blue">-&gt;</span> <span class=" -Color -Color-Blue">&#39;FrameOrSeries&#39;</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Generate descriptive statistics.
+
+Descriptive statistics include those that summarize the central
+tendency, dispersion and shape of a
+dataset&#39;s distribution, excluding ``NaN`` values.
+
+Analyzes both numeric and object series, as well
+as ``DataFrame`` column sets of mixed data types. The output
+will vary depending on what is provided. Refer to the notes
+below for more detail.
+
+Parameters
+----------
+percentiles : list-like of numbers, optional
+    The percentiles to include in the output. All should
+    fall between 0 and 1. The default is
+    ``[.25, .5, .75]``, which returns the 25th, 50th, and
+    75th percentiles.
+include : &#39;all&#39;, list-like of dtypes or None (default), optional
+    A white list of data types to include in the result. Ignored
+    for ``Series``. Here are the options:
+
+    - &#39;all&#39; : All columns of the input will be included in the output.
+    - A list-like of dtypes : Limits the results to the
+      provided data types.
+      To limit the result to numeric types submit
+      ``numpy.number``. To limit it instead to object columns submit
+      the ``numpy.object`` data type. Strings
+      can also be used in the style of
+      ``select_dtypes`` (e.g. ``df.describe(include=[&#39;O&#39;])``). To
+      select pandas categorical columns, use ``&#39;category&#39;``
+    - None (default) : The result will include all numeric columns.
+exclude : list-like of dtypes or None (default), optional,
+    A black list of data types to omit from the result. Ignored
+    for ``Series``. Here are the options:
+
+    - A list-like of dtypes : Excludes the provided data types
+      from the result. To exclude numeric types submit
+      ``numpy.number``. To exclude object columns submit the data
+      type ``numpy.object``. Strings can also be used in the style of
+      ``select_dtypes`` (e.g. ``df.describe(include=[&#39;O&#39;])``). To
+      exclude pandas categorical columns, use ``&#39;category&#39;``
+    - None (default) : The result will exclude nothing.
+datetime_is_numeric : bool, default False
+    Whether to treat datetime dtypes as numeric. This affects statistics
+    calculated for the column. For DataFrame input, this also
+    controls whether datetime columns are included by default.
+
+    .. versionadded:: 1.1.0
+
+Returns
+-------
+Series or DataFrame
+    Summary statistics of the Series or Dataframe provided.
+
+See Also
+--------
+DataFrame.count: Count number of non-NA/null observations.
+DataFrame.max: Maximum of the values in the object.
+DataFrame.min: Minimum of the values in the object.
+DataFrame.mean: Mean of the values.
+DataFrame.std: Standard deviation of the observations.
+DataFrame.select_dtypes: Subset of a DataFrame including/excluding
+    columns based on their dtype.
+
+Notes
+-----
+For numeric data, the result&#39;s index will include ``count``,
+``mean``, ``std``, ``min``, ``max`` as well as lower, ``50`` and
+upper percentiles. By default the lower percentile is ``25`` and the
+upper percentile is ``75``. The ``50`` percentile is the
+same as the median.
+
+For object data (e.g. strings or timestamps), the result&#39;s index
+will include ``count``, ``unique``, ``top``, and ``freq``. The ``top``
+is the most common value. The ``freq`` is the most common value&#39;s
+frequency. Timestamps also include the ``first`` and ``last`` items.
+
+If multiple object values have the highest count, then the
+``count`` and ``top`` results will be arbitrarily chosen from
+among those with the highest count.
+
+For mixed data types provided via a ``DataFrame``, the default is to
+return only an analysis of numeric columns. If the dataframe consists
+only of object and categorical data without any numeric columns, the
+default is to return an analysis of both the object and categorical
+columns. If ``include=&#39;all&#39;`` is provided as an option, the result
+will include a union of attributes of each type.
+
+The `include` and `exclude` parameters can be used to limit
+which columns in a ``DataFrame`` are analyzed for the output.
+The parameters are ignored when analyzing a ``Series``.
+
+Examples
+--------
+Describing a numeric ``Series``.
+
+&gt;&gt;&gt; s = pd.Series([1, 2, 3])
+&gt;&gt;&gt; s.describe()
+count    3.0
+mean     2.0
+std      1.0
+min      1.0
+25%      1.5
+50%      2.0
+75%      2.5
+max      3.0
+dtype: float64
+
+Describing a categorical ``Series``.
+
+&gt;&gt;&gt; s = pd.Series([&#39;a&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;])
+&gt;&gt;&gt; s.describe()
+count     4
+unique    3
+top       a
+freq      2
+dtype: object
+
+Describing a timestamp ``Series``.
+
+&gt;&gt;&gt; s = pd.Series([
+...   np.datetime64(&quot;2000-01-01&quot;),
+...   np.datetime64(&quot;2010-01-01&quot;),
+...   np.datetime64(&quot;2010-01-01&quot;)
+... ])
+&gt;&gt;&gt; s.describe(datetime_is_numeric=True)
+count                      3
+mean     2006-09-01 08:00:00
+min      2000-01-01 00:00:00
+25%      2004-12-31 12:00:00
+50%      2010-01-01 00:00:00
+75%      2010-01-01 00:00:00
+max      2010-01-01 00:00:00
+dtype: object
+
+Describing a ``DataFrame``. By default only numeric fields
+are returned.
+
+&gt;&gt;&gt; df = pd.DataFrame({&#39;categorical&#39;: pd.Categorical([&#39;d&#39;,&#39;e&#39;,&#39;f&#39;]),
+...                    &#39;numeric&#39;: [1, 2, 3],
+...                    &#39;object&#39;: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+...                   })
+&gt;&gt;&gt; df.describe()
+       numeric
+count      3.0
+mean       2.0
+std        1.0
+min        1.0
+25%        1.5
+50%        2.0
+75%        2.5
+max        3.0
+
+Describing all columns of a ``DataFrame`` regardless of data type.
+
+&gt;&gt;&gt; df.describe(include=&#39;all&#39;)  # doctest: +SKIP
+       categorical  numeric object
+count            3      3.0      3
+unique           3      NaN      3
+top              f      NaN      a
+freq             1      NaN      1
+mean           NaN      2.0    NaN
+std            NaN      1.0    NaN
+min            NaN      1.0    NaN
+25%            NaN      1.5    NaN
+50%            NaN      2.0    NaN
+75%            NaN      2.5    NaN
+max            NaN      3.0    NaN
+
+Describing a column from a ``DataFrame`` by accessing it as
+an attribute.
+
+&gt;&gt;&gt; df.numeric.describe()
+count    3.0
+mean     2.0
+std      1.0
+min      1.0
+25%      1.5
+50%      2.0
+75%      2.5
+max      3.0
+Name: numeric, dtype: float64
+
+Including only numeric columns in a ``DataFrame`` description.
+
+&gt;&gt;&gt; df.describe(include=[np.number])
+       numeric
+count      3.0
+mean       2.0
+std        1.0
+min        1.0
+25%        1.5
+50%        2.0
+75%        2.5
+max        3.0
+
+Including only string columns in a ``DataFrame`` description.
+
+&gt;&gt;&gt; df.describe(include=[object])  # doctest: +SKIP
+       object
+count       3
+unique      3
+top         a
+freq        1
+
+Including only categorical columns from a ``DataFrame`` description.
+
+&gt;&gt;&gt; df.describe(include=[&#39;category&#39;])
+       categorical
+count            3
+unique           3
+top              d
+freq             1
+
+Excluding numeric columns from a ``DataFrame`` description.
+
+&gt;&gt;&gt; df.describe(exclude=[np.number])  # doctest: +SKIP
+       categorical object
+count            3      3
+unique           3      3
+top              f      a
+freq             1      1
+
+Excluding object columns from a ``DataFrame`` description.
+
+&gt;&gt;&gt; df.describe(exclude=[object])  # doctest: +SKIP
+       categorical  numeric
+count            3      3.0
+unique           3      NaN
+top              f      NaN
+freq             1      NaN
+mean           NaN      2.0
+std            NaN      1.0
+min            NaN      1.0
+25%            NaN      1.5
+50%            NaN      2.0
+75%            NaN      2.5
+max            NaN      3.0
+<span class=" -Color -Color-Red">File:</span>      ~/opt/anaconda3/envs/dj21/lib/python3.7/site-packages/pandas/core/generic.py
+<span class=" -Color -Color-Red">Type:</span>      method
 </pre></div>
 </div>
 </div>
@@ -520,6 +1040,11 @@ https://guides.github.com/features/mastering-markdown/</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -527,10 +1052,20 @@ https://guides.github.com/features/mastering-markdown/</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29
 </pre></div>
 </div>
 </div>
